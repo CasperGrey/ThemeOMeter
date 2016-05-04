@@ -11,10 +11,13 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
+import { Presets, StyleSheet, LookRoot } from 'react-look'
 
 const templateHtml = fs.readFileSync('./public/index.html', 'utf8')
+const serverConfig = Presets['react-dom']
 const PORT = process.env.PORT || 5000
 var server = express()
+
 server.get('*', function(req, res, next) {
   match({ routes, location: req.url }, (err, redirect, props) => {
     if (err) {
@@ -24,16 +27,26 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
+
+      // Takes the userAgent directly form the request
+    serverConfig.userAgent = req.headers['user-agent']
+    // We also want to use the same <style>-tag for dynamic styles
+    serverConfig.styleElementId = '_look'
+
     const store = createStore(reducer)
     fetchNeeds(props, store)
     .then((asyncProps) => {
       const appHtml = renderToString(
         <Provider store={store}>
-          <AsyncRouterContext {...props} asyncProps={asyncProps} />
+          <LookRoot config={serverConfig}>
+            <AsyncRouterContext {...props} asyncProps={asyncProps} />
+          </LookRoot>
         </Provider>
       )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
+      const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
+      html = html.replace('<!-- {{css}} -->', appCSS)
       const initialState = {asyncProps, store: store.getState()}
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
       res.send(html)
