@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { StyleSheet } from 'react-look'
-
+import Background from './Background/Background.js'
 
 const styles = StyleSheet.create({
   App: {
@@ -20,7 +20,7 @@ export default class App extends Component {
 
     	<h5>A simple async props example.</h5>
 
-    	
+    
 
       {this.props.children}
 

@@ -13,7 +13,7 @@ import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
 
-const templateHtml = fs.readFileSync('./public/index.html', 'utf8')
+const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
 const PORT = process.env.PORT || 5000
 var server = express()
@@ -53,6 +53,6 @@ server.get('*', function(req, res, next) {
     })
   })
 })
-server.use(express.static(path.join(__dirname, '..', 'public')))
+server.use(express.static(path.resolve(__dirname, 'public')))
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))
