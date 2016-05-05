@@ -1,29 +1,30 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { StyleSheet } from 'react-look'
-import Background from './Background/Background.js'
+import Background from './Background/Background.jsx'
+
+require('./AppStyles.js')
 
 const styles = StyleSheet.create({
-  App: {
-    backgroundColor: 'black',
-    color: '#ffffff',
-    fontFamily: '"Courier New", Courier, monospace',
-    fontSize: '0.875rem',
-    fontWeight: 500,
+  AppInner: {
+    padding: '50px 60px',
   }
 })
 
+
 export default class App extends Component {
   render() {
-    return <div className={styles.App}>
-    	<h1>Animals</h1>
+    return <div>
+      <Background />
+      <div className={styles.AppInner}>
+      	<h2>Works</h2>
+        {/*
+      	<h5>A simple async props example.</h5>
 
-    	<h5>A simple async props example.</h5>
+      
 
-    
-
-      {this.props.children}
-
+        {this.props.children}*/}
+      </div>
     </div>
   }
 } 

@@ -21,6 +21,7 @@ Object.assign(config, {
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "http://localhost:8080/",
     filename: "server.bundle.js"
   },
   target: 'node',

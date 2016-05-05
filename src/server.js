@@ -27,8 +27,7 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
-
-      // Takes the userAgent directly form the request
+    // Takes the userAgent directly form the request
     serverConfig.userAgent = req.headers['user-agent']
     // We also want to use the same <style>-tag for dynamic styles
     serverConfig.styleElementId = '_look'
@@ -51,6 +50,7 @@ server.get('*', function(req, res, next) {
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
       res.send(html)
     })
+    .catch(next)
   })
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
