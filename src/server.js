@@ -13,11 +13,13 @@ import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
 
-const templateHtml = fs.readFileSync('./public/index.html', 'utf8')
+const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
+const serverConfig = Presets['react-dom']
 const PORT = process.env.PORT || 5000
 const serverConfig = Presets['react-dom']
 
 var server = express()
+
 server.get('*', function(req, res, next) {
   match({ routes, location: req.url }, (err, redirect, props) => {
     if (err) {
@@ -27,7 +29,7 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
-
+    
     serverConfig.userAgent = req.headers['user-agent']
     serverConfig.styleElementId = '_look'
 
@@ -43,14 +45,17 @@ server.get('*', function(req, res, next) {
       )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
+      const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
+      html = html.replace('<!-- {{css}} -->', appCSS)
       const initialState = {asyncProps, store: store.getState()}
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
       const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
       html = html.replace('<-- {{css}} -->', appCSS)
       res.send(html)
     })
+    .catch(next)
   })
 })
-server.use(express.static(path.join(__dirname, '..', 'public')))
+server.use(express.static(path.resolve(__dirname, 'public')))
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))

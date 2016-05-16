@@ -59,7 +59,6 @@ function runWebpackDevServer(){
   config.entry.push("webpack-dev-server/client?http://localhost:8080/")
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
   config.devtool = 'source-map'
-  //console.log(require('util').inspect(config))
   var compiler = webpack(config);
 
   var server = new WebpackDevServer(compiler, {
