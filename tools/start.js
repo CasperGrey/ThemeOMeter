@@ -6,10 +6,13 @@ import chalk from 'chalk'
 import copyFile from './copyFile.js'
 import WebpackDevServer from 'webpack-dev-server'
 import webpack from 'webpack'
-import webpackConfig from './../webpack.config.js'
+import webpackAppConfig from './../webpack.config.js'
+import webpackServerConfig from './../webpack.server.config.js'
 var babel = require("babel-core");
 
-copyFile('tools/dev-template.html', 'public/index.html')
+fs.mkdirSync('./dist')
+fs.mkdirSync('./dist/public')
+copyFile('tools/dev-template.html', './dist/public/index.html')
 runWebpackDevServer()  
 startServer()
 
@@ -18,54 +21,26 @@ startServer()
  * files are changed.
  */
 function startServer(){
-  const entryFile = path.join(__dirname, '../lib/server.js')
-  var watcher = new gaze.Gaze('src/**/*');
-  var server = spawnServerProcess()
+  const entryFile = path.join(__dirname, '../dist/server.bundle.js')
+  
+  var server
 
-  // A file has been added/changed/deleted has occurred 
-  watcher.on('all', function(event, filepath) { 
-    try {
-      transpileFile(filepath)
-    } catch (err){
-      console.log(toErrorStack(err))
-      console.log(chalk.red(`File does not compile, waiting for changes...`))
-      return
-    }
-    // Restart server
-    console.log(chalk.red(`Restarting server...`))
-    server.kill('SIGTERM');
+  var config = Object.assign({}, webpackServerConfig)
+  var compiler = webpack(config);
+  compiler.plugin("compile", function() {
+    console.log((chalk.red(`server bundle rebuilding`)))
+  });
+  compiler.watch({ // watch options:
+    aggregateTimeout: 300, // wait so long for more changes
+    //poll: true // use polling instead of native watchers
+    // pass a number to set the polling interval
+  }, function(err, stats) {
+    if (err) throw err
+    //console.log(require('util').inspect(stats))
+    console.log((chalk.red(`server bundle rebuilt`)))
+    if (server) server.kill('SIGTERM');
     server = spawnServerProcess();
   });
-
-  function toErrorStack(err) {
-    if (err._babel && err instanceof SyntaxError) {
-      return `${err.name}: ${formatPathInErrorMessage(err.message)}\n${err.codeFrame}`;
-    } else {
-      return err.stack;
-    }
-
-    function formatPathInErrorMessage(message){
-      var pathEndIndex = message.indexOf(":")
-      var messagePath = message.slice(0, pathEndIndex)
-      var relativePath = path.relative(__dirname, messagePath)
-      // Remove the ../ as this file is nested in tools
-      return relativePath.slice(3) + message.slice(pathEndIndex)
-    }
-  }
-
-  function transpileFile(filepath){
-    var relativeSrcPath = path.relative(__dirname, filepath)
-    console.log(chalk.red(`Transpiling ${relativeSrcPath.slice(3)}`))
-    var relativeLibPath = relativeSrcPath.replace("src", "lib")
-    // Rebuild the changed file
-    var { map, code } = babel.transformFileSync(filepath, {
-      sourceMaps: true,
-    })
-    //console.log(require('util').inspect(code))
-    var libFilePath = path.resolve(__dirname, relativeLibPath)
-    fs.writeFileSync(libFilePath, code, 'utf8')
-    fs.writeFileSync(libFilePath + `.map`, map, 'utf8')
-  }
 
   function spawnServerProcess() {
     const server = cp.fork(entryFile, {
@@ -77,17 +52,15 @@ function startServer(){
   }
 }
 
-
-
-
 function runWebpackDevServer(){
 
-  var config = Object.assign({}, webpackConfig)
+  var config = Object.assign({}, webpackAppConfig)
   config.entry.push("webpack/hot/dev-server")
   config.entry.push("webpack-dev-server/client?http://localhost:8080/")
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
   config.devtool = 'source-map'
-  var compiler = webpack(webpackConfig);
+  //console.log(require('util').inspect(config))
+  var compiler = webpack(config);
 
   var server = new WebpackDevServer(compiler, {
     // webpack-dev-server options

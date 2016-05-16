@@ -1,5 +1,5 @@
 require("babel-polyfill")
-
+Error.stackTraceLimit = 25
 import express from 'express'
 import path from 'path'
 import { fetchNeeds, AsyncRouterContext } from 'redux-async-props'
@@ -11,9 +11,12 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
+import { Presets, StyleSheet, LookRoot } from 'react-look'
 
 const templateHtml = fs.readFileSync('./public/index.html', 'utf8')
 const PORT = process.env.PORT || 5000
+const serverConfig = Presets['react-dom']
+
 var server = express()
 server.get('*', function(req, res, next) {
   match({ routes, location: req.url }, (err, redirect, props) => {
@@ -24,18 +27,26 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
+
+    serverConfig.userAgent = req.headers['user-agent']
+    serverConfig.styleElementId = '_look'
+
     const store = createStore(reducer)
     fetchNeeds(props, store)
     .then((asyncProps) => {
       const appHtml = renderToString(
         <Provider store={store}>
-          <AsyncRouterContext {...props} asyncProps={asyncProps} />
+          <LookRoot config={serverConfig}>
+            <AsyncRouterContext {...props} asyncProps={asyncProps} />
+          </LookRoot>
         </Provider>
       )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
       const initialState = {asyncProps, store: store.getState()}
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
+      const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
+      html = html.replace('<-- {{css}} -->', appCSS)
       res.send(html)
     })
   })

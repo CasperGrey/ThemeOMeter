@@ -14,8 +14,10 @@
     "express": "^4.13.4",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-look": "^1.0.0-beta9",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "redux-async-props": "^0.1.10",
     "webpack": "^1.13.0"
@@ -29,10 +31,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "rimraf lib && babel src -d lib && npm run build:tools && node tools-es5/build.js",
-    "build:source-maps": "rimraf lib && babel src -d lib --source-maps",
+    "build": "rimraf dist && npm run build:tools && node tools-es5/build.js",
     "build:tools": "rimraf tools-es5 && babel tools -d tools-es5",
-    "start": "npm run build:tools && npm run build:source-maps && node tools-es5/start.js"
+    "start": "npm run build:tools && rimraf dist && node tools-es5/start.js",
+    "postinstall": "npm run build -- release"
   },
   "repository": {
     "type": "git",

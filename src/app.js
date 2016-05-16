@@ -1,3 +1,4 @@
+require("babel-polyfill")
 import { AsyncRouterContext } from 'redux-async-props'
 import { createStore }  from 'redux';
 import reducer from './reducers/index.js'
@@ -6,6 +7,9 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from './modules/routes.js'
+import injectTapEventPlugin from "react-tap-event-plugin"
+
+injectTapEventPlugin();
 
 //... 
 const initialState = window.__INITIAL_STATE__
