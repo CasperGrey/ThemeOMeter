@@ -16,7 +16,6 @@ import { Presets, StyleSheet, LookRoot } from 'react-look'
 const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
 const PORT = process.env.PORT || 5000
-const serverConfig = Presets['react-dom']
 
 var server = express()
 
@@ -49,8 +48,6 @@ server.get('*', function(req, res, next) {
       html = html.replace('<!-- {{css}} -->', appCSS)
       const initialState = {asyncProps, store: store.getState()}
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
-      const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
-      html = html.replace('<-- {{css}} -->', appCSS)
       res.send(html)
     })
     .catch(next)
