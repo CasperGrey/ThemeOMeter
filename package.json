@@ -5,6 +5,7 @@
   "description": "A simple react starter kit",
   "main": "dist/server.bundle.js",
   "dependencies": {
+    "autoprefixer": "^6.3.7",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
@@ -18,7 +19,8 @@
     "file-loader": "^0.8.5",
     "isomorphic-style-loader": "^1.0.0",
     "material-ui": "^0.15.2",
-    "node-sass": "^3.8.0",
+    "pixrem": "^3.0.1",
+    "pleeease-filters": "^3.0.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-look": "^1.0.0-beta9",
@@ -28,8 +30,6 @@
     "redux": "^3.5.2",
     "redux-async-props": "^0.1.10",
     "rimraf": "^2.5.2",
-    "sass-loader": "^4.0.0",
-    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
   },

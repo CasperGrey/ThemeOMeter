@@ -10,7 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ContentPage.scss';
+import s from './ContentPage.css';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Form from './../Form.js'
@@ -27,7 +27,7 @@ class ContentPage extends Component {
   };
 
   componentWillMount() {
-    this.context.onSetTitle(title);
+    //this.context.onSetTitle(title);
   }
 
   constructor(props) {
@@ -63,5 +63,5 @@ class ContentPage extends Component {
   }
 }
 
-export default withStyles(ContentPage, s);
+export default ContentPage
 

@@ -29,12 +29,18 @@ const webpackConfig = {
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=application/octet-stream" },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=image/svg+xml" },
-      {
+      /*{
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }
+        loaders: [
+          'style',
+          `css-loader?${JSON.stringify({ sourceMap: true, minimize: false })}`,
+          'postcss-loader?pack=sass',
+          'sass-loader',
+        ],
+      },*/
+      { test: /\.css$/, loader: "isomorphic-style-loader!css-loader" },
     ],
-  }
+  },
 }
 
 module.exports = webpackConfig

@@ -12,6 +12,7 @@ import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
+import MuiThemeProvider from './MuiThemeProvider.jsx'
 
 const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
@@ -38,7 +39,9 @@ server.get('*', function(req, res, next) {
       const appHtml = renderToString(
         <Provider store={store}>
           <LookRoot config={serverConfig}>
-            <AsyncRouterContext {...props} asyncProps={asyncProps} />
+            <MuiThemeProvider>
+              <AsyncRouterContext {...props} asyncProps={asyncProps} />
+            </MuiThemeProvider>
           </LookRoot>
         </Provider>
       )

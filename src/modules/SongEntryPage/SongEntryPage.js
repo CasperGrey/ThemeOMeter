@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './SongEntryPage.scss';
+import s from './SongEntryPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardTitle} from 'material-ui/Card';
 import Form from '../Form.js'
@@ -89,6 +89,7 @@ class SongEntryPage extends Component {
     );
   }
 }
+
 
 export default withStyles(SongEntryPage, s);
 
