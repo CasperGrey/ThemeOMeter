@@ -7,9 +7,6 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-@import '../variables.scss';
-
-$brand-color: #f1fbf1;
 
 .root {
   background: #1a59e5;
@@ -19,11 +16,11 @@ $brand-color: #f1fbf1;
 .container {
   margin: 0 auto;
   padding: 20px 0;
-  max-width: $max-content-width;
+  max-width: 1000px;
 }
 
 .brand {
-  color: color($brand-color lightness(+10%));
+  color: blueviolet;
   text-decoration: none;
   font-size: 1.75em; /* ~28px */
 }
