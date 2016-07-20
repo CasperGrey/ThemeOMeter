@@ -80,14 +80,6 @@ class YoutubeAutocomplete extends Component {
     return <div>
       <Typeahead
       	inputValue={this.state.inputValue}
-      	placeholder={this.props.placeHolder}
-        className={this.props.className}
-      	onChange={this.handleChange.bind(this)}
-        optionTemplate={OptionsTemplate}
-        options={this.state.options}
-        onOptionClick={this.onClick.bind(this)}
-        onOptionChange={this.onOptionChange.bind(this)}
-        onDropdownClose={this.onDropDownClose.bind(this)}
       />
     </div>
   }

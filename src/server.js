@@ -12,7 +12,7 @@ import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import StylesAndThemeProvider from './StylesAndThemeProvider.jsx'
 
 const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
@@ -39,13 +39,17 @@ server.get('*', function(req, res, next) {
     fetchNeeds(props, store)
     .then((asyncProps) => {
       const appHtml = renderToString(
-        <MuiThemeProvider insertCss={(styles) => css.push(styles._getCss())}>
+        <StylesAndThemeProvider insertCss={(styles) => {
+          if (typeof styles == 'function')
+            throw new Error('did you get your withStyles parameters the wrong way around?')
+          css.push(styles._getCss())
+        }}>
           <Provider store={store}>
             <LookRoot config={serverConfig}>
               <AsyncRouterContext {...props} asyncProps={asyncProps} />
             </LookRoot>
           </Provider>
-        </MuiThemeProvider>
+        </StylesAndThemeProvider>
       )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
