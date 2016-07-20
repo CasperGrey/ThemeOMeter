@@ -27,7 +27,7 @@ class SongEntryPage extends Component {
   };
 
   componentWillMount() {
-    this.context.onSetTitle(title);
+    //this.context.onSetTitle(title);
   }
 
   constructor(props) {
@@ -91,5 +91,5 @@ class SongEntryPage extends Component {
 }
 
 
-export default withStyles(SongEntryPage, s);
+export default withStyles(s)(SongEntryPage)
 

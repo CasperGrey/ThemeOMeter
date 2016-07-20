@@ -8,16 +8,19 @@ import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from './modules/routes.js'
 import injectTapEventPlugin from "react-tap-event-plugin"
-import MuiThemeProvider from './MuiThemeProvider.jsx'
+import StylesAndThemeProvider from './StylesAndThemeProvider.jsx'
 
 injectTapEventPlugin();
+
+// TODO: Dunno what I'm supposed to do with this css on the client
+const css = []; // CSS for all rendered React components
 
 //... 
 const initialState = window.__INITIAL_STATE__
 const store = createStore(reducer, initialState.store)
 render((
   <Provider store={store}>
-    <MuiThemeProvider>
+    <StylesAndThemeProvider insertCss={(styles) => css.push(styles._getCss())}>
       <Router 
         routes={routes} 
         history={browserHistory}
@@ -29,6 +32,6 @@ render((
           asyncProps={initialState.asyncProps}
         />}
       />
-    </MuiThemeProvider>
+    </StylesAndThemeProvider>
   </Provider>
 ), document.getElementById('app'))

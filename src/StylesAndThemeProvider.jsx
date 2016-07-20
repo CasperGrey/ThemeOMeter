@@ -7,6 +7,22 @@ const muiTheme = getMuiTheme({
 });
 
 class Main extends React.Component {
+
+  constructor(props, context){
+    super(props, context)
+  }
+
+  static childContextTypes = {
+    insertCss: React.PropTypes.func, 
+  };
+
+
+  getChildContext() {
+    return { 
+      insertCss: this.props.insertCss,
+    }
+  };
+
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -16,4 +32,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default (Main)

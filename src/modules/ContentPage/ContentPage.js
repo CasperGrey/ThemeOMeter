@@ -63,5 +63,5 @@ class ContentPage extends Component {
   }
 }
 
-export default ContentPage
+export default withStyles(s)(ContentPage)
 

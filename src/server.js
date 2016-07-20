@@ -33,17 +33,19 @@ server.get('*', function(req, res, next) {
     serverConfig.userAgent = req.headers['user-agent']
     serverConfig.styleElementId = '_look'
 
+    const css = []; // CSS for all rendered React components
+
     const store = createStore(reducer)
     fetchNeeds(props, store)
     .then((asyncProps) => {
       const appHtml = renderToString(
-        <Provider store={store}>
-          <LookRoot config={serverConfig}>
-            <MuiThemeProvider>
+        <MuiThemeProvider insertCss={(styles) => css.push(styles._getCss())}>
+          <Provider store={store}>
+            <LookRoot config={serverConfig}>
               <AsyncRouterContext {...props} asyncProps={asyncProps} />
-            </MuiThemeProvider>
-          </LookRoot>
-        </Provider>
+            </LookRoot>
+          </Provider>
+        </MuiThemeProvider>
       )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
