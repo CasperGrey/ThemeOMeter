@@ -9,7 +9,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ContactPage.scss';
+import s from './ContactPage.css';
 
 const title = 'Contact Us';
 

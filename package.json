@@ -18,7 +18,9 @@
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
     "isomorphic-style-loader": "^1.0.0",
+    "jsonp": "^0.2.0",
     "material-ui": "^0.15.2",
+    "normalize": "^0.3.1",
     "pixrem": "^3.0.1",
     "pleeease-filters": "^3.0.0",
     "react": "^15.0.1",
@@ -27,11 +29,13 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-tap-event-plugin": "^1.0.0",
+    "react-typeahead-component": "^0.9.0",
     "redux": "^3.5.2",
     "redux-async-props": "^0.1.10",
     "rimraf": "^2.5.2",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "youtube-finder": "^1.0.0"
   },
   "devDependencies": {
     "chalk": "^1.1.3",
