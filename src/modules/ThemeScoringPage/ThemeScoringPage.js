@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ThemeScoringPage.scss';
+import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 const title = 'Song Entry';
 
