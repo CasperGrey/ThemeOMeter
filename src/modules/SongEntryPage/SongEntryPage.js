@@ -13,7 +13,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
-import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
+// import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
 //import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -65,11 +65,11 @@ class SongEntryPage extends Component {
             </DropDownMenu>
             <Divider/>
             <Subheader>Search Youtube</Subheader>
-            <YoutubeAutocomplete
-              maxresults="10"
-              apiKey="AIzaSyB7A5zHn2Bd7F6FktdkW4JFLtWTyD3jeq0"
-              />
-            <Divider/>
+          {/*<YoutubeAutocomplete*/}
+            {/*maxresults="10"*/}
+            {/*apiKey="AIzaSyB7A5zHn2Bd7F6FktdkW4JFLtWTyD3jeq0"*/}
+            {/*/>*/}
+          {/*<Divider/>*/}
             <Subheader>Manual Youtube Entry</Subheader>
           <Text
               className ={s.textStyle}
