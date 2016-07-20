@@ -3,7 +3,7 @@ import App from './App/App.js'
 import Dogs from './Dogs/Dogs.js'
 import Cats from './Cats/Cats.js'
 import ContentPage from './ContentPage/ContentPage.js'
-import SongEntryPage from './SongEntryPage/SongEntryPage'
+import SongEntryPage from './SongEntryPage/SongEntryPage.js'
 import { Route } from 'react-router'
 
 export default (
