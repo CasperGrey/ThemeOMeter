@@ -15,9 +15,9 @@ import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
-//import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-//injectTapEventPlugin();
+injectTapEventPlugin();
 const title = 'Song Entry';
 
 class SongEntryPage extends Component {
@@ -27,7 +27,7 @@ class SongEntryPage extends Component {
   };
 
   componentWillMount() {
-    //this.context.onSetTitle(title);
+    this.context.onSetTitle(title);
   }
 
   constructor(props) {
