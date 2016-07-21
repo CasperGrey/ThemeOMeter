@@ -3,6 +3,7 @@ import Typeahead from 'react-typeahead-component';
 import JSONP from 'jsonp';
 import OptionsTemplate from './OptionsTemplate';
 import YoutubeFinder from 'youtube-finder';
+import TextField from 'material-ui/TextField';
 
 const googleAutoSuggestURL = '//suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
 
@@ -78,8 +79,8 @@ class YoutubeAutocomplete extends Component {
     // this.onChange = this.onChange.bind(this)
     // this is why you have to do onChange={this.handleChange.bind(this)}
     return <div>
-      <Typeahead
-      	inputValue={this.state.inputValue}
+      <TextField
+      	value={this.state.inputValue}
       />
     </div>
   }
