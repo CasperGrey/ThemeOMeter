@@ -7,8 +7,6 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-@import '../variables.scss';
-
 .root {
   background: #333;
   color: #fff;
@@ -17,7 +15,7 @@
 .container {
   margin: 0 auto;
   padding: 20px 15px;
-  max-width: $max-content-width;
+  max-width: 1000px;
   text-align: center;
 }
 
@@ -26,7 +24,6 @@
 }
 
 .textMuted {
-  composes: text;
   color: rgba(255, 255, 255, .3);
 }
 
