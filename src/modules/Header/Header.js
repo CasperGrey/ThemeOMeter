@@ -17,16 +17,16 @@ class Header extends Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <Navigation className={s.nav} />
-          <Link className={s.brand} to="/">
+      <div className="root">
+        <div className="container">
+          <Navigation className="nav" />
+          <Link className="brand" to="/">
             <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
-            <span className={s.brandTxt}>Themeo</span>
+            <span className="brandTxt">Themeo</span>
           </Link>
-          <div className={s.banner}>
-            <h1 className={s.bannerTitle}>TEST</h1>
-            <p className={s.bannerDesc}>Score to the death</p>
+          <div className="banner">
+            <h1 className="bannerTitle">TEST</h1>
+            <p className="bannerDesc">Score to the death</p>
           </div>
         </div>
       </div>

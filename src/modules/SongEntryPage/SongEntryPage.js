@@ -27,7 +27,7 @@ class SongEntryPage extends Component {
   };
 
   componentWillMount() {
-    this.context.onSetTitle(title);
+    //this.context.onSetTitle(title);
   }
 
   constructor(props) {

@@ -56,6 +56,7 @@ server.get('*', function(req, res, next) {
       const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
       html = html.replace('<!-- {{css}} -->', appCSS)
       const initialState = {asyncProps, store: store.getState()}
+      html = html.replace('<!-- {{styleLoaderCss}} -->', css.join(''))
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))
       res.send(html)
     })
