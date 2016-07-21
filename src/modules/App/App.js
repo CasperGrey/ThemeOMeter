@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import emptyFunction from 'fbjs/lib/emptyFunction';
+import s from './App.js'
 import Header from '../Header';
+import Footer from '../Footer';
+import Content from '../ContentPage';
 
 export default class App extends Component {
+
   render() {
-    return <div>
-      <Header />
-      <h1>Router Test Page</h1>
-
-      <h5>A simple async props example.</h5>
-
-      <ul role="nav">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/entry">Entry</Link></li>
-        <li><Link to="/score">Scoring</Link></li>
-      </ul>
-
-      {this.props.children}
-
-    </div>
+    return !this.props.error ? (
+        <div>
+          <Header />
+          <Content />
+          {this.props.children}
+          <Footer />
+        </div>
+    ) : this.props.children;
   }
 }
