@@ -6,7 +6,7 @@ const webpackConfig = {
   ],
   output: {
     path: path.resolve(__dirname, "dist", "public"),
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:8000/",
     filename: "bundle.js"
   },
   plugins: [

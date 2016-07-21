@@ -56,7 +56,7 @@ function runWebpackDevServer(){
 
   var config = Object.assign({}, webpackAppConfig)
   config.entry.push("webpack/hot/dev-server")
-  config.entry.push("webpack-dev-server/client?http://localhost:8080/")
+  config.entry.push("webpack-dev-server/client?http://localhost:8000/")
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
   config.devtool = 'source-map'
   var compiler = webpack(config);
@@ -98,7 +98,7 @@ function runWebpackDevServer(){
       cached: false, 
     }
   });
-  server.listen(8080, "localhost", function() {
-    console.log('webpack dev server running on port 8080')
+  server.listen(8000, "localhost", function() {
+    console.log('webpack dev server running on port 8000')
   });
 }
