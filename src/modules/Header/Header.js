@@ -35,4 +35,4 @@ class Header extends Component {
 
 }
 
-export default withStyles(Header, s);
+export default withStyles(s)(Header)

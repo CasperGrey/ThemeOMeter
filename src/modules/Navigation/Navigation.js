@@ -20,7 +20,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div className={cx(s.root, this.props.className)} role="navigation">
+      <div className={`${this.props.className}`} role="navigation">
         <Link className={s.link} to="/about">About</Link>
         <Link className={s.link} to="/contact">Contact</Link>
         <span className={s.spacer}> | </span>
@@ -32,4 +32,4 @@ class Navigation extends Component {
 
 }
 
-export default withStyles(Navigation, s);
+export default withStyles(s)(Navigation);
