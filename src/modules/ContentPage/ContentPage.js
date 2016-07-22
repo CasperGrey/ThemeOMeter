@@ -26,9 +26,6 @@ class ContentPage extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
-    //this.context.onSetTitle(title);
-  }
 
   constructor(props) {
     super(props);
@@ -39,15 +36,14 @@ class ContentPage extends Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
+      <div className={"contentroot"}>
+        <div className={"contentcontainer"}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
           <Paper zDepth={3}>
-            <Card className={s.cardStyle}>
+            <Card className={"cardStyle"}>
               <CardTitle title="Let's Do This" subtitle="2016" />
               <Form>
-                <Divider/>
                 <Subheader>Where would you like to go</Subheader>
                 <Divider/>
               </Form>
