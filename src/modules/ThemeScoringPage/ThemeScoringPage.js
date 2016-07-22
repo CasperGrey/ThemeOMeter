@@ -13,14 +13,14 @@ class ThemeScoringPage extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
-    this.context.onSetTitle(title);
-  }
+  // componentWillMount() {
+  //   this.context.onSetTitle(title);
+  // }
 
   render() {
     return (
-      <div className={"root"}>
-        <div className={"container"}>
+      <div className={"scoreroot"}>
+        <div className={"scorecontainer"}>
           <h1>{title}</h1>
           <p>...</p>
         </div>
@@ -31,4 +31,4 @@ class ThemeScoringPage extends Component {
 
 }
 
-export default withStyles(ThemeScoringPage, s);
+export default withStyles(s)(ThemeScoringPage);

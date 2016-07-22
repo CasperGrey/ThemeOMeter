@@ -9,7 +9,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './NotFoundPage.scss';
+import s from './NotFoundPage.css';
 
 const title = 'Page Not Found';
 
@@ -20,10 +20,6 @@ class NotFoundPage extends Component {
     onPageNotFound: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
-    this.context.onSetTitle(title);
-    this.context.onPageNotFound();
-  }
 
   render() {
     return (
@@ -36,4 +32,4 @@ class NotFoundPage extends Component {
 
 }
 
-export default withStyles(NotFoundPage, s);
+export default withStyles(s)(NotFoundPage);

@@ -9,7 +9,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './RegisterPage.scss';
+import s from './RegisterPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 const title = 'New User Registration';
 
@@ -18,10 +18,6 @@ class RegisterPage extends Component {
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
   };
-
-  componentWillMount() {
-    this.context.onSetTitle(title);
-  }
 
   render() {
     return (
@@ -37,4 +33,4 @@ class RegisterPage extends Component {
 
 }
 
-export default withStyles(RegisterPage, s);
+export default withStyles(s)(RegisterPage);

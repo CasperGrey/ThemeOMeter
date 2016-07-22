@@ -16,8 +16,8 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className={"root"}>
-        <div className={"container"}>
+      <div className={"Footerroot"}>
+        <div className={"Footercontainer"}>
           <span className={"text"}>© TheGreySpace</span>
           <span className={"spacer"}>·</span>
           <Link className={"link"} to="/">Home</Link>

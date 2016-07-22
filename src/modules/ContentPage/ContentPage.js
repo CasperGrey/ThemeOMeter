@@ -53,7 +53,7 @@ class ContentPage extends Component {
               </Form>
               <CardActions>
                 <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
-                <RaisedButton primary={true} label="Score Theme"/>
+                <RaisedButton primary={true} label="Score Theme" href='score'/>
               </CardActions>
             </Card>
           </Paper>

@@ -40,19 +40,19 @@ class SongEntryPage extends Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
+      <div className={"root"}>
+        <div className={"container"}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
       <Paper zDepth={3}>
-        <Card className={s.cardStyle}>
+        <Card className={"cardStyle"}>
           <CardTitle title="Please Enter Your Songs" subtitle="2016" />
           <Form>
             <Divider/>
             <Subheader>Please select the Theme</Subheader>
             <DropDownMenu
               onChange={this.handleChange}
-              className={s.dropdownStyle}
+              className ={"dropdownStyle"}
               autoWidth={false}
             >
               <MenuItem value={1} primaryText="Theme" />
@@ -70,7 +70,7 @@ class SongEntryPage extends Component {
           {/*<Divider/>*/}
             <Subheader>Manual Youtube Entry</Subheader>
           <Text
-              className ={s.textStyle}
+              className ={"textStyle"}
               name="Youtube URL Entry"
               placeholder="Youtube URL"
               label="URLEntry"/>

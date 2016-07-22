@@ -9,7 +9,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './LoginPage.scss';
+import s from './LoginPage.css';
 
 const title = 'Log In';
 
@@ -19,9 +19,6 @@ class LoginPage extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
-    this.context.onSetTitle(title);
-  }
 
   render() {
     return (
