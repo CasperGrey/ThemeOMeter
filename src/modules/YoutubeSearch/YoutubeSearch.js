@@ -23,7 +23,7 @@ class YoutubeSearch extends Component{
             selectedVideo: null
         };
 
-        this.videoSearch('Zyzz');
+        this.videoSearch('Macarena');
     }
 
     videoSearch(searchTerm) {

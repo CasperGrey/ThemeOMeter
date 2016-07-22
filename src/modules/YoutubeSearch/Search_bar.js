@@ -10,14 +10,16 @@ export default class Search_bar extends Component{
         return(
             <div className="search-bar">
                <Text
-                    className = "search-term"
+                    className ={"search-term"}
+                    name="Youtube Search Entry"
+                    placeholder="Youtube URL"
+                    label="URLEntry"/>
                     value = {this.state.term}
                     onChange = { (event) => this.onInputChange(event.target.value)}
                 />
             </div>
         );
     }
-
     onInputChange(term) {
         this.setState({ term });
         this.props.onSearchTermChange(term);

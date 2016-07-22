@@ -12,12 +12,15 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
 import Paper from 'material-ui/Paper';
 import YoutubeSearch from './../YoutubeSearch'
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
 
 const title = 'Song Entry';
+var EntryList =
 
 class SongEntryPage extends Component {
 

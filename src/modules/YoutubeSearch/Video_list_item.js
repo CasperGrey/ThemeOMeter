@@ -1,4 +1,7 @@
 import React from "react"
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const Video_list_item = ( { video, onVideoSelect } ) => {
 
@@ -12,9 +15,18 @@ const Video_list_item = ( { video, onVideoSelect } ) => {
 
             <div className="media-body">
                 <div className ="media-heading">{video.snippet.title}</div>
+                <IconButton tooltip="Font Icon">
+                    <FontIcon className="muidocs-icon-action-home" />
+                </IconButton>
+                <RaisedButton
+                    secondary={true}
+                    label="Add"
+                   />
+
             </div>
         </div>
     </li>
+
 }
 
 export default Video_list_item;
