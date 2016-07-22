@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Text from '../Text.js'
 
 export default class Search_bar extends Component{
     constructor(props){
@@ -8,8 +9,7 @@ export default class Search_bar extends Component{
     render(){
         return(
             <div className="search-bar">
-                <label for="search-term">Search:&nbsp;&nbsp;</label>
-                <input
+               <Text
                     className = "search-term"
                     value = {this.state.term}
                     onChange = { (event) => this.onInputChange(event.target.value)}

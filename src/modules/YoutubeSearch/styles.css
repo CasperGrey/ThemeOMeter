@@ -8,13 +8,5 @@
     z-index: 1;
     width: inherit !important;
 
-    li[role="option"]{
-        padding: 5px;
-        &[aria-selected="true"]{
-            background: #00bcd4;
-            color: white;
-            font-weight: bold;
-        }
-    }
 }
 

@@ -42,7 +42,6 @@ class SongEntryPage extends Component {
     return (
       <div className={"root"}>
         <div className={"container"}>
-          <YoutubeSearch />
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
       <Paper zDepth={3}>
@@ -65,11 +64,8 @@ class SongEntryPage extends Component {
             </DropDownMenu>
             <Divider/>
             <Subheader>Search Youtube</Subheader>
-          {/*<YoutubeAutocomplete*/}
-            {/*maxresults="10"*/}
-            {/*apiKey="AIzaSyB7A5zHn2Bd7F6FktdkW4JFLtWTyD3jeq0"*/}
-            {/*/>*/}
-          {/*<Divider/>*/}
+            <YoutubeSearch />
+            <Divider/>
             <Subheader>Manual Youtube Entry</Subheader>
           <Text
               className ={"textStyle"}
