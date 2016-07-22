@@ -15,7 +15,7 @@ const API_KEY = 'AIzaSyBYf1d1OI9RrbBZ8ox-HppCUqyndH8herc';
 
 // Create a new component
 // This component should create some html
-class App extends Component{
+class YoutubeSearch extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -51,3 +51,5 @@ class App extends Component{
         )
     }
 }
+//
+export default YoutubeSearch
