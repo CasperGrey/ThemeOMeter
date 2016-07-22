@@ -34,7 +34,6 @@ class SongEntryPage extends Component {
   }
 
   handleChange = (event, index, value) => {
-    debugger
     this.setState({value});
   }
 
@@ -51,6 +50,7 @@ class SongEntryPage extends Component {
             <Divider/>
             <Subheader>Please select the Theme</Subheader>
             <DropDownMenu
+              value={this.state.value}
               onChange={this.handleChange}
               className ={"dropdownStyle"}
               autoWidth={false}
