@@ -13,6 +13,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
+import YoutubeSearch from './../YoutubeSearch'
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
 
@@ -41,6 +42,7 @@ class SongEntryPage extends Component {
     return (
       <div className={"root"}>
         <div className={"container"}>
+          <YoutubeSearch />
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
       <Paper zDepth={3}>
