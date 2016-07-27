@@ -1,15 +1,17 @@
 
-.root {
+.entryroot {
 
 }
 
-.container {
+.entrycontainer {
   margin: 0 auto;
   padding: 0 0 40px;
   max-width: 900px;
   align-content: center;
 
 }
+
+
 
 .cardStyle {
   display: inline;

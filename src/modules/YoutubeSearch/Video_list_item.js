@@ -1,9 +1,12 @@
 import React from "react"
-import FontIcon from 'material-ui/FontIcon';
-import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import SongEntry from '../SongEntryPage/SongEntryPage'
+import s from './styles.css';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 const Video_list_item = ( { video, onVideoSelect } ) => {
+
+
 
     const imageUrl = video.snippet.thumbnails.default.url;
 
@@ -15,13 +18,7 @@ const Video_list_item = ( { video, onVideoSelect } ) => {
 
             <div className="media-body">
                 <div className ="media-heading">{video.snippet.title}</div>
-                <IconButton tooltip="Font Icon">
-                    <FontIcon className="muidocs-icon-action-home" />
-                </IconButton>
-                <RaisedButton
-                    secondary={true}
-                    label="Add"
-                   />
+
 
             </div>
         </div>
@@ -29,4 +26,4 @@ const Video_list_item = ( { video, onVideoSelect } ) => {
 
 }
 
-export default Video_list_item;
+export default withStyles(s)(Video_list_item);

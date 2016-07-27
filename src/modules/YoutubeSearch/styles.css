@@ -1,12 +1,7 @@
-.react-typeahead-options {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    border: 1px solid #ccc;
-    cursor: default;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 1;
-    width: inherit !important;
+
+.list-group-item {
+
+    align-content: flex-end;
+
 
 }
-
