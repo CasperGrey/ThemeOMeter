@@ -28,3 +28,5 @@ var EntryForm = React.createClass({
         );
     }
 });
+
+export default EntryForm

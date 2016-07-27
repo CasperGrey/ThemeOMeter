@@ -21,3 +21,5 @@ var EntryListItem = React.createClass({
         );
     }
 });
+
+export default EntryListItem
