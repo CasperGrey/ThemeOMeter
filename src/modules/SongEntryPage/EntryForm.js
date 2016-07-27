@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom'
 import RaisedButton from 'material-ui/RaisedButton';
 import Form from '../Form.js';
 
@@ -10,7 +11,7 @@ var EntryForm = React.createClass({
         e.preventDefault();
         this.props.onFormSubmit(this.state.item);
         this.setState({item: ''});
-        React.findDOMNode(this.refs.item).focus();
+        ReactDOM.findDOMNode(this.refs.item).focus();
         return;
     },
     onChange: function(e){

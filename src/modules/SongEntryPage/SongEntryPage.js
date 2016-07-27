@@ -38,7 +38,7 @@ class SongEntryPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.state = {value: 1, items: []};
   }
 
   handleChange = (event, index, value) => {
@@ -46,8 +46,14 @@ class SongEntryPage extends Component {
   }
 
   updateItems = (value) => {
-      var allItems = this.state.items.concat({value});
-      this.setState({items: allItems});
+
+    // We clone the existing items array with slice, so that we have a new 
+    // array rather than a reference to the existing one
+    var items = this.state.items.slice()
+    items.push(value)
+
+    // Update state with the new array
+    this.setState({items: items});
   }
 
 
@@ -82,7 +88,8 @@ class SongEntryPage extends Component {
             <Divider/>
              <Subheader>Your Selection</Subheader>
             <EntryList items={this.state.items} />
-            <EntryForm onFormSubmit={this.updateItems}/>
+            {/* Ensure we bind so that `this` will relate to the current component */}
+            <EntryForm onFormSubmit={this.updateItems.bind(this)}/>
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save"/>
