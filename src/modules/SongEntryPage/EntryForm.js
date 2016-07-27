@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import RaisedButton from 'material-ui/RaisedButton'
+import RaisedButton from 'material-ui/RaisedButton';
+import Form from '../Form.js';
 
 var EntryForm = React.createClass({
     getInitialState: function() {

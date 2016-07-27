@@ -11,11 +11,12 @@ var EntryListItem = React.createClass({
                 primaryText= 'Test1'
                 leftCheckbox={
                     <Checkbox
-                        value='1'
                         defaultChecked={true}
                     />}
                 rightIconButton={
-                    <IconButton tooltip="Remove"> <Close color = 'Red' /> </IconButton>}
+                    <IconButton tooltip="Remove">
+                        <Close color='Red'/>
+                    </IconButton>}
                 value = {this.props.children}
             />
         );

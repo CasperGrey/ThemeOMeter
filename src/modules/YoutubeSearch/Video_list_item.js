@@ -18,12 +18,10 @@ const Video_list_item = ( { video, onVideoSelect } ) => {
 
             <div className="media-body">
                 <div className ="media-heading">{video.snippet.title}</div>
-
-
             </div>
         </div>
     </li>
 
 }
 
-export default withStyles(s)(Video_list_item);
+export default Video_list_item;

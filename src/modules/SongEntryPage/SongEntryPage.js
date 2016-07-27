@@ -62,7 +62,6 @@ class SongEntryPage extends Component {
          <Paper zDepth={3}>
            <Card className={"cardStyle"}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
-             <Form>
              <Divider/>
              <Subheader>Please select the Theme</Subheader>
              <DropDownMenu
@@ -84,7 +83,6 @@ class SongEntryPage extends Component {
              <Subheader>Your Selection</Subheader>
             <EntryList items={this.state.items} />
             <EntryForm onFormSubmit={this.updateItems}/>
-            </Form>
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save"/>
