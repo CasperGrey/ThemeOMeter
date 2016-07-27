@@ -19,13 +19,14 @@ var EntryForm = React.createClass({
     },
     render: function(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <Form>
                 <input type='text' ref='item' onChange={this.onChange} value={this.state.item}/>
                 <RaisedButton
                     secondary={true}
                     label="Add"
+                    onTouchTap={this.handleSubmit}
                 />
-            </form>
+            </Form>
         );
     }
 });

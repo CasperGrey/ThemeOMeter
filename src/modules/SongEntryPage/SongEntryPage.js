@@ -46,7 +46,7 @@ class SongEntryPage extends Component {
   }
 
   updateItems = (value) => {
-      var allItems = this.state.items.concat([value]);
+      var allItems = this.state.items.concat({value});
       this.setState({items: allItems});
   }
 
