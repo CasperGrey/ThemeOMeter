@@ -16,8 +16,9 @@ import Paper from 'material-ui/Paper';
 import EntryList from './EntryList';
 import ListItem from './EntryListItem'
 import EntryForm from './EntryForm'
-
+import { StyleSheet } from 'react-look'
 import YoutubeSearch from './../YoutubeSearch';
+import Video_list from "./../YoutubeSearch/Video_list"
 
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
@@ -38,7 +39,7 @@ class SongEntryPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1, items: []};
+    this.state = {value: 1, items: [], videoItems: []};
   }
 
   handleChange = (event, index, value) => {
@@ -56,24 +57,32 @@ class SongEntryPage extends Component {
     this.setState({items: items});
   }
 
+    onAddVideo = (selectedVideo) => {
+        // We clone the existing items array with slice, so that we have a new
+        // array rather than a reference to the existing one
+        var videoItems = this.state.videoItems.slice()
+        videoItems.push(selectedVideo)
 
+        // Update state with the new array
+        this.setState({videoItems});
+    };
 
 
     render() {
     return (
-      <div className={"entryroot"}>
-        <div className={"entrycontainer"}>
+      <div className={"root"}>
+        <div className={styles.songentrycontainerStyle}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
          <Paper zDepth={3}>
-           <Card className={"cardStyle"}>
+           <Card className={styles.listGroupItem}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
              <Subheader>Please select the Theme</Subheader>
              <DropDownMenu
               value={this.state.value}
               onChange={this.handleChange}
-              className ={"dropdownStyle"}
+              className ={styles.dropdownStyle}
               autoWidth={false}
              >
               <MenuItem value={1} primaryText="Theme" />
@@ -84,12 +93,11 @@ class SongEntryPage extends Component {
             </DropDownMenu>
             <Divider/>
             <Subheader>Search Youtube</Subheader>
-            <YoutubeSearch />
+            <YoutubeSearch onAddVideo={this.onAddVideo} />
             <Divider/>
-             <Subheader>Your Selection</Subheader>
-            <EntryList items={this.state.items} />
-            {/* Ensure we bind so that `this` will relate to the current component */}
-            <EntryForm onFormSubmit={this.updateItems.bind(this)}/>
+             <Subheader>Your Selections</Subheader>
+               {/* Ensure we bind so that `this` will relate to the current component */}
+             <Video_list videos={this.state.videoItems} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save"/>
@@ -101,5 +109,37 @@ class SongEntryPage extends Component {
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+
+    songentrycontainerStyle: {
+        margin: '0 auto',
+        padding: '0 0 40px',
+        maxwidth : '900px',
+        aligncontent: 'center',
+
+    },
+
+    cardStyle: {
+        display: 'inline',
+        margin: '24px',
+        margintop: '2px',
+        transitionduration: '0.3s',
+        textalign: 'center',
+        border: '1px solid #ddd',
+        boxshadow: '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.02),0 1px 5px -2px rgba(0, 0, 0, 0.12)',
+    },
+
+    dropdownStyle: {
+        width:'200px',
+    },
+
+})
+
 export default withStyles(s)(SongEntryPage)
+
+
+
+
 
