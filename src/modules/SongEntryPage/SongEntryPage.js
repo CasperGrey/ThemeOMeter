@@ -75,7 +75,7 @@ class SongEntryPage extends Component {
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
          <Paper zDepth={3}>
-           <Card className={styles.listGroupItem}>
+           <Card className={styles.cardStyle}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
              <Subheader>Please select the Theme</Subheader>
@@ -115,20 +115,20 @@ const styles = StyleSheet.create({
 
     songentrycontainerStyle: {
         margin: '0 auto',
-        padding: '0 0 40px',
-        maxwidth : '900px',
-        aligncontent: 'center',
+        padding: '0 0 40',
+        maxWidth : '900',
+        alignContent: 'center',
 
     },
 
     cardStyle: {
         display: 'inline',
-        margin: '24px',
-        margintop: '2px',
-        transitionduration: '0.3s',
-        textalign: 'center',
-        border: '1px solid #ddd',
-        boxshadow: '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.02),0 1px 5px -2px rgba(0, 0, 0, 0.12)',
+        margin: '24',
+        marginTop: '2',
+        transitionDuration: '0.3s',
+        textAlign: 'center',
+        border: '1 solid #ddd',
+        boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
     },
 
     dropdownStyle: {

@@ -9,20 +9,15 @@
 
 
 .root {
-  background: #1a59e5;
-  color: #fff;
+
 }
 
 .container {
-  margin: 0 auto;
-  padding: 20px 0;
-  max-width: 1000px;
+
 }
 
 .brand {
-  color: blueviolet;
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
+
 }
 
 .brandTxt {

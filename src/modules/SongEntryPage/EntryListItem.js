@@ -5,6 +5,11 @@ import Checkbox from 'material-ui/Checkbox';
 import { ListItem } from 'material-ui/List'
 
 var EntryListItem = React.createClass({
+
+/*    removeVideo(e){
+        this.props.setState();
+    }*/
+
     render: function(){
       return <ListItem
         primaryText= 'Test1'

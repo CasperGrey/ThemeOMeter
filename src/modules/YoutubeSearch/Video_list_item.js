@@ -4,13 +4,15 @@ import SongEntry from '../SongEntryPage/SongEntryPage'
 import s from './styles.css';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
+import { StyleSheet } from 'react-look'
+
 const Video_list_item = ( { video, onVideoSelect } ) => {
 
 
 
     const imageUrl = video.snippet.thumbnails.default.url;
 
-    return <li onClick={ () => onVideoSelect(video) } className="list-group-item">
+    return <li onClick={ () => onVideoSelect(video) } className={styles.listGroupItem}>
         <div className = "video-list-media">
             <div className="media-left">
                 <img className = "media-object" src={imageUrl}/>
@@ -24,4 +26,13 @@ const Video_list_item = ( { video, onVideoSelect } ) => {
 
 }
 
-export default Video_list_item;
+const styles = StyleSheet.create({
+    listGroupItem: {
+        display: 'table-cell',
+        margin: '0 auto',
+        textAlign: 'center',
+
+    },
+})
+
+export default withStyles(s)(Video_list_item)

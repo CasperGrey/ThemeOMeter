@@ -17,6 +17,7 @@ import Form from './../Form.js'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
+import { StyleSheet } from 'react-look'
 
 const title = 'Song Entry';
 
@@ -36,8 +37,8 @@ class ContentPage extends Component {
 
   render() {
     return (
-      <div className={"contentroot"}>
-        <div className={"contentcontainer"}>
+      <div className={"root"}>
+        <div className={styles.containerStyle}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
           <Paper zDepth={3}>
@@ -58,6 +59,18 @@ class ContentPage extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+
+  containerStyle: {
+    margin: '0 auto',
+    padding: '0 0 40',
+    maxWidth: '900',
+    textAlign: 'center',
+
+  },
+
+})
 
 export default withStyles(s)(ContentPage)
 
