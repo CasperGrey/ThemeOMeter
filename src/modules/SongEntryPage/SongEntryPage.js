@@ -67,6 +67,13 @@ class SongEntryPage extends Component {
         this.setState({videoItems});
     };
 
+    onDeleteVideo = (video) => {
+        const { videoItems } = this.state
+        let index = videoItems.indexOf(video)
+        var newVideos = videoItems.slice()
+        newVideos.splice(index, 1)
+        this.setState({videoItems: newVideos})
+    }
 
     render() {
     return (
@@ -95,9 +102,10 @@ class SongEntryPage extends Component {
             <Subheader>Search Youtube</Subheader>
             <YoutubeSearch onAddVideo={this.onAddVideo} />
             <Divider/>
+            <div style={{clear: 'both'}} />
              <Subheader>Your Selections</Subheader>
                {/* Ensure we bind so that `this` will relate to the current component */}
-             <Video_list videos={this.state.videoItems} />
+             <Video_list videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save"/>

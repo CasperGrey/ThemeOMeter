@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import Text from '../Text.js'
-
+import TextField from 'material-ui/TextField';
 
 export default class Search_bar extends Component{
     constructor(props){
@@ -12,7 +11,7 @@ export default class Search_bar extends Component{
     render(){
         return(
             <div className="search-bar">
-               <input
+               <TextField
                     className ="search-term"
                     value = {this.state.term}
                     onChange = {(event) => this.onInputChange(event.target.value)}

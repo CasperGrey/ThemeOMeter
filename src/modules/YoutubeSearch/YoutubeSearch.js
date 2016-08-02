@@ -30,6 +30,7 @@ class YoutubeSearch extends Component{
 
     static propTypes = {
         onAddVideo: React.PropTypes.func,
+        allowDelete: React.PropTypes.bool,
     }
 
     videoSearch(searchTerm) {
@@ -52,8 +53,9 @@ class YoutubeSearch extends Component{
         }
     }
 
+
     render(){
-        const { onAddVideo } = this.props
+        const { onAddVideo, allowDelete } = this.props
         const videoSearch = _.debounce( (term) => {this.videoSearch(term)},400)
 
         return (<div>
@@ -70,6 +72,7 @@ class YoutubeSearch extends Component{
                 <Video_list
                     onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
                     videos={this.state.videos}
+                    onDelete={allowDelete ? this.onDeleteVideo : null}
                 />
             </div>
         )

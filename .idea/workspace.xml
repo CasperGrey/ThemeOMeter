@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="Youtube list now populates with Add button">
+    <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.css" afterPath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" afterPath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/Header/Header.css" afterPath="$PROJECT_DIR$/src/modules/Header/Header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/Header/Header.js" afterPath="$PROJECT_DIR$/src/modules/Header/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/Navigation/Navigation.js" afterPath="$PROJECT_DIR$/src/modules/Navigation/Navigation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" afterPath="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js" afterPath="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" afterPath="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js" afterPath="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css" afterPath="$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,35 +33,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SongEntryPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SongEntryPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="46" />
+            <state relative-caret-position="211">
+              <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
               <folding>
-                <marker date="1469682932502" expanded="false" signature="0:46" ph="/** Created by johnstonb on 14/07/2016. ...*/" />
+                <element signature="e#47#99#0" expanded="true" />
+                <marker date="1470126777998" expanded="false" signature="0:46" ph="/** Created by johnstonb on 14/07/2016. ...*/" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntryListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js">
+      <file leaf-file-name="YoutubeSearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="507">
+              <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+              <folding>
+                <element signature="e#89#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Video_list_item.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+      <file leaf-file-name="Search_bar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScoreSlider.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThemeScoringPage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#47#93#0" expanded="false" />
+                <element signature="e#94#146#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,74 +98,58 @@
       <file leaf-file-name="Video_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YoutubeSearch.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
+            <state relative-caret-position="510">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#89#111#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntryList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js">
+      <file leaf-file-name="YoutubeAutocomplete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state relative-caret-position="-20">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntryForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryForm.js">
+      <file leaf-file-name="Video_list_item.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="2" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="541">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.css">
+      <file leaf-file-name="Navigation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding>
+                <element signature="e#262#314#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.js">
+      <file leaf-file-name="Link.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/Link/Link.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="306">
+              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#262#303#0" expanded="true" />
+                <element signature="e#262#314#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SongEntryPage.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -168,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/modules/ContactPage/ContactPage.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/server.js" />
-        <option value="$PROJECT_DIR$/src/modules/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/modules/Link/Link.js" />
         <option value="$PROJECT_DIR$/src/modules/App/App.css" />
         <option value="$PROJECT_DIR$/src/modules/Footer/Footer.scss" />
@@ -184,30 +193,32 @@
         <option value="$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.css" />
         <option value="$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.js" />
         <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.css" />
-        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
         <option value="$PROJECT_DIR$/src/modules/NotFoundPage/NotFoundPage.js" />
         <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.css" />
         <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/src/modules/App/App.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Index.js" />
-        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js" />
         <option value="$PROJECT_DIR$/src/modules/routes.js" />
         <option value="$PROJECT_DIR$/src/modules/Text.js" />
-        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryForm.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css" />
-        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
         <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.css" />
         <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
         <option value="$PROJECT_DIR$/src/modules/Header/Header.css" />
         <option value="$PROJECT_DIR$/src/modules/Header/Header.js" />
-        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" />
+        <option value="$PROJECT_DIR$/src/modules/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js" />
+        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js" />
+        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" />
+        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" />
+        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
+        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js" />
       </list>
     </option>
   </component>
@@ -356,7 +367,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeScoringPage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="SongEntryPage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Link" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -541,7 +596,7 @@
       <workItem from="1468982717059" duration="2854000" />
       <workItem from="1468993301164" duration="12921000" />
       <workItem from="1469077201998" duration="1826000" />
-      <workItem from="1469142476699" duration="48362000" />
+      <workItem from="1469142476699" duration="59308000" />
     </task>
     <task id="LOCAL-00001" summary="Updated with Original ThemeO project files">
       <created>1468983714739</created>
@@ -634,11 +689,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469680885651</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="CSS fixed on Song Entry to show horizontal search results. Header and ContentPage changed to React Look Stylesheets">
+      <created>1469685200133</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1469685200133</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65980000" />
+    <option name="totallyTimeSpent" value="76926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -687,31 +749,24 @@
     <MESSAGE value="Updated to fix client side javascript issues." />
     <MESSAGE value="Fixed client side issues to render List section" />
     <MESSAGE value="Youtube list now populates with Add button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Youtube list now populates with Add button" />
+    <MESSAGE value="CSS fixed on Song Entry to show horizontal search results. Header and ContentPage changed to React Look Stylesheets" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS fixed on Song Entry to show horizontal search results. Header and ContentPage changed to React Look Stylesheets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js</url>
+          <line>6</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/csso/dist/csso-browser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -797,37 +852,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding>
-            <element signature="e#47#99#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -922,16 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/OptionsTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -963,30 +982,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,17 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#262#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1078,14 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1094,13 +1070,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,22 +1102,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="459">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Link/Link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
-            <marker date="1469682932502" expanded="false" signature="0:46" ph="/** Created by johnstonb on 14/07/2016. ...*/" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#262#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#262#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
+        <state relative-caret-position="507">
+          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
           <folding>
             <element signature="e#89#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#93#0" expanded="false" />
+            <element signature="e#94#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+          <folding>
+            <element signature="e#47#99#0" expanded="true" />
+            <marker date="1470126777998" expanded="false" signature="0:46" ph="/** Created by johnstonb on 14/07/2016. ...*/" />
           </folding>
         </state>
       </provider>
