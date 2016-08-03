@@ -9,9 +9,11 @@ RUN npm install && \
 
 COPY . /app/
 
+RUN npm install
 RUN npm build
 
 EXPOSE 5000
+EXPOSE 8000
 
 ENTRYPOINT ["npm"]
 CMD ["start"]

@@ -98,7 +98,7 @@ function runWebpackDevServer(){
       cached: false, 
     }
   });
-  server.listen(8000, "localhost", function() {
+  server.listen(8000, "0.0.0.0", function() {
     console.log('webpack dev server running on port 8000')
   });
 }
