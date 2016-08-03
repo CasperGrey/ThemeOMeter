@@ -78,19 +78,8 @@ class ThemeScoringPage extends Component {
                         <Card className={styles.cardStyle}>
                             <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
-                            <Subheader>Please select the Theme</Subheader>
-                            <DropDownMenu
-                                value={this.state.value}
-                                onChange={this.handleChange}
-                                className ={styles.dropdownStyle}
-                                autoWidth={false}
-                            >
-                                <MenuItem value={1} primaryText="Theme" />
-                                <MenuItem value={2} primaryText="Blue" />
-                                <MenuItem value={3} primaryText="Rock" />
-                                <MenuItem value={4} primaryText="Pop" />
-                                <MenuItem value={5} primaryText="Jazz" />
-                            </DropDownMenu>
+                            <Subheader>Theme X</Subheader>
+
                             <Divider/>
                             <Subheader>Score</Subheader>
                             <Divider/>

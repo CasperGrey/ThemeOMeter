@@ -3,7 +3,7 @@ import App from './App/App.js'
 import Dogs from './Dogs/Dogs.js'
 import Cats from './Cats/Cats.js'
 import ContentPage from './ContentPage/ContentPage.js'
-import SongEntryPage from './SongEntryPage/SongEntryPage.js'
+import SongEntryPage from './SongEntryPage'
 import ThemeScoringPage from './ThemeScoringPage/ThemeScoringPage'
 import { Route, IndexRoute } from 'react-router'
 

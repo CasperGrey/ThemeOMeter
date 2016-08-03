@@ -72,6 +72,9 @@ class SongEntryPage extends Component {
     }
 
     render() {
+
+        var { onSave } = this.props
+        if (!onSave) onSave = function(){}
     return (
       <div className={"root"}>
         <div className={styles.songentrycontainerStyle}>
@@ -81,7 +84,7 @@ class SongEntryPage extends Component {
            <Card className={styles.cardStyle}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
-             <Subheader>Current theme</Subheader>
+             <Subheader>Current theme: {this.props.currentTheme}</Subheader>
                <Countdown/>
              <DropDownMenu
               value={this.state.value}
@@ -105,7 +108,7 @@ class SongEntryPage extends Component {
              <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
-          <RaisedButton primary={true} label="Save"/>
+          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)} />
           </CardActions>
          </Card>
        </Paper>

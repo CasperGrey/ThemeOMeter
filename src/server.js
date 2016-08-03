@@ -65,4 +65,8 @@ server.get('*', function(req, res, next) {
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
 
+// apply the routes to our application
+server.use('/api/themes', require('./api/theme.js'))
+server.use('/api/songs', require('./api/songs.js'));
+
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))
