@@ -1,0 +1,14 @@
+main:
+  build: .
+  links:
+    - db
+  ports:
+    - '5000:5000'
+db:
+  image: mysql:5.7
+  volumes:
+    - $PWD/data/backup:/backup
+    - $PWD/datadir:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD : 'Password1'
+    MYSQL_DATABASE : 'thegreys_weekly_music'
