@@ -18,7 +18,7 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look'
-
+import Login from './../LoginPage/LoginPage'
 const title = 'Song Entry';
 
 class ContentPage extends Component {
@@ -47,6 +47,7 @@ class ContentPage extends Component {
               <Form>
                 <Subheader>Where would you like to go</Subheader>
                 <Divider/>
+                <Login />
               </Form>
               <CardActions>
                 <RaisedButton secondary={true} label="Song Entry" href='/entry'/>

@@ -27,6 +27,7 @@
     "react": "^15.2.1",
     "react-dom": "^15.0.1",
     "react-look": "^1.0.0-beta9",
+    "react-native-fbsdk": "^0.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-tap-event-plugin": "^1.0.0",

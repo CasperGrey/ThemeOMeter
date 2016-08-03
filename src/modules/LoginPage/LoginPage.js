@@ -11,26 +11,30 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './LoginPage.css';
 
-const title = 'Log In';
+const FBSDK = require('react-native-fbsdk');
+const {
+    LoginButton,
+} = FBSDK;
 
-class LoginPage extends Component {
-
-  static contextTypes = {
-    onSetTitle: PropTypes.func.isRequired,
-  };
-
-
-  render() {
+var Login = React.createClass({
+  render: function() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <h1>{title}</h1>
-          <p>...</p>
-        </div>
-      </div>
+        <View>
+          <LoginButton
+              publishPermissions={["publish_actions"]}
+              onLoginFinished={
+                (error, result) => {
+                  if (error) {
+                    alert("Login failed with error: " + result.error);
+                  } else if (result.isCancelled) {
+                    alert("Login was cancelled");
+                  } else {
+                    alert("Login was successful with permissions: " + result.grantedPermissions)
+                  }
+                }
+              }
+              onLogoutFinished={() => alert("User logged out")}/>
+        </View>
     );
   }
-
-}
-
-export default withStyles(LoginPage, s);
+});

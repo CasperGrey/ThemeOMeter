@@ -6,19 +6,15 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './SongEntryPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardTitle} from 'material-ui/Card';
-import Form from '../Form.js';
-import Text from '../Text.js';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
-import EntryList from './EntryList';
-import ListItem from './EntryListItem'
-import EntryForm from './EntryForm'
 import { StyleSheet } from 'react-look'
 import YoutubeSearch from './../YoutubeSearch';
-import Video_list from "./../YoutubeSearch/Video_list"
+import Countdown from  './Countdown';
+import PlayerSongList from './../PlayerSongList/PlayerSongList'
 
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
@@ -85,7 +81,8 @@ class SongEntryPage extends Component {
            <Card className={styles.cardStyle}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
-             <Subheader>Please select the Theme</Subheader>
+             <Subheader>Current theme</Subheader>
+               <Countdown/>
              <DropDownMenu
               value={this.state.value}
               onChange={this.handleChange}
@@ -105,7 +102,7 @@ class SongEntryPage extends Component {
             <div style={{clear: 'both'}} />
              <Subheader>Your Selections</Subheader>
                {/* Ensure we bind so that `this` will relate to the current component */}
-             <Video_list videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
+             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save"/>
