@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="Added a countdown component &#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.Js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js" />
+    <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" afterPath="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" afterPath="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,30 +36,6 @@
               <folding>
                 <element signature="e#47#99#0" expanded="true" />
                 <marker date="1470200420702" expanded="false" signature="0:46" ph="/** Created by johnstonb on 14/07/2016. ...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Countdown.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#46#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Video_list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,11 +80,31 @@
       <file leaf-file-name="LoginPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <element signature="e#262#314#0" expanded="true" />
+                <element signature="e#262#288#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookLogin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,8 +124,8 @@
       <file leaf-file-name="ContentPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding>
                 <element signature="e#262#314#0" expanded="true" />
               </folding>
@@ -172,7 +165,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/modules/ContactPage/ContactPage.css" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/server.js" />
         <option value="$PROJECT_DIR$/src/modules/Link/Link.js" />
         <option value="$PROJECT_DIR$/src/modules/App/App.css" />
@@ -218,8 +210,10 @@
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.Js" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js" />
-        <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js" />
+        <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" />
       </list>
     </option>
   </component>
@@ -641,7 +635,7 @@
       <workItem from="1468982717059" duration="2854000" />
       <workItem from="1468993301164" duration="12921000" />
       <workItem from="1469077201998" duration="1826000" />
-      <workItem from="1469142476699" duration="69559000" />
+      <workItem from="1469142476699" duration="70627000" />
     </task>
     <task id="LOCAL-00001" summary="Updated with Original ThemeO project files">
       <created>1468983714739</created>
@@ -755,11 +749,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470185598855</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added FB login component &#10;Added new component for Player Song Entry">
+      <created>1470204256891</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1470204256891</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87177000" />
+    <option name="totallyTimeSpent" value="88245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="23" width="1920" height="1040" extended-state="0" />
@@ -811,7 +812,8 @@
     <MESSAGE value="CSS fixed on Song Entry to show horizontal search results. Header and ContentPage changed to React Look Stylesheets" />
     <MESSAGE value="- Changed CSS to React Look formatting for ThemeScoring and Navigation Page&#10;- Updated Navigation to use React Router &#10;- Added Score Sliders to ThemeScoring Page&#10;- Updated overall slider to work off Theme and Taste Sliders&#10;- Added Toggle between simple and Advanced scoring &#10;- Updated CSS Stylings on Song Entry page &#10;- Changed Input field on Song Entry to MaterialUI Text Field&#10;" />
     <MESSAGE value="Added a countdown component &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a countdown component &#10;" />
+    <MESSAGE value="Added FB login component &#10;Added new component for Player Song Entry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FB login component &#10;Added new component for Player Song Entry" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -828,24 +830,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tools/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/dev-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/prod-template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1185,7 +1169,7 @@
         <state relative-caret-position="289">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="e#46#72#0" expanded="true" />
+            <element signature="e#46#72#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1195,7 +1179,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="26" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1259,10 +1243,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="475">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
             <element signature="e#262#314#0" expanded="true" />
           </folding>
@@ -1271,10 +1271,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#262#314#0" expanded="true" />
+            <element signature="e#262#288#0" expanded="true" />
           </folding>
         </state>
       </provider>
