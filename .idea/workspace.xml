@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/db.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/songs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/theme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/package.json" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/routes.js" afterPath="$PROJECT_DIR$/src/modules/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server.js" afterPath="$PROJECT_DIR$/src/server.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="songs.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="songs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/songs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -65,36 +58,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/db.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SongEntryPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
+            <state relative-caret-position="269">
+              <caret line="91" column="15" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
               <folding>
                 <element signature="e#47#99#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Countdown.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+              <folding>
+                <element signature="e#46#72#0" expanded="true" />
+                <marker date="1470289994656" expanded="true" signature="1016:1162" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="613">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" />
         <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js" />
         <option value="$PROJECT_DIR$/node_modules/youtube-api-search/index.js" />
-        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.Js" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js" />
@@ -209,9 +202,10 @@
         <option value="$PROJECT_DIR$/src/api/db.js" />
         <option value="$PROJECT_DIR$/src/api/theme.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx" />
-        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
         <option value="$PROJECT_DIR$/src/server.js" />
         <option value="$PROJECT_DIR$/src/api/songs.js" />
+        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
       </list>
     </option>
   </component>
@@ -222,10 +216,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1040" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -457,7 +451,7 @@
       <workItem from="1468982717059" duration="2854000" />
       <workItem from="1468993301164" duration="12921000" />
       <workItem from="1469077201998" duration="1826000" />
-      <workItem from="1469142476699" duration="76819000" />
+      <workItem from="1469142476699" duration="84868000" />
     </task>
     <task id="LOCAL-00001" summary="Updated with Original ThemeO project files">
       <created>1468983714739</created>
@@ -585,17 +579,24 @@
       <option name="project" value="LOCAL" />
       <updated>1470206213073</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added mysql connectiion &#10;Added API for theme GET &#10;Added API for Song PUT">
+      <created>1470213532967</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1470213532967</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94437000" />
+    <option name="totallyTimeSpent" value="102486000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="1920" height="1040" extended-state="0" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25420168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25208333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.349087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -643,7 +644,8 @@
     <MESSAGE value="Added a countdown component &#10;" />
     <MESSAGE value="Added FB login component &#10;Added new component for Player Song Entry" />
     <MESSAGE value="Fixed FB Login Component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed FB Login Component" />
+    <MESSAGE value="Added mysql connectiion &#10;Added API for theme GET &#10;Added API for Song PUT" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mysql connectiion &#10;Added API for theme GET &#10;Added API for Song PUT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -904,16 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#46#72#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -924,7 +916,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.Js">
+    <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
@@ -959,14 +951,6 @@
           <folding>
             <element signature="e#0#51#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,7 +1004,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1075,16 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
-          <folding>
-            <element signature="e#47#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -1095,9 +1069,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/songs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="91" column="15" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+          <folding>
+            <element signature="e#47#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#46#72#0" expanded="true" />
+            <marker date="1470289994656" expanded="true" signature="1016:1162" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

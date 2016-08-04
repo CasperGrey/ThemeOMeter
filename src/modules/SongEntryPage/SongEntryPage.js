@@ -84,7 +84,7 @@ class SongEntryPage extends Component {
            <Card className={styles.cardStyle}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
-             <Subheader>Current theme: {this.props.currentTheme}</Subheader>
+             <Subheader classname={styles.themeTitle}>Current theme: {this.props.currentTheme}</Subheader>
                <Countdown/>
              <DropDownMenu
               value={this.state.value}
@@ -141,6 +141,11 @@ const styles = StyleSheet.create({
 
     dropdownStyle: {
         width:'200px',
+    },
+
+    themeTitle: {
+      color: 'red',
+
     },
 
 })
