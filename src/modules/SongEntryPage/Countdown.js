@@ -4,6 +4,8 @@
 import React from 'react';
 import LinearProgress from 'material-ui/LinearProgress';
 import moment from 'moment';
+import { StyleSheet } from 'react-look';
+
 
 export default class Countdown extends React.Component {
 
@@ -12,10 +14,11 @@ export default class Countdown extends React.Component {
 
     this.state = {
       completed: 0,
-      themeDate: moment().endOf('week').subtract('days',1),
+      themeDate: moment().endOf('week').subtract('hours',40),
       daysLeft: 0,
       minutesLeft: 0,
-      hoursLeft: 0
+      hoursLeft: 0,
+      secondsLeft:0,
     };
   }
 
@@ -34,21 +37,35 @@ export default class Countdown extends React.Component {
     var today = moment()
     const diff = themeDate.diff(today,'milliseconds');
     const daysDiff = themeDate.diff(today,'days');
-    const hoursDiff = themeDate.diff(today,'hours');
-    const minutesDiff = themeDate.diff(today,'minutes');
+    const hoursDiff = themeDate.diff(today,'hours') - (daysDiff * 24);
+    const minutesDiff = themeDate.diff(today,'minutes') - (daysDiff * 24 * 60) - (hoursDiff  * 60);
+    const secondsDiff = themeDate.diff(today,'seconds') - (daysDiff * 24 * 60*60) - (hoursDiff  * 60*60) - (minutesDiff * 60);
     const millisecondsInAWeek = 1000 * 60 * 60 * 24 * 7
     this.setState({ 
         completed: (millisecondsInAWeek - diff) / millisecondsInAWeek * 100,
         daysLeft: daysDiff,
         minutesLeft:minutesDiff,
         hoursLeft: hoursDiff,
+        secondsLeft: secondsDiff,
     })
   }
 
   render() {
     return <div className="Countdown">
       <LinearProgress mode="determinate" value={this.state.completed} />
-      <span>{this.state.daysLeft} Day {this.state.hoursLeft} Hours {this.state.minutesLeft} Minutes</span>
+      <div className = {styles.countdownText}>
+      <span> <h2>Theme Closes in </h2>{this.state.daysLeft} Day {this.state.hoursLeft} Hours {this.state.minutesLeft} Minutes {this.state.secondsLeft} Seconds</span>
+      </div>
     </div>
   }
+
 }
+
+const styles = StyleSheet.create({
+
+    countdownText: {
+        margin: '30',
+
+    },
+
+})
