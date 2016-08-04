@@ -6,8 +6,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './SongEntryPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardTitle} from 'material-ui/Card';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
@@ -16,8 +14,6 @@ import YoutubeSearch from './../YoutubeSearch';
 import Countdown from  './Countdown';
 import PlayerSongList from './../PlayerSongList/PlayerSongList'
 
-// import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
-// Needed for onTouchTap
 
 const title = 'Song Entry';
 const items = [];
@@ -84,20 +80,10 @@ class SongEntryPage extends Component {
            <Card className={styles.cardStyle}>
             <CardTitle title="Please Enter Your Songs" subtitle="2016" />
              <Divider/>
+               <div className ={styles.themeTitle}>
              <Subheader>Current theme: {this.props.currentTheme}</Subheader>
+               </div>
                <Countdown/>
-             <DropDownMenu
-              value={this.state.value}
-              onChange={this.handleChange}
-              className ={styles.dropdownStyle}
-              autoWidth={false}
-             >
-              <MenuItem value={1} primaryText="Theme" />
-              <MenuItem value={2} primaryText="Blue" />
-              <MenuItem value={3} primaryText="Rock" />
-              <MenuItem value={4} primaryText="Pop" />
-              <MenuItem value={5} primaryText="Jazz" />
-            </DropDownMenu>
             <Divider/>
             <Subheader>Search Youtube</Subheader>
             <YoutubeSearch onAddVideo={this.onAddVideo} />
@@ -141,6 +127,12 @@ const styles = StyleSheet.create({
 
     dropdownStyle: {
         width:'200px',
+    },
+
+    themeTitle: {
+        margin: '10',
+        fontSize: 'small',
+
     },
 
 })
