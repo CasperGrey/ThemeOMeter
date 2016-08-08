@@ -9,17 +9,13 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardTitle} from 'material-ui/Card';
-import Form from '../Form.js';
-import Text from '../Text.js';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
-import YoutubeSearch from './../YoutubeSearch';
-import Video_list from "./../YoutubeSearch/Video_list"
+
+
 
 // import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
 // Needed for onTouchTap
