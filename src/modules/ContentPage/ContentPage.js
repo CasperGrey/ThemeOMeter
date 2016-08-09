@@ -8,10 +8,9 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContentPage.css';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardTitle} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Form from './../Form.js'
 import Divider from 'material-ui/Divider';

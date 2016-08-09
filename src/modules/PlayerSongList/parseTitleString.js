@@ -4,7 +4,7 @@
 // TODO: output a testing dataset for changes to this function.
 
 var TRACK_SEPARATOR = ' - ';
-function parseTitleString(string, partsCallback) {
+export default function parseTitleString(string, partsCallback) {
     var artist, title, credits = [];
     var string = string || '';
 
@@ -27,12 +27,12 @@ function parseTitleString(string, partsCallback) {
         string = string.replace(token + ' - ', '').trim();
         string = string.replace(token.toUpperCase() + ' - ', '').trim();
         string = string.replace(token.toLowerCase() + ' - ', '').trim();
-        string = string.replace(token.capitalize() + ' - ', '').trim();
+        string = string.replace(token.toUpperCase() + ' - ', '').trim();
 
         string = string.replace(token, '').trim();
         string = string.replace(token.toUpperCase(), '').trim();
         string = string.replace(token.toLowerCase(), '').trim();
-        string = string.replace(token.capitalize(), '').trim();
+        string = string.replace(token.toUpperCase(), '').trim();
     });
 
     if (DEBUG) console.log('next string: ' +string );
@@ -113,3 +113,4 @@ function parseTitleString(string, partsCallback) {
 
     partsCallback(output);
 }
+

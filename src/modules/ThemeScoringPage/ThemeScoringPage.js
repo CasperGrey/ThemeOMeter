@@ -16,10 +16,6 @@ import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
 
 
-
-// import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
-// Needed for onTouchTap
-
 const title = 'Song Entry';
 const items = [];
 

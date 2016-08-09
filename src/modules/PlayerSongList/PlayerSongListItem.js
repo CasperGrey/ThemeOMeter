@@ -1,9 +1,10 @@
 import React from "react"
 import { StyleSheet } from 'react-look'
-import { NavigationClose } from 'material-ui/svg-icons'
+import { NavigationClose } from 'material-ui/svg-icons/navigation/close'
 import IconButton from 'material-ui/IconButton'
 import ListItem from 'material-ui/List/ListItem'
 import TextField from 'material-ui/TextField'
+import parseTitleString from './parseTitleString'
 
 class PlayerSongListItem extends React.Component {
 
@@ -34,7 +35,9 @@ class PlayerSongListItem extends React.Component {
                     </div>
                     <div className="media-body">
                         <div className={styles.mediaHeading}>
-                            {video.snippet.title}
+
+                           {video.snippet.title}
+
                         </div>
                     </div>
                     <div className = {styles.extraSongInfo}>
@@ -43,7 +46,7 @@ class PlayerSongListItem extends React.Component {
                     <TextField
                         floatingLabelText={"Artist"}
                         hintText ={"Your song artist"}
-                        defaultValue={video.snippet.title}
+                        defaultValue={parseTitleString(video.snippet.title)[0]}
                     />
                     <TextField
                         floatingLabelText={"Song"}

@@ -2,12 +2,12 @@ import React from "react"
 import PlayerSongListItem from "./PlayerSongListItem"
 import List from 'material-ui/List'
 
+
 class PlayerSongList extends React.Component{
 
     static propTypes = {
         onDelete: React.PropTypes.func,
     }
-
 
 
     render = () => {
