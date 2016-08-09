@@ -4,7 +4,7 @@ import express from 'express'
 // get an instance of router
 var router = express.Router();
 
-import connection from './db.js'
+import connection from '../db/db.js'
 
 
 // route with parameters (http://localhost:8080/hello/:name)

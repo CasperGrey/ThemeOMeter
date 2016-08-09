@@ -4,7 +4,7 @@
 // TODO: output a testing dataset for changes to this function.
 
 var TRACK_SEPARATOR = ' - ';
-export default function parseTitleString(string, partsCallback) {
+export default function parseTitleString(string) {
     var artist, title, credits = [];
     var string = string || '';
 
@@ -15,7 +15,7 @@ export default function parseTitleString(string, partsCallback) {
     // TODO: load from datafile
     var baddies = ['[dubstep]', '[electro]', '[edm]', '[house music]',
         '[glitch hop]', '[video]', '[official video]', '(official video)',
-        '(official music video)', '(lyrics)',
+        '(official music video)', '(lyrics)','(Original Video)',
         '[ official video ]', '[official music video]', '[free download]',
         '[free dl]', '( 1080p )', '(with lyrics)', '(high res / official video)',
         '(music video)', '[music video]', '[hd]', '(hd)', '[hq]', '(hq)',
@@ -111,6 +111,6 @@ export default function parseTitleString(string, partsCallback) {
      console.log('title: ' + title);
      console.log('credits: ' + credits);*/
 
-    partsCallback(output);
+    return output;
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SongEntryPage from './SongEntryPage.js'
+import parseTitleString from './../PlayerSongList/parseTitleString'
 
 class Container extends Component {
 
@@ -14,20 +15,27 @@ class Container extends Component {
     }
 
     onSave = (videoItems) => {
-        debugger
+
         videoItems.forEach(video => {
+
+            var songInfo = parseTitleString(video.snippet.title)
+
             fetch('/api/songs', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    songName: video.snippet.title,
+                    songName: songInfo.title,
+                    artistName: songInfo.artist,
+                    comment: video.comment,
                 })
             })
         })
 
     };
+
+
 
     state = {};
 

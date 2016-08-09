@@ -65,11 +65,17 @@ class SongEntryPage extends Component {
         var newVideos = videoItems.slice()
         newVideos.splice(index, 1)
         this.setState({videoItems: newVideos})
-    }
+    };
+
+    onCommentChange = (video, i, comment) => {
+        var videoItems = this.state.videoItems.slice()
+        videoItems[i].comment = comment
+        this.setState({videoItems})
+    };
 
     render() {
 
-        var { onSave } = this.props
+        var { onSave, onCommentChange } = this.props
         if (!onSave) onSave = function(){}
     return (
       <div className={"root"}>
@@ -91,7 +97,7 @@ class SongEntryPage extends Component {
             <div style={{clear: 'both'}} />
              <Subheader>Your Selections</Subheader>
                {/* Ensure we bind so that `this` will relate to the current component */}
-             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
+             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
           <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)} />

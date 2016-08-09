@@ -11,14 +11,16 @@ class PlayerSongList extends React.Component{
 
 
     render = () => {
-        const { onDelete } = this.props
-
-        const videoItems = this.props.videos.map( video => {
+        var { onDelete, onCommentChange } = this.props
+        if (!onCommentChange)
+            onCommentChange = function(){}
+        const videoItems = this.props.videos.map( (video, i) => {
             return <PlayerSongListItem
                 onVideoSelect = {this.props.onVideoSelect}
                 key = {video.etag}
                 video = {video}
                 onDelete={onDelete}
+                onCommentChange={(e, value) => onCommentChange(video, i, value)}
             />
 
 
