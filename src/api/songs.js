@@ -6,9 +6,8 @@ var bodyParser = require('body-parser')
 var router = express.Router();
 router.use(bodyParser.json())
 
-//import connection from '../db/db.js'
 
-import { getArtist, createArtist } from './../db/artists.js'
+import {getArtist, createArtist } from './../db/artists.js'
 import {createSong, getSong} from './../db/song.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
