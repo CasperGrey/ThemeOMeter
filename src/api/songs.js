@@ -8,11 +8,11 @@ router.use(bodyParser.json())
 
 //import connection from '../db/db.js'
 
-//import { getArtist, createArtist } from './../db/artists.js'
-
+import { getArtist, createArtist } from './../db/artists.js'
+import {createSong, getSong} from './../db/song.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
-router.post('/', function(req, res, next) {
+router.post('/', async function(req, res, next) {
 
 
     var songName = req.body.songName
@@ -21,15 +21,19 @@ router.post('/', function(req, res, next) {
 
     console.log(require('util').inspect(req.body))
 
-    /*var artist = await getArtist(artistName)
+    var artist = await getArtist(artistName)
     if (!artist){
         var artist = await createArtist(artistName)
     }
 
-    var song = await getSong(songName, artist.name);
+    // I put the parameters this way around because it's more about the song and the
+    // artist could be an optional parameter
+    var song = await getSong(songName, artist.id);
+
+    // If we don't have a song then create one
     if (!song){
-        var song = await createSong(songName, artist.id)
-    }*/
+        song = await createSong(songName, artist.id)
+    }
 
 
 

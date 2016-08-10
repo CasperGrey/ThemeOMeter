@@ -16,23 +16,27 @@ class Container extends Component {
 
     onSave = (videoItems) => {
 
-        videoItems.forEach(video => {
+        if(videoItems.length < 1){
+         console.log("less than 5 songs")
+        }
+        else {
+            videoItems.forEach(video => {
 
-            var songInfo = parseTitleString(video.snippet.title)
+                var songInfo = parseTitleString(video.snippet.title)
 
-            fetch('/api/songs', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    songName: songInfo.title,
-                    artistName: songInfo.artist,
-                    comment: video.comment,
+                fetch('/api/songs', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        songName: songInfo.title,
+                        artistName: songInfo.artist,
+                        comment: video.comment,
+                    })
                 })
             })
-        })
-
+        }
     };
 
 

@@ -57,7 +57,6 @@ export function getSongsByArtist(id){
 
 
 export function createArtist(name){
-    var value = req.body.artistName
 
     return new Promise(function(resolve, reject){
         connection.query('INSERT INTO dimartists (artist_name) VALUES(?)', [name] , function(err, rows, fields) {
@@ -70,6 +69,9 @@ export function createArtist(name){
         });
     })
 }
+
+
+
 
 
 
