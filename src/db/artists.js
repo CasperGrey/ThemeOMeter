@@ -9,9 +9,9 @@ router.use(bodyParser.json())
 import connection from './db.js'
 
 
-export function getArtist(name){
+export function getArtistId(name){
     var value = req.body.songName
-
+    console.log("fired")
     return new Promise(function(resolve, reject){
         connection.query('SELECT top 1 from dimartists where artist_name = ?', [name], function(err, rows, fields) {
             if (err) return reject(err);
@@ -24,11 +24,24 @@ export function getArtist(name){
     })
 }
 
-export function getArtistID(name){
-    var value = req.body.songName
+export function getArtist(name){
+    console.log("fired2")
 
     return new Promise(function(resolve, reject){
-        connection.query('SELECT artist_id FROM dimartists where artist_name like "?"', [name], function(err, rows, fields) {
+        connection.query('SELECT * FROM dimartists where artist_name like ? limit 1', [name], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows[0]
+
+            resolve(result)
+
+        });
+    })
+}
+
+export function getArtistById(id){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT * FROM dimartists where artist_id = ?', [id], function(err, rows, fields) {
             if (err) return reject(err);
 
             var result = rows[0]
@@ -41,7 +54,6 @@ export function getArtistID(name){
 
 
 export function getSongsByArtist(id){
-    var value = req.body.artistName
 
     return new Promise(function(resolve, reject){
         connection.query('SELECT * FROM dimsongs where artist_id = ?', [id] , function(err, rows, fields) {
@@ -59,12 +71,12 @@ export function getSongsByArtist(id){
 export function createArtist(name){
 
     return new Promise(function(resolve, reject){
-        connection.query('INSERT INTO dimartists (artist_name) VALUES(?)', [name] , function(err, rows, fields) {
+        connection.query('INSERT INTO dimartists (artist_name) VALUES(?);', [name] , function(err, result) {
             if (err) return reject(err);
 
-            var result = rows[0]
+            var artistId = result.insertId
 
-            resolve(result)
+            resolve(getArtistById(artistId))
 
         });
     })

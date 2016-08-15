@@ -5,27 +5,24 @@ import express from 'express'
 var router = express.Router();
 
 import connection from '../db/db.js'
-
+import { getCurrentTheme } from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
-router.get('/current', function(req, res, next) {
+router.get('/current', async function(req, res, next) {
 
-
-
-    connection.query('SELECT theme_name FROM dimthemes WHERE theme_current = 1;', function(err, rows, fields) {
-        if (err) return next(err);
-
-        if (rows.length == 0){
+    try {
+        var currentTheme = await getCurrentTheme()
+        if (currentTheme == null)
             return res.status(404).send({
                 message: "No current theme"
             })
-        }
 
         return res.send({
-            name: rows[0].theme_name
+            name: currentTheme.theme_name
         })
-
-    });
+    } catch (err){
+        next(err);
+    }
 
 });
 

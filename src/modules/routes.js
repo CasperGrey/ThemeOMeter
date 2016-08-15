@@ -2,7 +2,7 @@ import React from 'react'
 import App from './App/App.js'
 import ContentPage from './ContentPage/ContentPage.js'
 import SongEntryPage from './SongEntryPage'
-import ThemeScoringPage from './ThemeScoringPage/ThemeScoringPage'
+import ThemeScoringPage from './ThemeScoringPage'
 import { Route, IndexRoute } from 'react-router'
 
 

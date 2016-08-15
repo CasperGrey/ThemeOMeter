@@ -29,7 +29,7 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
-    
+
     serverConfig.userAgent = req.headers['user-agent']
     serverConfig.styleElementId = '_look'
 
@@ -64,6 +64,7 @@ server.get('*', function(req, res, next) {
   })
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
+
 
 // apply the routes to our application
 server.use('/api/themes', require('./api/theme.js'))

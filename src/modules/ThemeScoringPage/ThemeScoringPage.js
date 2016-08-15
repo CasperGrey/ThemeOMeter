@@ -25,6 +25,14 @@ class ThemeScoringPage extends Component {
         onSetTitle: PropTypes.func.isRequired,
     };
 
+    static propTypes = {
+        songs: React.PropTypes.array,
+    }
+
+    static defaultProps = {
+        songs: [],
+    }
+
     componentWillMount() {
         //this.context.onSetTitle(title);
     }
@@ -61,6 +69,13 @@ class ThemeScoringPage extends Component {
 
 
     render() {
+
+        /*return <div>
+            {this.props.songs.map(song => {
+                return <div>{song.name}</div>
+            })}
+        </div>*/
+
         return (
             <div className={"root"}>
                 <div className={styles.themescorecontainerStyle}>

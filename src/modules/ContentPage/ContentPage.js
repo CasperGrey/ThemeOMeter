@@ -10,7 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContentPage.css';
-import {Card, CardActions, CardTitle} from 'material-ui/Card';
+import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Form from './../Form.js'
 import Divider from 'material-ui/Divider';
@@ -42,12 +42,13 @@ class ContentPage extends Component {
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
           <Paper zDepth={3}>
             <Card className={"cardStyle"}>
+              <CardMedia>
+                <img src="./../images/6.jpg" />
+              </CardMedia>
               <CardTitle title="Let's Do This" subtitle="2016" />
-              <Form>
                 <Subheader>Where would you like to go</Subheader>
                 <Divider/>
                 <Login />
-              </Form>
               <CardActions>
                 <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
                 <RaisedButton primary={true} label="Score Theme" href='score'/>
@@ -73,4 +74,3 @@ const styles = StyleSheet.create({
 })
 
 export default withStyles(s)(ContentPage)
-
