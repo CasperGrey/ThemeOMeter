@@ -12,7 +12,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContentPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-import Form from './../Form.js'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
@@ -36,14 +35,14 @@ class ContentPage extends Component {
 
   render() {
     return (
-      <div className={"root"}>
+      <div className={styles.root}>
         <div className={styles.containerStyle}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
           <Paper zDepth={3}>
             <Card className={"cardStyle"}>
               <CardMedia>
-                <img src="./../images/6.jpg" />
+                <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Let's Do This" subtitle="2016" />
                 <Subheader>Where would you like to go</Subheader>
@@ -63,6 +62,9 @@ class ContentPage extends Component {
 
 const styles = StyleSheet.create({
 
+    root: {
+    margin: '0 auto',
+    },
   containerStyle: {
     margin: '0 auto',
     padding: '0 0 40',

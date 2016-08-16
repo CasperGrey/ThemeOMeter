@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
 
     appBackground: {
         backgroundColor: 'whitesmoke',
-
     },
 
 })

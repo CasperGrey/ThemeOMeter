@@ -64,8 +64,8 @@ server.get('*', function(req, res, next) {
   })
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
-
-
+server.use(express.static(path.resolve(__dirname, '..', '..', 'src', 'public')))
+console.log(path.resolve(__dirname, '..', '..', 'src', 'public'))
 // apply the routes to our application
 server.use('/api/themes', require('./api/theme.js'))
 server.use('/api/songs', require('./api/songs.js'));
