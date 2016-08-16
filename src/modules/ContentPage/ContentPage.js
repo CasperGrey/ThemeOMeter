@@ -19,6 +19,7 @@ import { StyleSheet } from 'react-look'
 import Login from './../LoginPage/LoginPage'
 const title = 'Song Entry';
 
+
 class ContentPage extends Component {
 
   static contextTypes = {
@@ -35,16 +36,16 @@ class ContentPage extends Component {
 
   render() {
     return (
-      <div className={styles.root}>
+      <div className="root">
         <div className={styles.containerStyle}>
           {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
           <Paper zDepth={3}>
-            <Card className={"cardStyle"}>
-              <CardMedia>
+            <Card className={styles.cardStyle}>
+              <CardMedia className={styles.img}>
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
-              <CardTitle title="Let's Do This" subtitle="2016" />
+              <CardTitle title="Theme O" subtitle="2016" />
                 <Subheader>Where would you like to go</Subheader>
                 <Divider/>
                 <Login />
@@ -68,9 +69,24 @@ const styles = StyleSheet.create({
   containerStyle: {
     margin: '0 auto',
     padding: '0 0 40',
-    maxWidth: '900',
+    maxWidth: '500',
     textAlign: 'center',
 
+  },
+
+  cardStyle: {
+
+    maxWidth: '500',
+    textAlign: 'center',
+
+  },
+
+  img: {
+    display: 'inline-flex',
+    maxWidth:'100%',
+    maxHeight:'100%',
+    height:'auto',
+    width:'auto', /* ie8 */
   },
 
 })

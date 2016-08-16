@@ -8,13 +8,13 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardTitle} from 'material-ui/Card';
+import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
-
+import Video_detail from "./../YoutubeSearch/Video_detail"
 
 const title = 'Song Entry';
 const items = [];
@@ -83,6 +83,13 @@ class ThemeScoringPage extends Component {
                     <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
                     <Paper zDepth={3}>
                         <Card className={styles.cardStyle}>
+                            <CardMedia className={styles.img}>
+                            <Video_detail video={{
+                              id: {
+                                videoId: 'H_a46WJ1viA',
+                              },
+                            }}/>
+                            </CardMedia>
                             <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
                             <Subheader>Theme X</Subheader>
@@ -111,7 +118,7 @@ const styles = StyleSheet.create({
     themescorecontainerStyle: {
         margin: '0 auto',
         padding: '0 0 40',
-        maxWidth : '900',
+        maxWidth : '500',
         alignContent: 'center',
 
     },
@@ -124,18 +131,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         border: '1 solid #ddd',
         boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
+        maxWidth: '500',
     },
 
     dropdownStyle: {
         width:'200px',
     },
 
+    img: {
+      display: 'inline-flex',
+      maxWidth:'100%',
+      maxHeight:'100%',
+      height:'auto',
+      width:'auto', /* ie8 */
+    },
+
 })
 
 export default withStyles(s)(ThemeScoringPage)
-
-
-
-
-
-

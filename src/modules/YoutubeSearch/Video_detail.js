@@ -16,10 +16,10 @@ const Video_detail = ( { video }) =>{
                 <iframe className = "embed-responsive-item" src={url}></iframe>
             </div>
 
-            <div className="details">
+            {(video.snippet && video.snippet.title && video.snippet.description) ? <div className="details">
                 <div>{video.snippet.title}</div>
                 <div>{video.snippet.description}</div>
-            </div>
+            </div> : null}
         </div>
     )
 }

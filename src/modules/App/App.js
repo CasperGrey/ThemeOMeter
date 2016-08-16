@@ -21,3 +21,20 @@ const styles = StyleSheet.create({
     },
 
 })
+
+StyleSheet.addCSS({
+  html: {
+    padding: 0,
+    margin: 0,
+  },
+  body: {
+   padding: 0,
+   margin: 0,
+   fontFamily: "Helvetica, Arial, sans-serif",
+   fontSize: 13,
+   WebkitFontSmoothing: 'antialiased',
+ },
+ root: {
+   margin: '0 auto',
+ }
+})
