@@ -11,7 +11,7 @@ import connection from './db.js'
 
 export function getSongsInTheme(id){
     return new Promise(function(resolve, reject){
-        connection.query('SELECT * from factentry where theme_id = ?', [id], function(err, rows, fields) {
+        connection.query('SELECT f.* , ds.song_url from factentry f join dimsongs ds on f.song_id = ds.song_id where theme_id = ?;', [id], function(err, rows, fields) {
             if (err) return reject(err);
 
             var result = rows
@@ -35,11 +35,3 @@ export function createEntry(theme_id,song_id,user_comment){
         });
     })
 }
-
-
-
-
-
-
-
-

@@ -61,7 +61,7 @@ router.post('/', async function(req, res, next) {
 router.get('/by-theme',  async function(req, res, next) {
     try{
         var theme = await getCurrentTheme()
-        var songs = await entryDb.getSongsInTheme(theme.id)
+        var songs = await entryDb.getSongsInTheme(theme.theme_id)
         res.send(songs)
     } catch (err){
         next(err)

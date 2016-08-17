@@ -8,13 +8,15 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton'
 import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
-import Video_detail from "./../YoutubeSearch/Video_detail"
+import Video_detail from "./../YoutubeSearch/Video_detail";
+import{AVSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 
 const title = 'Song Entry';
 const items = [];
@@ -69,7 +71,7 @@ class ThemeScoringPage extends Component {
 
 
     render() {
-
+        debugger
         /*return <div>
             {this.props.songs.map(song => {
                 return <div>{song.name}</div>
@@ -90,6 +92,11 @@ class ThemeScoringPage extends Component {
                               },
                             }}/>
                             </CardMedia>
+                            <IconButton tooltip="SVG Icon"
+                            style ={styles.icons}>
+                              <AVSkipPrevious color='red'/>
+                              <NavigationClose color='red'/>
+                            </IconButton>
                             <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
                             <Subheader>Theme X</Subheader>
@@ -120,6 +127,11 @@ const styles = StyleSheet.create({
         padding: '0 0 40',
         maxWidth : '500',
         alignContent: 'center',
+
+    },
+
+    icons: {
+
 
     },
 
