@@ -33,7 +33,7 @@ class Container extends Component {
                         songName: songInfo.title,
                         artistName: songInfo.artist,
                         comment: video.comment,
-                        songURL: `https://youtu.be/${songInfo.id.videoId}`,
+                        songURL: `https://youtu.be/${video.id.videoId}`,
                     })
                 })
             })
