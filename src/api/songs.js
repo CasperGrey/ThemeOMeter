@@ -21,6 +21,7 @@ router.post('/', async function(req, res, next) {
         var artistName = req.body.artistName
         var comment = req.body.comment
         var url = req.body.songURL
+        var videoId = req.body.videoId
 
         console.log(require('util').inspect(req.body))
 
@@ -35,7 +36,7 @@ router.post('/', async function(req, res, next) {
 
         // If we don't have a song then create one
         if (!song) {
-            song = await createSong(songName, artist.artist_id, url)
+            song = await createSong(songName, artist.artist_id, url , videoId)
             var theme = await getCurrentTheme()
             var entry = await entryDb.createEntry(theme.theme_id,song.song_id, comment || '')
         }

@@ -16,7 +16,7 @@ import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
-import{AVSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
+
 
 const title = 'Song Entry';
 const items = [];
@@ -71,7 +71,6 @@ class ThemeScoringPage extends Component {
 
 
     render() {
-        debugger
         /*return <div>
             {this.props.songs.map(song => {
                 return <div>{song.name}</div>
@@ -88,15 +87,10 @@ class ThemeScoringPage extends Component {
                             <CardMedia className={styles.img}>
                             <Video_detail video={{
                               id: {
-                                videoId: 'H_a46WJ1viA',
+                                videoId:this.props.songs[0].video_id,
                               },
                             }}/>
                             </CardMedia>
-                            <IconButton tooltip="SVG Icon"
-                            style ={styles.icons}>
-                              <AVSkipPrevious color='red'/>
-                              <NavigationClose color='red'/>
-                            </IconButton>
                             <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
                             <Subheader>Theme X</Subheader>

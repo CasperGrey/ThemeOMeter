@@ -15,8 +15,8 @@ class Container extends Component {
     }
 
     onSave = (videoItems) => {
-
-        if(videoItems.length < 5){
+        debugger
+        if(videoItems.length < 1){
          console.log("less than 5 songs")
         }
         else {
@@ -33,7 +33,8 @@ class Container extends Component {
                         songName: songInfo.title,
                         artistName: songInfo.artist,
                         comment: video.comment,
-                        songURL: `https://youtu.be/${songInfo.id.videoId}`,
+                        songURL: `https://youtu.be/${video.id.videoId}`,
+                        videoId: video.id.videoId,
                     })
                 })
             })

@@ -9,10 +9,10 @@ router.use(bodyParser.json())
 import connection from './db.js'
 
 
-export function createSong(songName,artist_id, url){
+export function createSong(songName,artist_id, url,videoId){
     console.log("CreateSongRun")
     return new Promise(function(resolve, reject){
-        connection.query('INSERT INTO dimsongs (song_name,artist_id,genre_id, song_url) VALUES(?,?,0,?)', [songName,artist_id,url] , function(err, result) {
+        connection.query('INSERT INTO dimsongs (song_name,artist_id,genre_id, song_url,video_id) VALUES(?,?,0,?,?)', [songName,artist_id,url,videoId] , function(err, result) {
             if (err) return reject(err);
 
             resolve(getSongById(result.insertId))
@@ -49,11 +49,3 @@ export function getSong(songName,artist_id){
         });
     })
 }
-
-
-
-
-
-
-
-
