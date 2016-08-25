@@ -86,11 +86,11 @@ class ThemeScoringPage extends Component {
                     <Paper zDepth={3}>
                         <Card className={styles.cardStyle}>
                             <CardMedia className={styles.img}>
-                            <Video_detail video={{
+                            {this.props.songs.length >= 1 ? <Video_detail video={{
                               id: {
                                 videoId:this.props.songs[0].video_id,
                               },
-                            }}/>
+                            }}/> : null}
                             </CardMedia>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}>
