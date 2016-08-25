@@ -1,4 +1,5 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton'
 
 export default class FacebookLogin extends React.Component {
     constructor(props) {
@@ -50,9 +51,9 @@ export default class FacebookLogin extends React.Component {
     render() {
         return (
             <div>
-                <button className={this.props.class} onClick={this.clickHandler.bind(this)}>
+                <RaisedButton className={this.props.class} onClick={this.clickHandler.bind(this)}>
                     {this.props.buttonText}
-                </button>
+                </RaisedButton>
             </div>
         );
     }
