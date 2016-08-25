@@ -9,6 +9,7 @@
 
 import React from 'react';
 import FacebookLogin from './FacebookLogin';
+import { StyleSheet } from 'react-look'
 
 class Login extends React.Component{
 
@@ -23,19 +24,21 @@ class Login extends React.Component{
 
     render () {
         return (
-            <div>
+            <div >
                 <FacebookLogin socialId="1648042272179054"
                                language="en_US"
                                scope="public_profile,email"
                                responseHandler={this.responseFacebook}
                                xfbml={true}
                                version="v2.5"
-                               class="facebook-login"
-                               buttonText="Login With Facebook"/>
+                               class= "facebook-login"
+                               buttonText="Log in with Facebook"/>
             </div>
         );
     }
 
 }
+
+
 
 export default Login;
