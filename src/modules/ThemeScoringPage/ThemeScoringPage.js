@@ -16,7 +16,7 @@ import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
-import{AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
+import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 
 
 const title = 'Song Entry';
@@ -42,7 +42,7 @@ class ThemeScoringPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: 1, items: [], videoItems: []};
+        this.state = {value: 1, items: [], videoItems: [], selectedSongIndex: 0};
     }
 
     handleChange = (event, index, value) => {
@@ -88,19 +88,23 @@ class ThemeScoringPage extends Component {
                             <CardMedia className={styles.img}>
                             {this.props.songs.length >= 1 ? <Video_detail video={{
                               id: {
-                                videoId:this.props.songs[0].video_id,
+                                videoId:this.props.songs[this.state.selectedSongIndex].video_id,
                               },
                             }}/> : null}
                             </CardMedia>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}>
-                              <AvSkipPrevious color='red'/>
-                              <NavigationClose color='red'/>
+                              <AvSkipPrevious color='grey'/>
+                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}
+                            </IconButton>
+                            <IconButton tooltip="SVG Icon"
+                            style ={styles.icons}>
+                              <AvSkipNext color='grey'/>
+                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex +1})}
                             </IconButton>
                             <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
                             <Subheader>Theme X</Subheader>
-
                             <Divider/>
                             <Subheader>Score</Subheader>
                             <Divider/>
