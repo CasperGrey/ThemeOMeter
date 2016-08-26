@@ -92,27 +92,25 @@ class ThemeScoringPage extends Component {
                               },
                             }}/> : null}
                             </CardMedia>
+                            <Divider/>
+                            {this.props.songs[this.state.selectedSongIndex].user_comment}
+                            <Divider/>
                             <IconButton tooltip="SVG Icon"
-                            style ={styles.icons}>
+                            style ={styles.icons}
+                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}>
                               <AvSkipPrevious color='grey'/>
-                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}
                             </IconButton>
                             <IconButton tooltip="SVG Icon"
-                            style ={styles.icons}>
+                            style ={styles.icons}
+                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex +1})}>
                               <AvSkipNext color='grey'/>
-                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex +1})}
                             </IconButton>
-                            <CardTitle title="Time to score!" subtitle="2016" />
                             <Divider/>
-                            <Subheader>Theme X</Subheader>
-                            <Divider/>
-                            <Subheader>Score</Subheader>
-                            <Divider/>
+                            <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider/>
                             <Subheader>Your Selections</Subheader>
 
                             <CardActions>
-                                <RaisedButton secondary={true} label="Back"/>
                                 <RaisedButton primary={true} label="Save"/>
                             </CardActions>
                         </Card>

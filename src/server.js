@@ -69,5 +69,5 @@ console.log(path.resolve(__dirname, '..', 'src', 'public'))
 // apply the routes to our application
 server.use('/api/themes', require('./api/theme.js'))
 server.use('/api/songs', require('./api/songs.js'));
-
+server.use('/api/songs', require('./api/score.js'));
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))

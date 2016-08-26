@@ -9,6 +9,13 @@ class Container extends Component {
         .then(songs => {
             this.setState({songs})
         })
+        fetch('/api/themes/current')
+        .then(response => response.json())
+        .then(json => {
+            this.setState({
+                currentTheme: json.name
+            })
+        })
     }
 
     state = {};
@@ -16,6 +23,7 @@ class Container extends Component {
     render = () => <ThemeScoringPage
         {...this.props}
         songs={this.state.songs}
+        currentTheme={this.state.currentTheme}
     />
 }
 
