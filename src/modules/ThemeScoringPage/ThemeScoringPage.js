@@ -92,8 +92,7 @@ class ThemeScoringPage extends Component {
                               },
                             }}/> : null}
                             </CardMedia>
-                            <Divider/>
-                            {this.props.songs[this.state.selectedSongIndex].user_comment}
+
                             <Divider/>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}
@@ -102,9 +101,18 @@ class ThemeScoringPage extends Component {
                             </IconButton>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}
-                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex +1})}>
+                            onClick={() => {
+                                if(this.state.selectedSongIndex < this.props.songs.length){
+                                  this.setState({selectedSongIndex: this.state.selectedSongIndex +1})
+                                }
+                                else{
+                                  this.state.selectedSongIndex= 0
+                                }
+                              }}>
                               <AvSkipNext color='grey'/>
                             </IconButton>
+                            <Divider/>
+                            this.props.songs[this.state.selectedSongIndex].user_comment
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider/>
