@@ -10,7 +10,6 @@ import connection from './db.js'
 
 
 export function getScoreBySongId(id){
-    var value = req.body.songName
 
     return new Promise(function(resolve, reject){
         connection.query('SELECT top 1 from factscores where song_id = ?', [id], function(err, rows, fields) {
@@ -25,7 +24,14 @@ export function getScoreBySongId(id){
 }
 
 
+export function enterScore(theme_id,song_id,score,song_comment){
+    console.log("ScoreEnteredRun")
+    return new Promise(function(resolve, reject){
+        connection.query('INSERT INTO factscores (theme_id,agent_id,song_picker_id, song_id, valid_vote,song_raw_score,song_comments) VALUES(?,1,1,?,1,?,?)', [theme_id,song_id,score,song_comment] , function(err, result) {
+            if (err) return reject(err);
 
+            resolve(result)
 
-
-
+        });
+    })
+}

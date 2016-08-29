@@ -119,7 +119,7 @@ class ThemeScoringPage extends Component {
                             <Subheader>Your Selections</Subheader>
 
                             <CardActions>
-                                <RaisedButton primary={true} label="Save"/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.songs[this.state.selectedSongIndex])}/>
                             </CardActions>
                         </Card>
                     </Paper>

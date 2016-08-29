@@ -7,30 +7,20 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {getArtist, createArtist } from './../db/artists.js'
-import {createSong, getSong} from './../db/song.js'
-import * as entryDb from './../db/entry.js'
-import { getCurrentTheme } from './../db/theme.js'
+import {enterScore} from './../db/.js'
+
 
 // route with parameters (http://localhost:8080/hello/:name)
 router.post('/', async function(req, res, next) {
 
+        var theme_id = req.body.theme_id
+        var song_id = req.body.song_id
+        var score = req.body.score
+        var song_comment = req.body.song_comment
+
     try {
+            var score = await enterScore(theme_id,song_id,score,song_comment)
 
-        var song_id = await getSong(artistName)
-        if (!artist) {
-            var artist = await createArtist(artistName)
-        }
-
-        // I put the paraymeters this way around because it's more about the song and the
-        // artist could be an optional parameter
-        var song = await getSong(songName, artist.artist_id);
-
-        // If we don't have a song then create one
-        if (!song) {
-            song = await createSong(songName, artist.artist_id, url , videoId)
-            var theme = await getCurrentTheme()
-            var entry = await entryDb.createEntry(theme.theme_id,song.song_id, comment || '')
         }
     }catch(err){
 
