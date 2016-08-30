@@ -77,7 +77,8 @@ class ThemeScoringPage extends Component {
                 return <div>{song.name}</div>
             })}
         </div>*/
-
+        var { onSave} = this.props
+        if (!onSave) onSave = function(){}
         return (
             <div className={"root"}>
                 <div className={styles.themescorecontainerStyle}>
@@ -116,6 +117,7 @@ class ThemeScoringPage extends Component {
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider/>
+                            song.score = this.state.firstSlider.value
                             <Subheader>Your Selections</Subheader>
 
                             <CardActions>
