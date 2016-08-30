@@ -77,7 +77,7 @@ class ThemeScoringPage extends Component {
                 return <div>{song.name}</div>
             })}
         </div>*/
-        var { onSave} = this.props
+        var {onSave,onChange} = this.props
         if (!onSave) onSave = function(){}
         return (
             <div className={"root"}>
@@ -100,6 +100,7 @@ class ThemeScoringPage extends Component {
                             onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}>
                               <AvSkipPrevious color='grey'/>
                             </IconButton>
+
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}
                             onClick={() => {
@@ -113,15 +114,16 @@ class ThemeScoringPage extends Component {
                               <AvSkipNext color='grey'/>
                             </IconButton>
                             <Divider/>
+
                             this.props.songs[this.state.selectedSongIndex].user_comment
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
-                            <ScoreSlider/>
+                            <ScoreSlider  onChange={(value) => this.props.songs[this.state.selectedSongIndex].score = value}/>
                             this.props.songs[this.state.selectedSongIndex].score = this.state.firstSlider.value
                             <Subheader>Your Selections</Subheader>
 
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.songs[this.state.selectedSongIndex])}/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
                             </CardActions>
                         </Card>
                     </Paper>

@@ -33,12 +33,12 @@ class Container extends Component {
                     },
                     body: JSON.stringify({
                         theme_id: songs.theme_id,
-                        artist_id: songs.song_id,
-                        url: songs.score,
-                        videoId: songs.song_comment,
+                        song_id: songs.song_id,
+                        score: songs.score,
+                        song_comment: songs.song_comment,
                     })
                 })
-            
+
         }
     };
 

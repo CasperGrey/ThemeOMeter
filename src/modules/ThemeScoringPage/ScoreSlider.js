@@ -27,6 +27,10 @@ export default class ScoreSlider extends React.Component {
             firstSlider: (value + thirdSlider) / 2,
             secondSlider: value,
         });
+
+        if (this.props.onChange)
+           this.props.onChange(value)
+
     }
 
     handleThirdSlider(event, value) {
