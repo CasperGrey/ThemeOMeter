@@ -117,7 +117,7 @@ class ThemeScoringPage extends Component {
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider/>
-                            song.score = this.state.firstSlider.value
+                            this.props.songs[this.state.selectedSongIndex].score = this.state.firstSlider.value
                             <Subheader>Your Selections</Subheader>
 
                             <CardActions>
