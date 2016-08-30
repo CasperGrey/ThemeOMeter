@@ -38,7 +38,7 @@ class Container extends Component {
                         videoId: songs.song_comment,
                     })
                 })
-            }
+            
         }
     };
 
