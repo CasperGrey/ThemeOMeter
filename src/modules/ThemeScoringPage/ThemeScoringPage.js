@@ -10,6 +10,7 @@ import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton'
 import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
+import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
@@ -30,10 +31,12 @@ class ThemeScoringPage extends Component {
 
     static propTypes = {
         songs: React.PropTypes.array,
+        onCommentChange: React.PropTypes.func,
     }
 
     static defaultProps = {
         songs: [],
+        comment: "",
     }
 
     componentWillMount() {
@@ -70,6 +73,12 @@ class ThemeScoringPage extends Component {
         this.setState({videoItems});
     };
 
+    onCommentChange = (comment) => {
+        var songs = this.props.songs[this.state.selectedSongIndex]
+        songs.song_comment = comment
+        this.setState({songs})
+    };
+
 
     render() {
         /*return <div>
@@ -77,7 +86,7 @@ class ThemeScoringPage extends Component {
                 return <div>{song.name}</div>
             })}
         </div>*/
-        var {onSave,onChange} = this.props
+        var {onSave,onChange,onCommentChange} = this.props
         if (!onSave) onSave = function(){}
         return (
             <div className={"root"}>
@@ -119,9 +128,13 @@ class ThemeScoringPage extends Component {
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider  onChange={(value) => this.props.songs[this.state.selectedSongIndex].score = value}/>
-                            this.props.songs[this.state.selectedSongIndex].score = this.state.firstSlider.value
-                            <Subheader>Your Selections</Subheader>
-
+                            <TextField
+                                multiLine={true}
+                                floatingLabelText={"Comment Box"}
+                                hintText ={"Describe why you chose this song."}
+                                onChange={onCommentChange}
+                                value={this.props.songs[this.state.selectedSongIndex].comment}
+                            />
                             <CardActions>
                                 <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
                             </CardActions>
