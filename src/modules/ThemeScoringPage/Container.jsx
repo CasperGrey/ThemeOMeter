@@ -26,19 +26,19 @@ class Container extends Component {
         }
         else {
 
-            fetch('/api/score', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    theme_id: songs.theme_id,
-                    artist_id: songs.song_id,
-                    url: songs.score,
-                    videoId: songs.song_comment,
+                fetch('/api/score', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        theme_id: songs.theme_id,
+                        artist_id: songs.song_id,
+                        url: songs.score,
+                        videoId: songs.song_comment,
+                    })
                 })
-            })
-            
+            }
         }
     };
 
@@ -48,6 +48,7 @@ class Container extends Component {
         {...this.props}
         songs={this.state.songs}
         currentTheme={this.state.currentTheme}
+        onSave={this.onSave}
     />
 }
 
