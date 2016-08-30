@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {enterScore} from './../db/.js'
+import {enterScore} from './../db/score.js'
 
 
 // route with parameters (http://localhost:8080/hello/:name)
