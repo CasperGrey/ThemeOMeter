@@ -35,7 +35,7 @@ class Container extends Component {
                         theme_id: songs.theme_id,
                         song_id: songs.song_id,
                         score: songs.score,
-                        song_comment: songs.song_comment,
+                        song_comment: songs.user_comment,
                     })
                 })
 

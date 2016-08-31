@@ -45,8 +45,15 @@ class ThemeScoringPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: 1, items: [], videoItems: [], selectedSongIndex: 0};
     }
+
+    state = {
+        value: 1, 
+        items: [], 
+        videoItems: [], 
+        selectedSongIndex: 0,
+        score: 5,
+    };
 
     handleChange = (event, index, value) => {
         this.setState({value});
@@ -79,6 +86,9 @@ class ThemeScoringPage extends Component {
         this.setState({songs})
     };
 
+    onScoreChange = (e, value) => {
+        this.setState({score: value})
+    };
 
     render() {
         /*return <div>
@@ -88,6 +98,15 @@ class ThemeScoringPage extends Component {
         </div>*/
         var {onSave,onChange,onCommentChange} = this.props
         if (!onSave) onSave = function(){}
+
+
+        const { songs } = this.props
+        const { selectedSongIndex, score } = this.state
+        var selectedSong = songs[selectedSongIndex]
+        // Add score to the song object
+        if (selectedSong)
+            Object.assign(selectedSong, {score})
+
         return (
             <div className={"root"}>
                 <div className={styles.themescorecontainerStyle}>
@@ -127,13 +146,13 @@ class ThemeScoringPage extends Component {
                             this.props.songs[this.state.selectedSongIndex].user_comment
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
-                            <ScoreSlider  onChange={(value) => this.props.songs[this.state.selectedSongIndex].score = value}/>
+                            <ScoreSlider onChange={this.onScoreChange}/>
                             <TextField
                                 multiLine={true}
                                 floatingLabelText={"Comment Box"}
                                 hintText ={"Describe why you chose this song."}
                                 onChange={onCommentChange}
-                                value={this.props.songs[this.state.selectedSongIndex].comment}
+                                value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
                                 <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
