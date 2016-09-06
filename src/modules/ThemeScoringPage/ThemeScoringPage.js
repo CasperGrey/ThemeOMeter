@@ -36,7 +36,6 @@ class ThemeScoringPage extends Component {
 
     static defaultProps = {
         songs: [],
-        comment: "",
     }
 
     componentWillMount() {
@@ -48,11 +47,12 @@ class ThemeScoringPage extends Component {
     }
 
     state = {
-        value: 1, 
-        items: [], 
-        videoItems: [], 
+        value: 1,
+        items: [],
+        videoItems: [],
         selectedSongIndex: 0,
         score: 5,
+        comment: '',
     };
 
     handleChange = (event, index, value) => {
@@ -70,20 +70,9 @@ class ThemeScoringPage extends Component {
         this.setState({items: items});
     }
 
-    onAddVideo = (selectedVideo) => {
-        // We clone the existing items array with slice, so that we have a new
-        // array rather than a reference to the existing one
-        var videoItems = this.state.videoItems.slice()
-        videoItems.push(selectedVideo)
 
-        // Update state with the new array
-        this.setState({videoItems});
-    };
-
-    onCommentChange = (comment) => {
-        var songs = this.props.songs[this.state.selectedSongIndex]
-        songs.song_comment = comment
-        this.setState({songs})
+    onCommentChange = (e,   value) => {
+        this.setState({comment: value})
     };
 
     onScoreChange = (e, value) => {
@@ -101,12 +90,13 @@ class ThemeScoringPage extends Component {
 
 
         const { songs } = this.props
-        const { selectedSongIndex, score } = this.state
+        const { selectedSongIndex, score, comment} = this.state
         var selectedSong = songs[selectedSongIndex]
-        // Add score to the song object
-        if (selectedSong)
+        // Add score & comment to the song object
+        if (selectedSong){
             Object.assign(selectedSong, {score})
-
+            Object.assign(selectedSong, {comment})
+          }
         return (
             <div className={"root"}>
                 <div className={styles.themescorecontainerStyle}>
@@ -151,7 +141,7 @@ class ThemeScoringPage extends Component {
                                 multiLine={true}
                                 floatingLabelText={"Comment Box"}
                                 hintText ={"Describe why you chose this song."}
-                                onChange={onCommentChange}
+                                onChange={this.onCommentChange}
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>

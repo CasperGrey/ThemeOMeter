@@ -15,8 +15,7 @@ class Container extends Component {
     }
 
     onSave = (videoItems) => {
-        debugger
-        if(videoItems.length < 1){
+        if(videoItems.length < 1 && videoItems.length < 6){
          console.log("less than 5 songs")
         }
         else {
@@ -38,6 +37,8 @@ class Container extends Component {
                     })
                 })
             })
+            console.log("Save Succesful")
+
         }
     };
 
