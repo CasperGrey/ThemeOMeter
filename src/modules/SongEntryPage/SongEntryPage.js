@@ -13,7 +13,7 @@ import { StyleSheet } from 'react-look'
 import YoutubeSearch from './../YoutubeSearch';
 import Countdown from  './Countdown';
 import PlayerSongList from './../PlayerSongList/PlayerSongList'
-
+import TextField from 'material-ui/TextField'
 
 const title = 'Song Entry';
 const items = [];
@@ -22,6 +22,10 @@ class SongEntryPage extends Component {
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
+  };
+
+  state = {
+      successMessage: "",
   };
 
 
@@ -73,6 +77,8 @@ class SongEntryPage extends Component {
         this.setState({videoItems})
     };
 
+
+
     render() {
 
         var { onSave, onCommentChange } = this.props
@@ -103,7 +109,13 @@ class SongEntryPage extends Component {
             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
-          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)} href='score'/>
+          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)}/>
+            <div>
+              <TextField
+                id="success-text"
+                value={this.props.successMessage}
+              />
+           </div>
           </CardActions>
          </Card>
        </Paper>

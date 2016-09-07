@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SongEntryPage from './SongEntryPage.js'
 import parseTitleString from './../PlayerSongList/parseTitleString'
+import TextField from 'material-ui/TextField'
+import { browserHistory } from 'react-router'
 
 class Container extends Component {
 
@@ -13,6 +15,10 @@ class Container extends Component {
             })
         })
     }
+
+    state = {
+        successMessage: "",
+    };
 
     onSave = (videoItems) => {
         if(videoItems.length < 1 && videoItems.length < 6){
@@ -37,7 +43,8 @@ class Container extends Component {
                     })
                 })
             })
-            console.log("Save Succesful")
+            this.setState({successMessage: "Save Succesful"})
+            setTimeout(function() {browserHistory.push('/score')}, 2000);
 
         }
     };
@@ -50,6 +57,7 @@ class Container extends Component {
         {...this.props}
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
+        successMessage = {this.state.successMessage}
     />
 }
 
