@@ -7,25 +7,30 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {enterScore} from './../db/score.js'
-
+import {getUser, createUser} from './../db/user.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
 router.post('/', async function(req, res, next) {
 
-    var theme_id = req.body.theme_id
-    var user_id = req.body.user_id
-    var song_id = req.body.song_id
-    var score = req.body.score
-    var song_comment = req.body.song_comment
-
     try {
-        var score = await enterScore(theme_id,user_id,song_id,score,song_comment)
-    } catch(err){
+
+        var name = req.body.name
+        var accessToken = req.body.accessToken
+
+        console.log(require('util').inspect(req.body))
+
+        var user = await getUser(name)
+        if (!user) {
+            var user = await createUser(name,accessToken)
+        }
+
+    }catch(err){
+
         console.error(err)
         next(err)
-    }
 
+
+    }
 
 });
 

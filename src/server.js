@@ -70,5 +70,6 @@ console.log(path.resolve(__dirname, '..', 'src', 'public'))
 server.use('/api/themes', require('./api/theme.js'))
 server.use('/api/songs', require('./api/songs.js'));
 server.use('/api/score', require('./api/score.js'));
+server.use('/api/user', require('./api/user.js'));
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))

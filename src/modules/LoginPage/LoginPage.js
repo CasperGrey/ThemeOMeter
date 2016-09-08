@@ -19,7 +19,21 @@ class Login extends React.Component{
 
     responseFacebook (response) {
         console.log(response);
-        //anything else you want to do(save to localStorage)...
+        fetch('/api/user', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: response.name,
+                accessToken: response.accessToken,
+              })
+            })
+            .then(response => response.json())
+            .then(response => {
+              sessionStorage.setItem('userId', user.user_id)
+              debugger
+            })
     }
 
     render () {
