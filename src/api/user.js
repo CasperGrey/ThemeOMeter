@@ -21,8 +21,9 @@ router.post('/', async function(req, res, next) {
 
         var user = await getUser(name)
         if (!user) {
-            var user = await createUser(name,accessToken)
+            user = await createUser(name,accessToken)
         }
+
 
     }catch(err){
 

@@ -25,7 +25,7 @@ class Container extends Component {
          console.log("Invalid Vote")
         }
         else {
-              var userid =  sessionStorage.getItem('userId')
+          var userid = JSON.parse(sessionStorage.getItem('userId'));
                 fetch('/api/score', {
                     method: 'post',
                     headers: {
