@@ -13,6 +13,7 @@ import { StyleSheet } from 'react-look'
 
 class Login extends React.Component{
 
+
     constructor (props, context) {
         super(props, context);
     }
@@ -31,7 +32,7 @@ class Login extends React.Component{
             })
             .then(response => response.json())
             .then(response => {
-              sessionStorage.setItem('userId', user.user_id)
+              sessionStorage.setItem('userId', response.agent_id)
               debugger
             })
     }
@@ -46,7 +47,7 @@ class Login extends React.Component{
                                xfbml={true}
                                version="v2.5"
                                class= "facebook-login"
-                               buttonText="Log in with Facebook"/>
+                               buttonText= "Login"/>
             </div>
         );
     }

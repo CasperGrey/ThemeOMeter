@@ -12,7 +12,7 @@ import connection from './db.js'
 export function getScoreBySongId(id){
 
     return new Promise(function(resolve, reject){
-        connection.query('SELECT top 1 from factscores where song_id = ?', [id], function(err, rows, fields) {
+        connection.query('SELECT * from factscores where song_id = ?', [id], function(err, rows, fields) {
             if (err) return reject(err);
 
             var result = rows[0]

@@ -24,11 +24,10 @@ class Container extends Component {
         if(videoItems.length < 1 && videoItems.length < 6){
          console.log("less than 5 songs")
         }
-        else {
+        else {      
             videoItems.forEach(video => {
-
                 var songInfo = parseTitleString(video.snippet.title)
-
+                var userid = JSON.parse(sessionStorage.getItem('userId'))
                 fetch('/api/songs', {
                     method: 'post',
                     headers: {
@@ -36,6 +35,7 @@ class Container extends Component {
                     },
                     body: JSON.stringify({
                         songName: songInfo.title,
+                        user_id : userid,
                         artistName: songInfo.artist,
                         comment: video.comment,
                         songURL: `https://youtu.be/${video.id.videoId}`,

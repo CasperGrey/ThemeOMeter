@@ -18,6 +18,7 @@ router.post('/', async function(req, res, next) {
     try {
 
         var songName = req.body.songName
+        var user_id =  req.body.user_id
         var artistName = req.body.artistName
         var comment = req.body.comment
         var url = req.body.songURL
@@ -38,7 +39,7 @@ router.post('/', async function(req, res, next) {
         if (!song) {
             song = await createSong(songName, artist.artist_id, url , videoId)
             var theme = await getCurrentTheme()
-            var entry = await entryDb.createEntry(theme.theme_id,song.song_id, comment || '')
+            var entry = await entryDb.createEntry(theme.theme_id,user_id,song.song_id, comment || '')
         }
     }catch(err){
 

@@ -23,6 +23,7 @@ router.post('/', async function(req, res, next) {
         if (!user) {
             user = await createUser(name,accessToken)
         }
+        return res.send(user)
 
 
     }catch(err){

@@ -23,9 +23,9 @@ export function getSongsInTheme(id){
 }
 
 
-export function createEntry(theme_id,song_id,user_comment){
+export function createEntry(theme_id,agent_id,song_id,user_comment){
     return new Promise(function(resolve, reject){
-        connection.query('INSERT INTO factentry (theme_id,agent_id,song_id,user_comment) VALUES(?,1,?,?)',[theme_id,song_id, user_comment], function(err, rows, fields) {
+        connection.query('INSERT INTO factentry (theme_id,agent_id,song_id,user_comment) VALUES(?,?,?,?)',[theme_id,agent_id,song_id, user_comment], function(err, rows, fields) {
             if (err) return reject(err);
 
             var result = rows[0]
