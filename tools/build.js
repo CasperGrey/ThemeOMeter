@@ -17,6 +17,7 @@ function compileWebpackClientBundle(){
 	  'process.env.NODE_ENV': process.env.NODE_ENV == 'production' ? '"production"' : '"development"'
 	}))
   var compiler = webpack(webpackClientConfig);
+
   compiler.run(function(err, stats) {
     if (err) throw err
     console.log(stats.toString())

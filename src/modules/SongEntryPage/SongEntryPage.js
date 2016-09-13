@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './SongEntryPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardTitle} from 'material-ui/Card';
+import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
@@ -13,6 +13,7 @@ import { StyleSheet } from 'react-look'
 import YoutubeSearch from './../YoutubeSearch';
 import Countdown from  './Countdown';
 import PlayerSongList from './../PlayerSongList/PlayerSongList'
+import TextField from 'material-ui/TextField'
 
 
 const title = 'Song Entry';
@@ -22,6 +23,10 @@ class SongEntryPage extends Component {
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
+  };
+
+  state = {
+      successMessage: "",
   };
 
 
@@ -40,7 +45,7 @@ class SongEntryPage extends Component {
 
   updateItems = (value) => {
 
-    // We clone the existing items array with slice, so that we have a new 
+    // We clone the existing items array with slice, so that we have a new
     // array rather than a reference to the existing one
     var items = this.state.items.slice()
     items.push(value)
@@ -65,11 +70,19 @@ class SongEntryPage extends Component {
         var newVideos = videoItems.slice()
         newVideos.splice(index, 1)
         this.setState({videoItems: newVideos})
-    }
+    };
+
+    onCommentChange = (video, i, comment) => {
+        var videoItems = this.state.videoItems.slice()
+        videoItems[i].comment = comment
+        this.setState({videoItems})
+    };
+
+
 
     render() {
 
-        var { onSave } = this.props
+        var { onSave, onCommentChange } = this.props
         if (!onSave) onSave = function(){}
     return (
       <div className={"root"}>
@@ -78,23 +91,32 @@ class SongEntryPage extends Component {
           <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
          <Paper zDepth={3}>
            <Card className={styles.cardStyle}>
-            <CardTitle title="Please Enter Your Songs" subtitle="2016" />
-             <Divider/>
-               <div className ={styles.themeTitle}>
+           <CardMedia className={styles.img}>
+             <img src="/james-jean.jpg" width="200px" height="auto" />
+           </CardMedia>
+           <CardTitle title="Please Enter Your Songs" subtitle="2016" />
+           <Divider/>
+           <div className ={styles.themeTitle}>
              <Subheader>Current theme: {this.props.currentTheme}</Subheader>
-               </div>
-               <Countdown/>
+            </div>
+            <Countdown/>
             <Divider/>
             <Subheader>Search Youtube</Subheader>
             <YoutubeSearch onAddVideo={this.onAddVideo} />
             <Divider/>
             <div style={{clear: 'both'}} />
-             <Subheader>Your Selections</Subheader>
-               {/* Ensure we bind so that `this` will relate to the current component */}
-             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} />
+            <Subheader>Your Selections</Subheader>
+            {/* Ensure we bind so that `this` will relate to the current component */}
+            <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
           <CardActions>
           <RaisedButton secondary={true} label="Back"/>
-          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)} />
+          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)}/>
+            <div>
+              <TextField
+                id="success-text"
+                value={this.props.successMessage}
+              />
+           </div>
           </CardActions>
          </Card>
        </Paper>
@@ -110,7 +132,7 @@ const styles = StyleSheet.create({
     songentrycontainerStyle: {
         margin: '0 auto',
         padding: '0 0 40',
-        maxWidth : '900',
+        maxWidth : '500',
         alignContent: 'center',
 
     },
@@ -135,11 +157,15 @@ const styles = StyleSheet.create({
 
     },
 
+
+    img: {
+      display: 'inline-flex',
+      maxWidth:'100%',
+      maxHeight:'100%',
+      height:'580',
+      width:'500', /* ie8 */
+    },
+
 })
 
 export default withStyles(s)(SongEntryPage)
-
-
-
-
-

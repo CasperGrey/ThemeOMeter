@@ -2,5 +2,5 @@
   "name": "SongEntryPage",
   "version": "0.0.0",
   "private": true,
-  "main": "./ThemeScoringPage.js"
+  "main": "./Container.jsx"
 }

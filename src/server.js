@@ -29,7 +29,7 @@ server.get('*', function(req, res, next) {
     } else if (!props) {
       return next()
     }
-    
+
     serverConfig.userAgent = req.headers['user-agent']
     serverConfig.styleElementId = '_look'
 
@@ -64,9 +64,12 @@ server.get('*', function(req, res, next) {
   })
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
-
+server.use(express.static(path.resolve(__dirname, '..', 'src', 'public')))
+console.log(path.resolve(__dirname, '..', 'src', 'public'))
 // apply the routes to our application
 server.use('/api/themes', require('./api/theme.js'))
 server.use('/api/songs', require('./api/songs.js'));
+server.use('/api/score', require('./api/score.js'));
+server.use('/api/user', require('./api/user.js'));
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))

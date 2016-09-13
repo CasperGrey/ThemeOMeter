@@ -8,21 +8,17 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardTitle} from 'material-ui/Card';
-import Form from '../Form.js';
-import Text from '../Text.js';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton'
+import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
+import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
-import YoutubeSearch from './../YoutubeSearch';
-import Video_list from "./../YoutubeSearch/Video_list"
+import Video_detail from "./../YoutubeSearch/Video_detail";
+import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 
-// import YoutubeAutocomplete from '../YoutubeSearch/YoutubeAutocomplete.js'
-// Needed for onTouchTap
 
 const title = 'Song Entry';
 const items = [];
@@ -33,14 +29,31 @@ class ThemeScoringPage extends Component {
         onSetTitle: PropTypes.func.isRequired,
     };
 
+    static propTypes = {
+        songs: React.PropTypes.array,
+        onCommentChange: React.PropTypes.func,
+    }
+
+    static defaultProps = {
+        songs: [],
+    }
+
     componentWillMount() {
         //this.context.onSetTitle(title);
     }
 
     constructor(props) {
         super(props);
-        this.state = {value: 1, items: [], videoItems: []};
     }
+
+    state = {
+        value: 1,
+        items: [],
+        videoItems: [],
+        selectedSongIndex: 0,
+        score: 5,
+        comment: '',
+    };
 
     handleChange = (event, index, value) => {
         this.setState({value});
@@ -57,18 +70,33 @@ class ThemeScoringPage extends Component {
         this.setState({items: items});
     }
 
-    onAddVideo = (selectedVideo) => {
-        // We clone the existing items array with slice, so that we have a new
-        // array rather than a reference to the existing one
-        var videoItems = this.state.videoItems.slice()
-        videoItems.push(selectedVideo)
 
-        // Update state with the new array
-        this.setState({videoItems});
+    onCommentChange = (e,   value) => {
+        this.setState({comment: value})
     };
 
+    onScoreChange = (e, value) => {
+        this.setState({score: value})
+    };
 
     render() {
+        /*return <div>
+            {this.props.songs.map(song => {
+                return <div>{song.name}</div>
+            })}
+        </div>*/
+        var {onSave,onChange,onCommentChange} = this.props
+        if (!onSave) onSave = function(){}
+
+
+        const { songs } = this.props
+        const { selectedSongIndex, score, comment} = this.state
+        var selectedSong = songs[selectedSongIndex]
+        // Add score & comment to the song object
+        if (selectedSong){
+            Object.assign(selectedSong, {score})
+            Object.assign(selectedSong, {comment})
+          }
         return (
             <div className={"root"}>
                 <div className={styles.themescorecontainerStyle}>
@@ -76,19 +104,48 @@ class ThemeScoringPage extends Component {
                     <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
                     <Paper zDepth={3}>
                         <Card className={styles.cardStyle}>
-                            <CardTitle title="Time to score!" subtitle="2016" />
-                            <Divider/>
-                            <Subheader>Theme X</Subheader>
+                            <CardMedia className={styles.img}>
+                            {this.props.songs.length >= 1 ? <Video_detail video={{
+                              id: {
+                                videoId:this.props.songs[this.state.selectedSongIndex].video_id,
+                              },
+                            }}/> : null}
+                            </CardMedia>
 
                             <Divider/>
-                            <Subheader>Score</Subheader>
-                            <Divider/>
-                            <ScoreSlider/>
-                            <Subheader>Your Selections</Subheader>
+                            <IconButton tooltip="SVG Icon"
+                            style ={styles.icons}
+                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}>
+                              <AvSkipPrevious color='grey'/>
+                            </IconButton>
 
+                            <IconButton tooltip="SVG Icon"
+                            style ={styles.icons}
+                            onClick={() => {
+                                if(this.state.selectedSongIndex < this.props.songs.length){
+                                  this.setState({selectedSongIndex: this.state.selectedSongIndex +1})
+                                }
+                                else{
+                                  this.state.selectedSongIndex= 0
+                                }
+                              }}>
+                              <AvSkipNext color='grey'/>
+                            </IconButton>
+                            <Divider/>
+
+                            this.props.songs[this.state.selectedSongIndex].user_comment
+                            <Divider/>
+                            <Subheader>{this.props.currentTheme}</Subheader>
+                            <ScoreSlider onChange={this.onScoreChange}/>
+                            <TextField
+                                multiLine={true}
+                                floatingLabelText={"Comment Box"}
+                                hintText ={"Describe why you chose this song."}
+                                onChange={this.onCommentChange}
+                                value={selectedSong ? selectedSong.comment : ''}
+                            />
                             <CardActions>
-                                <RaisedButton secondary={true} label="Back"/>
-                                <RaisedButton primary={true} label="Save"/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
                             </CardActions>
                         </Card>
                     </Paper>
@@ -104,8 +161,13 @@ const styles = StyleSheet.create({
     themescorecontainerStyle: {
         margin: '0 auto',
         padding: '0 0 40',
-        maxWidth : '900',
+        maxWidth : '500',
         alignContent: 'center',
+
+    },
+
+    icons: {
+
 
     },
 
@@ -117,18 +179,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         border: '1 solid #ddd',
         boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
+        maxWidth: '500',
     },
 
     dropdownStyle: {
         width:'200px',
     },
 
+    img: {
+      display: 'inline-flex',
+      maxWidth:'100%',
+      maxHeight:'100%',
+      height:'auto',
+      width:'auto', /* ie8 */
+    },
+
 })
 
 export default withStyles(s)(ThemeScoringPage)
-
-
-
-
-
-

@@ -30,7 +30,7 @@ function startServer(){
   compiler.plugin("compile", function() {
     console.log((chalk.red(`server bundle rebuilding`)))
   });
-  compiler.watch({ // watch options:
+  /*compiler.watch({ // watch options:
     aggregateTimeout: 300, // wait so long for more changes
     //poll: true // use polling instead of native watchers
     // pass a number to set the polling interval
@@ -39,6 +39,12 @@ function startServer(){
     //console.log(require('util').inspect(stats))
     console.log((chalk.red(`server bundle rebuilt`)))
     if (server) server.kill('SIGTERM');
+    server = spawnServerProcess();
+  });*/
+  // Commented out the above so that the server never restarts
+  // it just keeps on running
+  compiler.run(function(err, stats) {
+    console.log((chalk.red(`server bundle built`)))
     server = spawnServerProcess();
   });
 

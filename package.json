@@ -39,8 +39,7 @@
     "rimraf": "^2.5.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
-    "youtube-api-search": "0.0.5",
-    "youtube-finder": "^1.0.0"
+    "youtube-api-search": "0.0.5"
   },
   "devDependencies": {
     "chalk": "^1.1.3",

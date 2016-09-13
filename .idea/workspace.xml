@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc59fecf-c1dc-4951-a52b-d9cfee58c715" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/db/theme.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/Container.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/songs.js" afterPath="$PROJECT_DIR$/src/api/songs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/theme.js" afterPath="$PROJECT_DIR$/src/api/theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/artists.js" afterPath="$PROJECT_DIR$/src/db/artists.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/entry.js" afterPath="$PROJECT_DIR$/src/db/entry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/song.js" afterPath="$PROJECT_DIR$/src/db/song.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx" afterPath="$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/ThemeScoringPage/package.json" afterPath="$PROJECT_DIR$/src/modules/ThemeScoringPage/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/routes.js" afterPath="$PROJECT_DIR$/src/modules/routes.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +36,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="theme.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/theme.js">
+      <file leaf-file-name="Container.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+                <marker date="1470903288807" expanded="true" signature="1263:1369" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,9 +52,11 @@
       <file leaf-file-name="songs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/songs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="1020">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+              <folding>
+                <element signature="e#164#223#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,52 +64,18 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SongEntryPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
-              <caret line="137" column="2" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
-              <folding>
-                <element signature="e#47#99#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Countdown.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#46#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+            <state relative-caret-position="952">
+              <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Container.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx">
+        <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/Container.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="27" />
+            <state relative-caret-position="306">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -103,31 +83,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search_bar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
+      <file leaf-file-name="ThemeScoringPage.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="578">
+              <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+              <folding>
+                <element signature="e#47#93#0" expanded="false" />
+                <element signature="e#94#146#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YoutubeSearch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
+      <file leaf-file-name="score.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/score.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="306">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Video_list_item.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+      <file leaf-file-name="entry.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/entry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="34" column="71" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="71" />
+            <state relative-caret-position="306">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="song.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/song.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -153,28 +168,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/modules/Footer/Footer.css" />
-        <option value="$PROJECT_DIR$/src/modules/Footer/Footer.js" />
-        <option value="$PROJECT_DIR$/dist/public/index.html" />
-        <option value="$PROJECT_DIR$/tools-es5/start.js" />
-        <option value="$PROJECT_DIR$/tools/start.js" />
-        <option value="$PROJECT_DIR$/webpack.base.config.js" />
-        <option value="$PROJECT_DIR$/webpack.server.config.js" />
-        <option value="$PROJECT_DIR$/tools/dev-template.html" />
-        <option value="$PROJECT_DIR$/tools/prod-template.html" />
         <option value="$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.css" />
         <option value="$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.js" />
         <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.css" />
         <option value="$PROJECT_DIR$/src/modules/NotFoundPage/NotFoundPage.js" />
         <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.css" />
-        <option value="$PROJECT_DIR$/src/modules/App/App.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Index.js" />
         <option value="$PROJECT_DIR$/src/modules/Text.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryForm.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js" />
-        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css" />
         <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.css" />
@@ -183,27 +187,38 @@
         <option value="$PROJECT_DIR$/src/modules/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js" />
-        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" />
         <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js" />
         <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js" />
         <option value="$PROJECT_DIR$/node_modules/youtube-api-search/index.js" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem" />
         <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.Js" />
-        <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js" />
-        <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js" />
         <option value="$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js" />
-        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/package.json" />
-        <option value="$PROJECT_DIR$/src/modules/routes.js" />
         <option value="$PROJECT_DIR$/src/api/db.js" />
+        <option value="$PROJECT_DIR$/src/server.js" />
+        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
+        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/modules/App/App.js" />
+        <option value="$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js" />
+        <option value="$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js" />
+        <option value="$PROJECT_DIR$/src/modules/PlayerSongList/parseTitleString.js" />
+        <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js" />
+        <option value="$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.js" />
+        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+        <option value="$PROJECT_DIR$/src/db/score.js" />
+        <option value="$PROJECT_DIR$/src/db/artists.js" />
+        <option value="$PROJECT_DIR$/src/db/theme.js" />
         <option value="$PROJECT_DIR$/src/api/theme.js" />
         <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx" />
-        <option value="$PROJECT_DIR$/src/server.js" />
+        <option value="$PROJECT_DIR$/src/db/song.js" />
         <option value="$PROJECT_DIR$/src/api/songs.js" />
-        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js" />
-        <option value="$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js" />
+        <option value="$PROJECT_DIR$/src/db/entry.js" />
+        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/package.json" />
+        <option value="$PROJECT_DIR$/src/modules/routes.js" />
+        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/Container.jsx" />
+        <option value="$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js" />
       </list>
     </option>
   </component>
@@ -217,7 +232,7 @@
     <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -226,7 +241,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -244,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,7 +328,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="YoutubeSearch" />
+              <option name="myItemId" value="ThemeScoringPage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,6 +368,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThemeOmeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -359,7 +393,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,7 +405,11 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\johnstonb\WebstormProjects\ThemeOmeter\src\db" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johnstonb\WebstormProjects\ThemeOmeter\src\db" />
       <recent name="C:\Users\johnstonb\WebstormProjects\ThemeOmeter\src\modules\Link" />
       <recent name="C:\Users\johnstonb\WebstormProjects\ThemeOmeter\src\modules" />
     </key>
@@ -449,7 +486,9 @@
       <workItem from="1468982717059" duration="2854000" />
       <workItem from="1468993301164" duration="12921000" />
       <workItem from="1469077201998" duration="1826000" />
-      <workItem from="1469142476699" duration="87164000" />
+      <workItem from="1469142476699" duration="135673000" />
+      <workItem from="1471211203588" duration="711000" />
+      <workItem from="1471212056086" duration="709000" />
     </task>
     <task id="LOCAL-00001" summary="Updated with Original ThemeO project files">
       <created>1468983714739</created>
@@ -591,33 +630,103 @@
       <option name="project" value="LOCAL" />
       <updated>1470290326029</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Countdown module updates">
+      <created>1470292694835</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1470292694835</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Countdown is now working to correct time 8am Friday mornings AEST">
+      <created>1470294631330</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1470294631330</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Javascript file for parsing the Youtube URL string">
+      <created>1470637288845</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1470637288845</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- removed unused components &quot;Dog&quot;, &quot;Cats&quot;&#10;- updated routes to no longer reflect unused components&#10;- clarified SVG icons in use to limit module load.&#10;- fixed Youtube title parser to now assess artist and song correctly&#10;">
+      <created>1470726058033</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1470726058033</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- Song name , Artist Name &amp; Comment now pass up to API&#10;- artists.js created with artist helper functions.&#10;- db.jc connection strings moved to db folder&#10;- Fixed CSS styling of PlayerSongListItem to be show in formatted table.">
+      <created>1470731927780</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1470731927780</updated>
+    </task>
+    <task id="LOCAL-00026" summary="- Added new helper functions to artists API &#10;--getArtistID()&#10;--getSongsByArtist()&#10;--createArtist()">
+      <created>1470733391387</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1470733391387</updated>
+    </task>
+    <task id="LOCAL-00027" summary="- Added new helper functions to score API &#10;--getScoreBySongId()">
+      <created>1470734065383</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1470734065383</updated>
+    </task>
+    <task id="LOCAL-00028" summary="- Added new helper functions to entry  API &#10;--getSongsInTheme()">
+      <created>1470734266621</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1470734266621</updated>
+    </task>
+    <task id="LOCAL-00029" summary="- created Song library for dimsongs helper functions&#10;- Updated songs API for processing of entries">
+      <created>1470789889163</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1470789889163</updated>
+    </task>
+    <task id="LOCAL-00030" summary="- Updated API">
+      <created>1470790676784</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1470790676784</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104782000" />
+    <option name="totallyTimeSpent" value="154711000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1092" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25208333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25184405" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.349087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.349087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32780084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -632,9 +741,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated with Original ThemeO project files" />
-    <MESSAGE value="Updated with CSS to remove s. reference in Song Entry , Theme Scoring &#10;&#10;Added Footer to App" />
-    <MESSAGE value="Changed Server Port due to conflict breaking client side rendering." />
     <MESSAGE value="Updated App to show ContentPage at home" />
     <MESSAGE value="Removed scss references and fixed up css files" />
     <MESSAGE value="added new youtube files" />
@@ -651,238 +757,42 @@
     <MESSAGE value="Fixed FB Login Component" />
     <MESSAGE value="Added mysql connectiion &#10;Added API for theme GET &#10;Added API for Song PUT" />
     <MESSAGE value="Countdown module updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Countdown module updates" />
+    <MESSAGE value="Countdown is now working to correct time 8am Friday mornings AEST" />
+    <MESSAGE value="Javascript file for parsing the Youtube URL string" />
+    <MESSAGE value="- removed unused components &quot;Dog&quot;, &quot;Cats&quot;&#10;- updated routes to no longer reflect unused components&#10;- clarified SVG icons in use to limit module load.&#10;- fixed Youtube title parser to now assess artist and song correctly&#10;" />
+    <MESSAGE value="- Song name , Artist Name &amp; Comment now pass up to API&#10;- artists.js created with artist helper functions.&#10;- db.jc connection strings moved to db folder&#10;- Fixed CSS styling of PlayerSongListItem to be show in formatted table." />
+    <MESSAGE value="- Added new helper functions to artists API &#10;--getArtistID()&#10;--getSongsByArtist()&#10;--createArtist()" />
+    <MESSAGE value="- Added new helper functions to score API &#10;--getScoreBySongId()" />
+    <MESSAGE value="- Added new helper functions to entry  API &#10;--getSongsInTheme()" />
+    <MESSAGE value="- created Song library for dimsongs helper functions&#10;- Updated songs API for processing of entries" />
+    <MESSAGE value="- Updated API" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Updated API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js</url>
-          <line>6</line>
-          <properties />
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/modules/ContactPage/ContactPage.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/modules/NotFoundPage/NotFoundPage.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/NotFoundPage/NotFoundPage.css">
+    <entry file="file://$PROJECT_DIR$/node_modules/youtube-api-search/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/LoginPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/TextBox/TextBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/TextBox/TextBox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/OptionsTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/server.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26131" column="37" selection-start-line="26131" selection-start-column="37" selection-end-line="26131" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/ContentPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Footer/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Footer/Footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Header/logo-small.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="2" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Link/Link.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#262#314#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/Navigation/Navigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#262#314#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-53">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -890,32 +800,205 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/App/App.css">
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryList.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryListItem.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeAutocomplete.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/server.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444227">
+          <caret line="26131" column="37" selection-start-line="26131" selection-start-column="37" selection-end-line="26131" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ScoreSlider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="586">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/EntryForm.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Cats/Cats.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/ContactPage/ContactPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#262#314#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ErrorPage/ErrorPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Feedback/Feedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Link/Link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/RegisterPage/RegisterPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/OptionsTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/parseTitleString.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
           <folding>
             <element signature="e#0#25#0" expanded="false" />
           </folding>
@@ -924,72 +1007,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="139">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
           <folding>
-            <element signature="e#0#25#0" expanded="false" />
+            <element signature="e#47#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/styles.css">
+    <entry file="file://$PROJECT_DIR$/src/db/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/artists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-410">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1470903288807" expanded="true" signature="1263:1369" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/songs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding>
+            <element signature="e#164#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/PlayerSongList/PlayerSongListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/App/App.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/Container.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
-            <element signature="e#0#51#0" expanded="false" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/ContentPage/ContentPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding>
-            <element signature="e#262#314#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/LoginPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/LoginPage/FacebookLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/ThemeScoringPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="25" />
+        <state relative-caret-position="578">
+          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding>
             <element signature="e#47#93#0" expanded="false" />
             <element signature="e#94#146#0" expanded="true" />
@@ -997,7 +1100,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/package.json">
+    <entry file="file://$PROJECT_DIR$/src/modules/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/ThemeScoringPage/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -1005,107 +1118,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/routes.js">
+    <entry file="file://$PROJECT_DIR$/src/db/score.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/theme.js">
+    <entry file="file://$PROJECT_DIR$/src/db/entry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Video_list_item.js">
+    <entry file="file://$PROJECT_DIR$/src/db/song.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="34" column="71" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="71" />
+        <state relative-caret-position="408">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/YoutubeSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/YoutubeSearch/Search_bar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/songs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/SongEntryPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="137" column="2" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
-          <folding>
-            <element signature="e#47#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/SongEntryPage/Countdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#46#72#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

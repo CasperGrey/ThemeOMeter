@@ -1,9 +1,6 @@
 import React from "react"
-import RaisedButton from 'material-ui/RaisedButton';
-import SongEntry from '../SongEntryPage/SongEntryPage'
 import s from './styles.css';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-
 import { StyleSheet } from 'react-look'
 import { NavigationClose } from 'material-ui/svg-icons'
 import IconButton from 'material-ui/IconButton'
@@ -13,14 +10,13 @@ class Video_list_item extends React.Component {
 
     static propTypes = {
         onDelete: React.PropTypes.func,
-    }
-aa
+    };
     render = () => {
-        var {video, onVideoSelect, onDelete} = this.props
+        var {video, onVideoSelect, onDelete} = this.props;
         const imageUrl = video.snippet.thumbnails.default.url;
 
         if (onVideoSelect == null)
-            onVideoSelect = function(){}
+            onVideoSelect = function(){};
 
         return <li onClick={ () => onVideoSelect(video) } className={styles.listGroupItem}>
             <div className="video-list-media">
@@ -34,6 +30,7 @@ aa
                 <div className="media-body">
                     <div className="media-heading">{video.snippet.title}</div>
                 </div>
+
             </div>
         </li>
     }
@@ -54,6 +51,6 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0,
     },
-})
+});
 
 export default withStyles(s)(Video_list_item)
