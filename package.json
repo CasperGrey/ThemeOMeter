@@ -63,5 +63,6 @@
   "bugs": {
     "url": "https://github.com/AlastairTaft/raincheck/issues"
   },
+  "engines":{"node":"6.3.0"},
   "homepage": "https://github.com/AlastairTaft/raincheck#readme"
 }
