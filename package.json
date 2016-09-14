@@ -47,8 +47,8 @@
     "source-map-support": "^0.4.0",
     "webpack-dev-server": "^1.14.1"
   },
-    "engines": {
-    "node": "> 0.6.0",
+  "engines": {
+    "node": "> 0.6.0"
   },
   "scripts": {
     "build": "rimraf dist && npm run build:tools && node tools-es5/build.js",
