@@ -50,7 +50,7 @@
   "scripts": {
     "build": "rimraf dist && npm run build:tools && node tools-es5/build.js",
     "build:tools": "rimraf tools-es5 && babel tools -d tools-es5",
-    "start": "npm run build:tools && rimraf dist && node tools-es5/start.js",
+    "start": "node ./node_modules/babel-cli/bin/babel-node.js tools/start.js",
     "postinstall": "npm run build -- release"
   },
   "repository": {
