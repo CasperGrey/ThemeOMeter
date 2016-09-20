@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton'
+import { StyleSheet } from 'react-look'
 
 export default class FacebookLogin extends React.Component {
     constructor(props) {
@@ -27,10 +28,11 @@ export default class FacebookLogin extends React.Component {
         };
     }
 
-    responseApi (authResponse) {
+    responseApi (authResponse) {Lkjh1212
         FB.api('/me', { fields: this.props.fields }, (me) => {
             me.accessToken = authResponse.accessToken;
             this.props.responseHandler(me);
+            sessionStorage.setItem(‘auth’, facebookResponseObject);
         });
     };
 
@@ -51,7 +53,7 @@ export default class FacebookLogin extends React.Component {
     render() {
         return (
             <div>
-                <RaisedButton className={this.props.class} onClick={this.clickHandler.bind(this)}>
+                <RaisedButton className={this.props.class} onClick={this.clickHandler.bind(this)} style={color:'#4267B2'}>
                     {this.props.buttonText}
                 </RaisedButton>
             </div>
