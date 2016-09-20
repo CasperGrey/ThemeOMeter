@@ -58,12 +58,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlastairTaft/raincheck.git"
+    "url": "git+https://github.com/CasperGrey/ThemeOMeter.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlastairTaft/raincheck/issues"
+    "url": "https://github.com/CasperGrey/ThemeOMeter/issues"
   },
-  "homepage": "https://github.com/AlastairTaft/raincheck#readme"
+  "homepage": "https://github.com/CasperGrey/ThemeOMeter#readme"
 }
