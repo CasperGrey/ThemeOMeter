@@ -63,7 +63,7 @@ export default class FacebookLogin extends React.Component {
 const styles = StyleSheet.create({
 
     facebooklogin: {
-        width:'200px',
+        color:'blue',
     },
 
 })
