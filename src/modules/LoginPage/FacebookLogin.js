@@ -53,7 +53,7 @@ export default class FacebookLogin extends React.Component {
     render() {
         return (
             <div>
-                <RaisedButton className={`${this.props.class} ${styles['facebook-login']}`} onClick={this.clickHandler.bind(this)}>
+                <RaisedButton className={`${this.props.class} ${styles['facebooklogin']}`} onClick={this.clickHandler.bind(this)}>
                     {this.props.buttonText}
                 </RaisedButton>
             </div>
@@ -62,7 +62,7 @@ export default class FacebookLogin extends React.Component {
 }
 const styles = StyleSheet.create({
 
-    facebook-login: {
+    facebooklogin: {
         width:'200px',
     },
 

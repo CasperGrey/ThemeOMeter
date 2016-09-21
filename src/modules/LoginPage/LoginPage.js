@@ -46,7 +46,7 @@ class Login extends React.Component{
                                responseHandler={this.responseFacebook}
                                xfbml={true}
                                version="v2.5"
-                               class= "facebook-login"
+                               class= "facebooklogin"
                                buttonText= "Login"/>
             </div>
         );

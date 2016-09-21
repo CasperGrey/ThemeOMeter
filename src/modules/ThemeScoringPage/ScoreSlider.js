@@ -8,27 +8,27 @@ import Toggle from 'material-ui/Toggle';
  */
 export default class ScoreSlider extends React.Component {
 
-
-    static propTypes = {
-        onChange: React.PropTypes.func,
-    };
+      static propTypes = {
+          onChange: React.PropTypes.func,
+      };
 
     state = {
         firstSlider: this.props.value || 5,
         secondSlider: 5,
         thirdSlider: 5,
         simpleView: true,
-    };
+    }
 
     componentWillReceiveProps = (newProps) => {
-        if (newProps.value)
+       if (newProps.value)
             this.setState({firstSlider: newProps.value})
     };
 
     handleFirstSlider(event, value) {
         this.setState({firstSlider: value});
+
         if (this.props.onChange)
-            this.props.onChange(event, value)
+          this.props.onChange(event, value)
     }
 
     handleSecondSlider(event, value) {
@@ -39,9 +39,10 @@ export default class ScoreSlider extends React.Component {
             firstSlider: (value + thirdSlider) / 2,
             secondSlider: value,
         });
-
         if (this.props.onChange)
            this.props.onChange(value)
+
+     }
 
     }
 
