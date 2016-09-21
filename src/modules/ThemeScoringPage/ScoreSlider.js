@@ -44,7 +44,7 @@ export default class ScoreSlider extends React.Component {
 
      }
 
-    }
+    
 
     handleThirdSlider(event, value) {
         const { secondSlider } = this.state
