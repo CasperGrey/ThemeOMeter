@@ -5,9 +5,11 @@ import express from 'express'
 var router = express.Router();
 
 import connection from '../db/db.js'
-import { getCurrentTheme } from './../db/theme.js'
+import { getCurrentTheme , getThemes } from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
+
+
 router.get('/current', async function(req, res, next) {
 
     try {
@@ -23,6 +25,17 @@ router.get('/current', async function(req, res, next) {
     } catch (err){
         next(err);
     }
+
+});
+
+router.get('/themes', async function(req, res, next) {
+
+  try{
+      var themes = await entryDb.getThemes()
+      res.send(themes)
+  } catch (err){
+      next(err)
+  }
 
 });
 

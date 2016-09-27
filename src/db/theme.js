@@ -52,3 +52,17 @@ export function toggleCurrentTheme(theme_id){
         });
     })
 }
+
+
+export function getThemes(){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT * from dimthemes;', function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows
+
+            resolve(result)
+
+        });
+    })
+}
