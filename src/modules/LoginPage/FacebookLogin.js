@@ -34,6 +34,7 @@ export default class FacebookLogin extends React.Component {
             this.props.responseHandler(me);
             sessionStorage.setItem('auth', facebookResponseObject);
         });
+        debugger
     };
 
     checkLoginState (response) {
