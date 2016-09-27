@@ -11,17 +11,12 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './AdminPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField'
-import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look'
-import Login from './../LoginPage/LoginPage'
-const title = 'Song Entry';
+const title = 'Admin Page';
 
 
-class ContentPage extends Component {
+class AdminPage extends Component {
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -46,13 +41,8 @@ class ContentPage extends Component {
               <CardMedia className={styles.img}>
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
-              <CardTitle title="Theme O" subtitle="2016" />
-                <Subheader>Where would you like to go</Subheader>
-                <Divider/>
-                <Login />
+              <CardTitle title="Admin"/>
               <CardActions>
-                <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
-                <RaisedButton primary={true} label="Score Theme" href='score'/>
               </CardActions>
             </Card>
           </Paper>
@@ -92,4 +82,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default withStyles(s)(ContentPage)
+export default withStyles(s)(AdminPage)
