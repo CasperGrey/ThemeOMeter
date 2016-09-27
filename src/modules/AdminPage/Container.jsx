@@ -3,20 +3,27 @@ import AdminPage from './AdminPage.js'
 
 class Container extends Component {
 
-    componentDidMount = () => {
-        fetch('/api/songs/by-theme')
-        .then(response => response.json())
-        .then(songs => {
-            this.setState({songs})
-        })
-        fetch('/api/themes/current')
-        .then(response => response.json())
-        .then(json => {
-            this.setState({
-                currentTheme: json.name
-            })
-        })
-    }
+  componentDidMount = () => {
+      fetch('/api/songs/by-theme')
+      .then(response => response.json())
+      .then(songs => {
+          this.setState({songs})
+      })
+      fetch('/api/themes/current')
+      .then(response => response.json())
+      .then(json => {
+          this.setState({
+              currentTheme: json.name
+          })
+      })
+
+      fetch('/api/themes/all')
+      .then(response => response.json())
+      .then(themes => {
+          this.setState({themes})
+      })
+  }
+
 
     onSave = (songs) => {
         debugger
@@ -26,7 +33,7 @@ class Container extends Component {
         }
         else {
           var userid = JSON.parse(sessionStorage.getItem('userId'));
-                fetch('/api/score', {
+                fetch('/api/theme', {
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/json',
@@ -50,6 +57,7 @@ class Container extends Component {
         songs={this.state.songs}
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
+        themes={this.state.themes}
     />
 }
 

@@ -28,7 +28,7 @@ router.get('/current', async function(req, res, next) {
 
 });
 
-router.get('/themes', async function(req, res, next) {
+router.get('/all', async function(req, res, next) {
 
   try{
       var themes = await getThemes()
