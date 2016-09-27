@@ -1,6 +1,6 @@
 {
-  "name": "ContentPage",
+  "name": "AdminPage",
   "version": "0.0.0",
   "private": true,
-  "main": "./ContentPage.js"
+  "main": "./Container.jsx"
 }
