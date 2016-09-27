@@ -31,7 +31,7 @@ router.get('/current', async function(req, res, next) {
 router.get('/themes', async function(req, res, next) {
 
   try{
-      var themes = await entryDb.getThemes()
+      var themes = await getThemes()
       res.send(themes)
   } catch (err){
       next(err)
