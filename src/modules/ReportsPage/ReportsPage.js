@@ -9,14 +9,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './AdminPage.css';
+import s from './ReportsPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look'
-const title = 'Admin Page';
+const title = 'Reports Page';
 
 
-class AdminPage extends Component {
+class ReportsPage extends Component {
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -41,7 +41,7 @@ class AdminPage extends Component {
               <CardMedia className={styles.img}>
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
-              <CardTitle title="Admin"/>
+              <CardTitle title="Reports"/>
               <CardActions>
               </CardActions>
             </Card>
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default withStyles(s)(AdminPage)
+export default withStyles(s)(ReportsPage)
