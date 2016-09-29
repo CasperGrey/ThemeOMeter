@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AdminPage from './AdminPage.js'
+import ReportsPage from './ReportsPage.js'
 
 class Container extends Component {
 
@@ -52,7 +52,7 @@ class Container extends Component {
 
     state = {};
 
-    render = () => <AdminPage
+    render = () => <ReportsPage
         {...this.props}
         songs={this.state.songs}
         currentTheme={this.state.currentTheme}
