@@ -29,6 +29,7 @@
     "pleeease-filters": "^3.0.0",
     "react": "^15.2.1",
     "react-dom": "^15.0.1",
+    "react-addons-update": "^15.0.0",
     "react-look": "^1.0.0-beta9",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",

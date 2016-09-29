@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ThemeScoringPage from './ThemeScoringPage.js'
 import { browserHistory } from 'react-router'
+import update from 'react-addons-update';
 
 class Container extends Component {
 
