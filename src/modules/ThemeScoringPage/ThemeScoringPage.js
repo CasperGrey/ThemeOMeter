@@ -59,15 +59,15 @@ class ThemeScoringPage extends Component {
         this.setState({value});
     }
 
-    updateItems = (value) => {
+    updateItems = (song) => {
 
         // We clone the existing items array with slice, so that we have a new
         // array rather than a reference to the existing one
-        var items = this.state.items.slice()
-        items.push(value)
+        var songs = this.props.songs.slice()
+        songs.push(song)
 
         // Update state with the new array
-        this.setState({items: items});
+        this.setState({songs: songs});
     }
 
 
@@ -145,7 +145,7 @@ class ThemeScoringPage extends Component {
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex]); this.props.songs.splice(1,[this.state.selectedSongIndex]) }/>
                             </CardActions>
                         </Card>
                     </Paper>
