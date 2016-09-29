@@ -123,7 +123,14 @@ class ThemeScoringPage extends Component {
                             <Divider/>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}
-                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}>
+                            onClick={() => {
+                                if(this.state.selectedSongIndex < 0){
+                                  this.state.selectedSongIndex= 0
+                                }
+                                else{
+                                  this.setState({selectedSongIndex: this.state.selectedSongIndex -1})
+                                } 
+                              }}>
                               <AvSkipPrevious color='grey'/>
                             </IconButton>
 
@@ -148,7 +155,7 @@ class ThemeScoringPage extends Component {
                             <TextField
                                 multiLine={true}
                                 floatingLabelText={"Comment Box"}
-                                hintText ={"Describe why you chose this song."}
+                                hintText ={"Anything you'd like to get off your chest?"}
                                 onChange={this.onCommentChange}
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
