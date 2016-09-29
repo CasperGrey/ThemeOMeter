@@ -20,6 +20,7 @@ class Login extends React.Component{
 
     responseFacebook (response) {
         console.log(response);
+        debugger
         fetch('/api/user', {
             method: 'post',
             headers: {
@@ -33,7 +34,7 @@ class Login extends React.Component{
             .then(response => response.json())
             .then(response => {
               sessionStorage.setItem('userId', response.agent_id)
-              debugger
+              
             })
     }
 
