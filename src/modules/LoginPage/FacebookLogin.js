@@ -32,7 +32,7 @@ export default class FacebookLogin extends React.Component {
         FB.api('/me', { fields: this.props.fields }, (me) => {
             me.accessToken = authResponse.accessToken;
             this.props.responseHandler(me);
-            sessionStorage.setItem('auth', facebookResponseObject);
+            sessionStorage.setItem('auth', authResponse);
         });
         debugger
     };
