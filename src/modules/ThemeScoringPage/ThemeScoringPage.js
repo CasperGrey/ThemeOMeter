@@ -145,7 +145,7 @@ class ThemeScoringPage extends Component {
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex]); this.props.songs.splice(1,[this.state.selectedSongIndex]) }/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex]); this.props.songs.splice(1,this.state.selectedSongIndex) }/>
                             </CardActions>
                         </Card>
                     </Paper>
