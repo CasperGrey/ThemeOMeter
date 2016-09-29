@@ -79,6 +79,14 @@ class ThemeScoringPage extends Component {
         this.setState({score: value})
     };
 
+    onDeleteVideo = (song) => {
+        const { songs } = this.props
+        let index = videoItems.indexOf(song)
+        var newSongs = songs.slice()
+        newSongs.splice(index, 1)
+        this.setState({videoItems: newVideos})
+    };
+
     render() {
         /*return <div>
             {this.props.songs.map(song => {
@@ -145,7 +153,7 @@ class ThemeScoringPage extends Component {
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex],this.state.selectedSongIndex)}/>
                             </CardActions>
                         </Card>
                     </Paper>

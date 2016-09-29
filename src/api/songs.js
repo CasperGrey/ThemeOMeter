@@ -49,14 +49,6 @@ router.post('/', async function(req, res, next) {
 
     }
 
-    /*connection.query('INSERT INTO dimsongs SET ?', {song_name: req.body.songName}, function(err, rows, fields) {
-        if (err) return next(err);
-
-        return res.send({
-            message: `${value} song added.`,
-        })
-
-    });*/
 
 });
 
