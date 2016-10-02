@@ -59,15 +59,15 @@ class ThemeScoringPage extends Component {
         this.setState({value});
     }
 
-    updateItems = (value) => {
+    updateItems = (song) => {
 
         // We clone the existing items array with slice, so that we have a new
         // array rather than a reference to the existing one
-        var items = this.state.items.slice()
-        items.push(value)
+        var songs = this.props.songs.slice()
+        songs.push(song)
 
         // Update state with the new array
-        this.setState({items: items});
+        this.setState({songs: songs});
     }
 
 
@@ -77,6 +77,14 @@ class ThemeScoringPage extends Component {
 
     onScoreChange = (e, value) => {
         this.setState({score: value})
+    };
+
+    onDeleteVideo = (song) => {
+        const { songs } = this.props
+        let index = videoItems.indexOf(song)
+        var newSongs = songs.slice()
+        newSongs.splice(index, 1)
+        this.setState({videoItems: newVideos})
     };
 
     render() {
@@ -115,7 +123,14 @@ class ThemeScoringPage extends Component {
                             <Divider/>
                             <IconButton tooltip="SVG Icon"
                             style ={styles.icons}
-                            onClick={() => this.setState({selectedSongIndex: this.state.selectedSongIndex -1})}>
+                            onClick={() => {
+                                if(this.state.selectedSongIndex < 0){
+                                  this.state.selectedSongIndex= 0
+                                }
+                                else{
+                                  this.setState({selectedSongIndex: this.state.selectedSongIndex -1})
+                                } 
+                              }}>
                               <AvSkipPrevious color='grey'/>
                             </IconButton>
 
@@ -140,12 +155,12 @@ class ThemeScoringPage extends Component {
                             <TextField
                                 multiLine={true}
                                 floatingLabelText={"Comment Box"}
-                                hintText ={"Describe why you chose this song."}
+                                hintText ={"Anything you'd like to get off your chest?"}
                                 onChange={this.onCommentChange}
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex])}/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex],this.state.selectedSongIndex)}/>
                             </CardActions>
                         </Card>
                     </Paper>

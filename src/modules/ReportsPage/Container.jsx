@@ -1,36 +1,39 @@
 import React, { Component } from 'react'
-import ThemeScoringPage from './ThemeScoringPage.js'
-import { browserHistory } from 'react-router'
-import update from 'react-addons-update';
+import ReportsPage from './ReportsPage.js'
 
 class Container extends Component {
 
-    componentDidMount = () => {
-        fetch('/api/songs/by-theme')
-        .then(response => response.json())
-        .then(songs => {
-            this.setState({songs})
-        })
-        fetch('/api/themes/current')
-        .then(response => response.json())
-        .then(json => {
-            this.setState({
-                currentTheme: json.name
-            })
-        })
+  componentDidMount = () => {
+      fetch('/api/songs/by-theme')
+      .then(response => response.json())
+      .then(songs => {
+          this.setState({songs})
+      })
+      fetch('/api/themes/current')
+      .then(response => response.json())
+      .then(json => {
+          this.setState({
+              currentTheme: json.name
+          })
+      })
 
-    }
+      fetch('/api/themes/all')
+      .then(response => response.json())
+      .then(themes => {
+          this.setState({themes})
+      })
+  }
 
-    onSave = (songs,index) => {
+
+    onSave = (songs) => {
         debugger
         // TODO: create check to make sure song hasnt been scored before
         if(songs.length < 1){
-        setTimeout(function() {browserHistory.push('/home')}, 2000);
-        console.log("Returning to home")
+         console.log("Invalid Vote")
         }
         else {
           var userid = JSON.parse(sessionStorage.getItem('userId'));
-                fetch('/api/score', {
+                fetch('/api/theme', {
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/json',
@@ -44,20 +47,17 @@ class Container extends Component {
                     })
                 })
                 debugger
-          //TODO: Remove song from songs to be scored once a score has been saved
-           this.setState({
-             songs: update(this.state.songs, {$splice: [[index, 1]]})
-           })
         }
-  };
+    };
 
     state = {};
 
-    render = () => <ThemeScoringPage
+    render = () => <ReportsPage
         {...this.props}
         songs={this.state.songs}
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
+        themes={this.state.themes}
     />
 }
 
