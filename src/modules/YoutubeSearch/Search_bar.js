@@ -13,7 +13,7 @@ export default class Search_bar extends Component{
         return(
             <div className="search-bar">
                <TextField
-                    autofocus
+                    autofocus ={true}
                     className ="search-term"
                     value = {this.state.term}
                     onChange = {(event) => this.onInputChange(event.target.value)}
