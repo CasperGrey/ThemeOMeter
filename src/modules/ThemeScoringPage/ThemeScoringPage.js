@@ -121,7 +121,7 @@ class ThemeScoringPage extends Component {
                             </CardMedia>
 
                             <Divider/>
-                            <IconButton tooltip="SVG Icon"
+                            <IconButton tooltip="Prev Song"
                             style ={styles.icons}
                             onClick={() => {
                                 if(this.state.selectedSongIndex < 0){
@@ -134,7 +134,7 @@ class ThemeScoringPage extends Component {
                               <AvSkipPrevious color='grey'/>
                             </IconButton>
 
-                            <IconButton tooltip="SVG Icon"
+                            <IconButton tooltip="Next Song"
                             style ={styles.icons}
                             onClick={() => {
                                 if(this.state.selectedSongIndex < this.props.songs.length){
