@@ -2,7 +2,7 @@
  * Created by jason on 5/10/16.
  */
 import { connect } from 'react-redux'
-import LoginPage from './LoginPage'
+import Login from './LoginPage'
 
 const mapStateToProps = (state) => {
     console.log(state);
@@ -45,8 +45,8 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const ContentPageContainer = connect(
+const LoginContainer = connect(
     mapStateToProps
-)(ContentPage)
+)(Login)
 
-export default ContentPageContainer
+export default LoginContainer

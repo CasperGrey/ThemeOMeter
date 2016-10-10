@@ -17,7 +17,7 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import {StyleSheet} from 'react-look'
-import Login from './../LoginPage/LoginPage'
+import LoginContainer from './../LoginPage/LoginPageContainer'
 const title = 'Song Entry';
 
 
@@ -43,7 +43,7 @@ class ContentPage extends Component {
                 <RaisedButton primary={true} label="Score Theme" href='score'/>
             </CardActions>;
         } else {
-            action = <Login/>;
+            action = <LoginContainer/>;
         }
 
         return (
