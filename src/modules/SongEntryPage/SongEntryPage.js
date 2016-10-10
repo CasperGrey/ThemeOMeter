@@ -94,7 +94,6 @@ class SongEntryPage extends Component {
            <CardMedia className={styles.img}>
              <img src="/james-jean.jpg" width="200px" height="auto" />
            </CardMedia>
-           <CardTitle title="Please Enter Your Songs" subtitle="2016" />
            <Divider/>
            <div className ={styles.themeTitle}>
              <Subheader>Current theme: {this.props.currentTheme}</Subheader>
@@ -160,10 +159,10 @@ const styles = StyleSheet.create({
 
     img: {
       display: 'inline-flex',
-      maxWidth:'100%',
-      maxHeight:'100%',
-      height:'580',
-      width:'500', /* ie8 */
+      maxWidth:'75%',
+      maxHeight:'75%',
+      height:'auto',
+      width:'auto', /* ie8 */
     },
 
 })
