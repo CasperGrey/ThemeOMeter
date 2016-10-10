@@ -7,88 +7,103 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContentPage.css';
-import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
+import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
-import { StyleSheet } from 'react-look'
+import {StyleSheet} from 'react-look'
 import Login from './../LoginPage/LoginPage'
 const title = 'Song Entry';
 
 
 class ContentPage extends Component {
 
-  static contextTypes = {
-    onSetTitle: PropTypes.func.isRequired,
-  };
+    action = '';
 
+    static contextTypes = {
+        onSetTitle: PropTypes.func.isRequired,
+    };
 
-  constructor(props) {
-    super(props);
-    this.state = {value: 1};
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  handleChange = (event, index, value) => this.setState({value});
+    handleChange = (event, index, value) => this.setState({value});
 
-  render() {
-    return (
-      <div className="root">
-        <div className={styles.containerStyle}>
-          {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
-          <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
-          <Paper zDepth={3}>
-            <Card className={styles.cardStyle}>
-              <CardMedia className={styles.img}>
-                <img src="/james-jean-talib.jpg" />
-              </CardMedia>
-              <CardTitle title="Theme O" subtitle="2016" />
-                <Subheader>Where would you like to go</Subheader>
-                <Divider/>
-                <Login />
-              <CardActions>
+    render() {
+        var action;
+        if (this.props.user) {
+            action =  <CardActions>
                 <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
                 <RaisedButton primary={true} label="Score Theme" href='score'/>
-              </CardActions>
-            </Card>
-          </Paper>
-        </div>
-      </div>
-    );
-  }
+            </CardActions>;
+        } else {
+            action = <Login/>;
+        }
+
+        return (
+            <div className="root">
+                <div className={styles.containerStyle}>
+                    {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
+                    <div dangerouslySetInnerHTML={{__html: this.props.content || ''}}/>
+                    <Paper zDepth={3}>
+                        <Card className={styles.cardStyle}>
+                            <CardMedia className={styles.img}>
+                                <img src="/james-jean-talib.jpg"/>
+                            </CardMedia>
+                            <CardTitle title="Theme O" subtitle="2016"/>
+                            <Subheader>Where would you like to go</Subheader>
+                            <Divider/>
+
+                            {action}
+
+                        </Card>
+                    </Paper>
+                </div>
+            </div>
+        );
+    }
 }
+ContentPage.propTypes = {
+    user: React.PropTypes.any.isRequired
+};
 
 const styles = StyleSheet.create({
 
     root: {
-    margin: '0 auto',
+        margin: '0 auto',
     },
-  containerStyle: {
-    margin: '0 auto',
-    padding: '0 0 40',
-    maxWidth: '500',
-    textAlign: 'center',
+    containerStyle: {
+        margin: '0 auto',
+        padding: '0 0 40',
+        maxWidth: '500',
+        textAlign: 'center',
 
-  },
+    },
 
-  cardStyle: {
+    cardStyle: {
 
-    maxWidth: '500',
-    textAlign: 'center',
+        maxWidth: '500',
+        textAlign: 'center',
 
-  },
+    },
 
-  img: {
-    display: 'inline-flex',
-    maxWidth:'100%',
-    maxHeight:'100%',
-    height:'auto',
-    width:'auto', /* ie8 */
-  },
+    img: {
+        display: 'inline-flex',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        height: 'auto',
+        width: 'auto', /* ie8 */
+    },
+
+    facebooklogin: {
+        minWidth: '150px'
+    }
 
 })
 

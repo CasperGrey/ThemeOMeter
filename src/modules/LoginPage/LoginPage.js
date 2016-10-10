@@ -9,33 +9,15 @@
 
 import React from 'react';
 import FacebookLogin from './FacebookLogin';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './LoginPage.css';
 import { StyleSheet } from 'react-look'
+import { dispatch } from 'redux'
 
 class Login extends React.Component{
 
-
     constructor (props, context) {
         super(props, context);
-    }
-
-    responseFacebook (response) {
-        console.log(response);
-        debugger
-        fetch('/api/user', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: response.name,
-                accessToken: response.accessToken,
-              })
-            })
-            .then(response => response.json())
-            .then(response => {
-              sessionStorage.setItem('userId', response.agent_id)
-              
-            })
     }
 
     render () {
@@ -44,17 +26,21 @@ class Login extends React.Component{
                 <FacebookLogin socialId="1648042272179054"
                                language="en_US"
                                scope="public_profile,email"
-                               responseHandler={this.responseFacebook}
+                               responseHandler={this.props.onLogin}
                                xfbml={true}
                                version="v2.5"
                                class= "facebooklogin"
-                               buttonText= "Login"/>
+                               buttonText= "Login with Facebook"/>
             </div>
         );
     }
 
 }
 
+Login.propTypes = {
+    onLogin: React.PropTypes.func.isRequired
+};
 
 
-export default Login;
+// export default Login;
+export default withStyles(s)(Login);
