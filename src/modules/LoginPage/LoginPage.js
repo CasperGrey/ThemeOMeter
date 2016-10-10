@@ -23,6 +23,7 @@ class Login extends React.Component{
     render () {
         return (
             <div >
+                {this.props.user}
                 <FacebookLogin socialId="1648042272179054"
                                language="en_US"
                                scope="public_profile,email"

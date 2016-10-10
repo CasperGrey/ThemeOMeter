@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import ContentPage from './ContentPage'
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        user: state.user
+        login: state.login,
+        user: state.login.user
     }
 }
 
@@ -17,6 +17,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const ContentPageContainer = connect(
     mapStateToProps
-)(ContentPage)
+)(ContentPage);
 
 export default ContentPageContainer

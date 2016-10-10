@@ -36,8 +36,9 @@ class ContentPage extends Component {
     handleChange = (event, index, value) => this.setState({value});
 
     render() {
+        console.log('home props', this.props.login.user)
         var action;
-        if (this.props.user) {
+        if (this.props.login.user) {
             action =  <CardActions>
                 <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
                 <RaisedButton primary={true} label="Score Theme" href='score'/>

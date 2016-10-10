@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import Login from './LoginPage'
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    console.log('login state', state);
     return {
-        user: state.user
+        user: state.login.user
     }
 }
 
@@ -35,8 +35,7 @@ const mapDispatchToProps = (dispatch) => {
             })
                 .then(response => response.json())
                 .then(response => {
-                    sessionStorage.setItem('userId', response.agent_id)
-                    this.setState({userId: response.agent_id})
+                    console.log('api/user - json: ', response)
                     dispatch(loginAction(response.agent_id))
 
                 })
@@ -46,7 +45,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const LoginContainer = connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Login)
 
 export default LoginContainer
