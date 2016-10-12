@@ -3,13 +3,14 @@
  */
 import { connect } from 'react-redux'
 import Login from './LoginPage'
+import Router from 'react-router'
 
 const mapStateToProps = (state) => {
     console.log('login state', state);
     return {
         user: state.login.user
     }
-}
+};
 
 function loginAction(user) {
     return {
@@ -20,8 +21,11 @@ function loginAction(user) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        login: () => {
+            dispatch(loginAction(1))
+        },
         onLogin: (response) => {
-
+            dispatch(loginAction(1));
             console.log(response);
             fetch('/api/user', {
                 method: 'post',
@@ -37,16 +41,14 @@ const mapDispatchToProps = (dispatch) => {
                 .then(response => {
                     console.log('api/user - json: ', response)
                     dispatch(loginAction(response.agent_id))
-
                 })
-
         }
     }
-}
+};
 
 const LoginContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Login)
+)(Login);
 
 export default LoginContainer

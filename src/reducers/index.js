@@ -8,8 +8,9 @@ function login(state, action) {
   }
   switch (action.type) {
     case 'LOGIN':
-      state.user = action.user
-      return state
+      return Object.assign({}, state, {
+        user: action.user
+      })
   }
   return state
 }

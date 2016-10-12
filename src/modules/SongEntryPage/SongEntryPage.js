@@ -108,7 +108,7 @@ class SongEntryPage extends Component {
             {/* Ensure we bind so that `this` will relate to the current component */}
             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
           <CardActions>
-          <RaisedButton secondary={true} label="Back"/>
+          <RaisedButton secondary={true} label="Back" href="/"/>
           <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)}/>
             <div>
               <TextField

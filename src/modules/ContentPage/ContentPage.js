@@ -35,6 +35,7 @@ class ContentPage extends Component {
 
     handleChange = (event, index, value) => this.setState({value});
 
+
     render() {
         console.log('home props', this.props.login.user)
         var action;
@@ -71,7 +72,7 @@ class ContentPage extends Component {
     }
 }
 ContentPage.propTypes = {
-    user: React.PropTypes.any.isRequired
+//    user: React.PropTypes.any.isRequired
 };
 
 const styles = StyleSheet.create({
