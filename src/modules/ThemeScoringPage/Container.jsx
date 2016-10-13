@@ -6,6 +6,7 @@ import update from 'react-addons-update';
 class Container extends Component {
 
     componentDidMount = () => {
+      debugger
         fetch('/api/songs/by-theme')
         .then(response => response.json())
         .then(songs => {
