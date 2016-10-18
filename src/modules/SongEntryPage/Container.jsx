@@ -14,6 +14,15 @@ class Container extends Component {
                 currentTheme: json.name
             })
         })
+        fetch('/api/theme', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                theme_id: 39,
+            })
+        })
     }
 
     state = {
@@ -24,7 +33,7 @@ class Container extends Component {
         if(videoItems.length < 1 && videoItems.length < 6){
          console.log("less than 5 songs")
         }
-        else {      
+        else {
             videoItems.forEach(video => {
                 var songInfo = parseTitleString(video.snippet.title)
                 var userid = JSON.parse(sessionStorage.getItem('userId'))
