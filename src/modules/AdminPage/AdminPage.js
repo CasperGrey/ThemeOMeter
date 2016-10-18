@@ -54,6 +54,8 @@ class AdminPage extends Component {
               <div>
                 <TextField
                   id="Theme_id_entry"
+                  value={this.state.theme_id}
+                  onChange={this.handleChange}
                 />
               <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
              </div>
