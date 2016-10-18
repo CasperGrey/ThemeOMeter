@@ -14,15 +14,7 @@ class Container extends Component {
                 currentTheme: json.name
             })
         })
-        fetch('/api/theme', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                theme_id: 39,
-            })
-        })
+
     }
 
     state = {

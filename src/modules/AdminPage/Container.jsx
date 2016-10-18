@@ -30,7 +30,7 @@ class Container extends Component {
                   'Content-Type': 'application/json',
               },
                 body: JSON.stringify({
-                  theme_id: 39,
+                  theme_id: theme_id,
                 })
             })
         }
