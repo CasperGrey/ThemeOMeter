@@ -49,6 +49,9 @@ class Container extends Component {
            this.setState({
              songs: update(this.state.songs, {$splice: [[index, 1]]})
            })
+           if(songs.length < 1){
+           setTimeout(function() {browserHistory.push('/summary')}, 2000);
+           }
         }
   };
 
