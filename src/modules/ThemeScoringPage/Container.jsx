@@ -48,9 +48,7 @@ class Container extends Component {
                 })
                 debugger
           //TODO: Remove song from songs to be scored once a score has been saved
-           this.setState({
-             songs: update(this.state.songs, {$splice: [[index, 1]]})
-           })
+           songs.splice(index,1)
            if(songs.length < 1){
            setTimeout(function() {browserHistory.push('/summary')}, 2000);
            }
