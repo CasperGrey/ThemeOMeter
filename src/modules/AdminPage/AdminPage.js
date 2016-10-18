@@ -36,7 +36,7 @@ class AdminPage extends Component {
 
 
 
-  handleChange = (event, index, value) => this.setState({theme_id});
+  handleChange = (event, index, value) => this.setState({theme_id: {value}});
 
   render() {
     var { onSave} = this.props
