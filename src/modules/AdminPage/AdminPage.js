@@ -28,8 +28,12 @@ class AdminPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1, theme_id: 1};
+    this.state = {value: 1};
   }
+
+  this.state = {
+    theme_id: 0,
+  };
 
   handleChange = (event, index, value) => this.setState({value});
 
