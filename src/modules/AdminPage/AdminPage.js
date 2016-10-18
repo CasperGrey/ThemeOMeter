@@ -11,6 +11,7 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './AdminPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
+import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look'
 const title = 'Admin Page';
@@ -42,6 +43,7 @@ class AdminPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Admin"/>
+               <Subheader>Current theme: {this.props.currentTheme}</Subheader>
               <CardActions>
               </CardActions>
             </Card>
