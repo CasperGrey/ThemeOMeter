@@ -18,7 +18,7 @@ router.post('/', async function(req, res, next) {
     try {
       var theme = await  toggleCurrentTheme(theme_id)
       }
-    } catch(err){
+     catch(err){
         console.error(err)
         next(err)
     }
