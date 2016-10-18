@@ -26,12 +26,14 @@ class AdminPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.state = {value: 1, theme_id: 1};
   }
 
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
+    var { onSave} = this.props
+    if (!onSave) onSave = function(){}
     return (
       <div className="root">
         <div className={styles.containerStyle}>
@@ -44,8 +46,15 @@ class AdminPage extends Component {
               </CardMedia>
               <CardTitle title="Admin"/>
                <Subheader>Current theme: {this.props.currentTheme}</Subheader>
+
               <CardActions>
               </CardActions>
+              <div>
+                <TextField
+                  id="Theme_id_entry"
+                />
+              <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
+             </div>
             </Card>
           </Paper>
         </div>
