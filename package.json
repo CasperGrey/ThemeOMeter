@@ -5,6 +5,7 @@
   "description": "A simple react starter kit",
   "main": "dist/server.bundle.js",
   "dependencies": {
+    "airbrake": "~1.0.3",
     "autoprefixer": "^6.3.7",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
