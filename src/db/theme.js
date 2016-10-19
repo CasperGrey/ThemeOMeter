@@ -47,7 +47,7 @@ export function createTheme(theme_name,theme_agent_id){
 export function toggleCurrentTheme(theme_id){
     return new Promise(function(resolve, reject){
         connection.query('UPDATE dimthemes SET theme_current = 1 WHERE theme_id = ?;',[theme_id], function(err, rows, fields) {
-            if (err) return next(err);
+            if (err) return reject(err);
 
         });
     })
