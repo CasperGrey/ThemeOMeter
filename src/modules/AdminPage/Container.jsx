@@ -20,7 +20,7 @@ class Container extends Component {
     onSave = (theme_id) => {
         debugger
         // TODO: create check to make sure song hasnt been scored before
-        if(!theme_id){
+        if(theme_id==null){
          console.log("Invalid Theme ID")
         }
         else {
