@@ -129,7 +129,7 @@ class ThemeScoringPage extends Component {
                                 }
                                 else{
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex -1})
-                                } 
+                                }
                               }}>
                               <AvSkipPrevious color='grey'/>
                             </IconButton>
@@ -160,7 +160,7 @@ class ThemeScoringPage extends Component {
                                 value={selectedSong ? selectedSong.comment : ''}
                             />
                             <CardActions>
-                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs[this.state.selectedSongIndex],this.state.selectedSongIndex)}/>
+                                <RaisedButton primary={true} label="Save" onClick={() => onSave(this.props.songs,this.state.selectedSongIndex)}/>
                             </CardActions>
                         </Card>
                     </Paper>

@@ -11,8 +11,11 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './AdminPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
+import Subheader from 'material-ui/Subheader';
+import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import { StyleSheet } from 'react-look'
+import TextField from 'material-ui/TextField'
 const title = 'Admin Page';
 
 
@@ -25,12 +28,19 @@ class AdminPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1};
-  }
+    this.state = {
+      value: 1,
+      theme_id: 0,
+    };
+  };
 
-  handleChange = (event, index, value) => this.setState({value});
+
+
+  handleChange = (event,value) => this.setState({theme_id: value});
 
   render() {
+    var { onSave} = this.props
+    if (!onSave) onSave = function(){}
     return (
       <div className="root">
         <div className={styles.containerStyle}>
@@ -42,8 +52,18 @@ class AdminPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Admin"/>
+               <Subheader>Current theme: {this.props.currentTheme}</Subheader>
+
               <CardActions>
               </CardActions>
+              <div>
+                <TextField
+                  id="Theme_id_entry"
+                  value={this.state.theme_id}
+                  onChange={this.handleChange}
+                />
+              <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
+             </div>
             </Card>
           </Paper>
         </div>

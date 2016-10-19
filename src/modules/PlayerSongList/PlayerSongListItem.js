@@ -43,9 +43,10 @@ class PlayerSongListItem extends React.Component {
                         <img className="media-object" src={imageUrl}/>
                     </td>
                     <td>
-                        <div className = {styles.extraSongInfo}>
-                            comment about music
-                        </div>
+                      // TODO: Placeholder for facts about music chosen.
+                        // <div className = {styles.extraSongInfo}>
+                        //     comment about music
+                        // </div>
                         <br />
                         <TextField
                             floatingLabelText={"Artist"}

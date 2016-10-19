@@ -6,6 +6,7 @@ import update from 'react-addons-update';
 class Container extends Component {
 
     componentDidMount = () => {
+      debugger
         fetch('/api/songs/by-theme')
         .then(response => response.json())
         .then(songs => {
@@ -22,6 +23,8 @@ class Container extends Component {
     }
 
     onSave = (songs,index) => {
+
+        var currentsong = songs[index]
         debugger
         // TODO: create check to make sure song hasnt been scored before
         if(songs.length < 1){
@@ -36,18 +39,22 @@ class Container extends Component {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        theme_id: songs.theme_id,
+                        theme_id: currentsong.theme_id,
                         user_id: userid,
-                        song_id: songs.song_id,
-                        score: songs.score,
-                        song_comment: songs.comment,
+                        song_id: currentsong.song_id,
+                        score: currentsong.score,
+                        song_comment: currentsong.comment,
                     })
                 })
                 debugger
           //TODO: Remove song from songs to be scored once a score has been saved
            this.setState({
-             songs: update(this.state.songs, {$splice: [[index, 1]]})
-           })
+                       songs: update(this.state.songs, {$splice: [[index, 1]]})
+                     })
+           songs.splice(index,1)
+           if(songs.length < 1){
+           setTimeout(function() {browserHistory.push('/summary')}, 2000);
+           }
         }
   };
 
