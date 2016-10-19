@@ -54,6 +54,16 @@ export function toggleCurrentTheme(theme_id){
 }
 
 
+export function toggleCurrentThemeOff(theme_id){
+    return new Promise(function(resolve, reject){
+        connection.query('UPDATE dimthemes SET theme_current = 0 WHERE theme_id = ?;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+        });
+    })
+}
+
+
 export function getThemes(){
     return new Promise(function(resolve, reject){
         connection.query('SELECT * from dimthemes;', function(err, rows, fields) {

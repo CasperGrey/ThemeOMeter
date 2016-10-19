@@ -5,7 +5,7 @@ import express from 'express'
 var router = express.Router();
 
 import connection from '../db/db.js'
-import { getCurrentTheme , getThemes, toggleCurrentTheme } from './../db/theme.js'
+import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff } from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
 
@@ -16,13 +16,17 @@ router.post('/', async function(req, res, next) {
     console.log(require('util').inspect(req.body))
 
     try {
+
+      var currentTheme = await geCurrentTheme()
+
+      await toggleCurrentThemeOff(currentTheme.theme_id)
+
       var theme = await  toggleCurrentTheme(theme_id)
       }
      catch(err){
         console.error(err)
         next(err)
-    }
-
+      }
 
 });
 
