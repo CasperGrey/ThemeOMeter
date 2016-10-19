@@ -1,8 +1,10 @@
 import express from 'express'
+var bodyParser = require('body-parser')
 
 
 // get an instance of router
 var router = express.Router();
+router.use(bodyParser.json())
 
 import connection from '../db/db.js'
 import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff } from './../db/theme.js'
@@ -11,21 +13,27 @@ import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff 
 
 router.post('/', async function(req, res, next) {
 
-    var theme_id = req.body.theme_id
 
-    console.log(require('util').inspect(req.body))
 
     try {
 
-      var currentTheme = await geCurrentTheme()
+      var theme_id = req.body.theme_id
+
+      console.log(require('util').inspect(req.body))
+
+      var currentTheme = await getCurrentTheme()
+
+      console.log('Turning off current theme')
 
       await toggleCurrentThemeOff(currentTheme.theme_id)
+
+      console.log('Turning on new theme')
 
       var theme = await  toggleCurrentTheme(theme_id)
       }
      catch(err){
         console.error(err)
-        next(err)
+        reject(err)
       }
 
 });
@@ -43,7 +51,7 @@ router.get('/current', async function(req, res, next) {
             name: currentTheme.theme_name
         })
     } catch (err){
-        next(err);
+        reject(err);
     }
 
 });

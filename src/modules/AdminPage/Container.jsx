@@ -18,12 +18,11 @@ class Container extends Component {
 
 
     onSave = (theme_id) => {
-        debugger
-        // TODO: create check to make sure song hasnt been scored before
         if(theme_id==null){
          console.log("Invalid Theme ID")
         }
         else {
+          console.log("Theme_id not null - processing POST")
           fetch('/api/themes', {
               method: 'post',
               headers: {
