@@ -10,8 +10,10 @@ import webpackAppConfig from './../webpack.config.js'
 import webpackServerConfig from './../webpack.server.config.js'
 var babel = require("babel-core");
 
-fs.mkdirSync('./dist')
-fs.mkdirSync('./dist/public')
+if (fs.existsSync('./dist') == false)
+  fs.mkdirSync('./dist')
+if (fs.existsSync('./dist/public') == false)
+  fs.mkdirSync('./dist/public')
 copyFile('tools/dev-template.html', './dist/public/index.html')
 runWebpackDevServer()  
 startServer()
