@@ -24,7 +24,7 @@ class Container extends Component {
          console.log("Invalid Theme ID")
         }
         else {
-          fetch('/api/theme', {
+          fetch('/api/themes', {
               method: 'post',
               headers: {
                   'Content-Type': 'application/json',
