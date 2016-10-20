@@ -51,7 +51,7 @@ router.post('/wipe', async function(req, res, next) {
       console.log('Wiping All Songs From Current Theme')
 
       await clearTheme(theme_id)
-      
+
       }
      catch(err){
         console.error(err)
@@ -70,7 +70,8 @@ router.get('/current', async function(req, res, next) {
             })
 
         return res.send({
-            name: currentTheme.theme_name
+            name: currentTheme.theme_name,
+            theme_id: currentTheme.theme_id
         })
     } catch (err){
         reject(err);

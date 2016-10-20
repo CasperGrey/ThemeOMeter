@@ -10,7 +10,8 @@ class Container extends Component {
     .then(response => response.json())
     .then(json => {
         this.setState({
-            currentTheme: json.name
+            currentTheme: json.name,
+            theme_id: json.theme_id
         })
     })
 
@@ -60,6 +61,7 @@ class Container extends Component {
     render = () => <AdminPage
         {...this.props}
         currentTheme={this.state.currentTheme}
+        themeid={this.state.theme_id}
         onSave={this.onSave}
         themes={this.state.themes}
         clearSongs={this.clearSongs}

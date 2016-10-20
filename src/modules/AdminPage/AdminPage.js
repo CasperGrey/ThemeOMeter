@@ -34,8 +34,6 @@ class AdminPage extends Component {
     };
   };
 
-
-
   handleChange = (event,value) => this.setState({theme_id: value});
 
   render() {
@@ -52,8 +50,10 @@ class AdminPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Admin"/>
+              <div>
                <Subheader>Current theme: {this.props.currentTheme}</Subheader>
-
+               <RaisedButton primary={true} label="Wipe Songs" onClick={() => clearSongs(this.props.themeid)}/>
+              </div>
               <CardActions>
               </CardActions>
               <div>
@@ -64,9 +64,6 @@ class AdminPage extends Component {
                 />
               <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
              </div>
-             <div>
-             <RaisedButton primary={true} label="Wipe Songs" onClick={() => clearSongs(this.state.theme_id)}/>
-            </div>
             </Card>
           </Paper>
         </div>
