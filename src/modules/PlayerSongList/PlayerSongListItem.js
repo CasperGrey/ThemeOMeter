@@ -18,7 +18,7 @@ class PlayerSongListItem extends React.Component {
         comment: "",
     }
 
-    componentDidMount{
+    componentDidMount = () => {
 
       this.refs.songcomment.focus()
 
