@@ -109,7 +109,7 @@ class SongEntryPage extends Component {
             <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
           <CardActions>
           <RaisedButton secondary={true} label="Back" href="/"/>
-          <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.videoItems)}/>
+          <RaisedButton primary={true} label="Finish" onClick={() => onSave(this.state.videoItems)}/>
             <div>
               <TextField
                 id="success-text"
