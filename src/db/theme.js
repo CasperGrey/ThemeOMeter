@@ -76,3 +76,12 @@ export function getThemes(){
         });
     })
 }
+
+export function clearTheme(theme_id){
+    return new Promise(function(resolve, reject){
+        connection.query('DELETE * FROM factentry WHERE theme_id = ?;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+            resolve()
+        });
+    })
+}

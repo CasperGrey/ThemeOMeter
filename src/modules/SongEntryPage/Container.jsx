@@ -23,7 +23,7 @@ class Container extends Component {
 
     onSave = (videoItems) => {
         if(videoItems.length < 5){
-         alert("less than 5 songs")
+         alert("Sorry you must choose at least 5 songs")
         }
         else {
             videoItems.forEach(video => {

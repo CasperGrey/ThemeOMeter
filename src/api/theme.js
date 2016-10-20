@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 import connection from '../db/db.js'
-import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff } from './../db/theme.js'
+import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff,clearTheme} from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
 
@@ -30,6 +30,28 @@ router.post('/', async function(req, res, next) {
       console.log('Turning on new theme')
 
       var theme = await  toggleCurrentTheme(theme_id)
+      }
+     catch(err){
+        console.error(err)
+        reject(err)
+      }
+
+});
+
+router.post('/wipe', async function(req, res, next) {
+
+
+
+    try {
+
+      var theme_id = req.body.theme_id
+
+      console.log(require('util').inspect(req.body))
+
+      console.log('Wiping All Songs From Current Theme')
+
+      await clearTheme(theme_id)
+      
       }
      catch(err){
         console.error(err)

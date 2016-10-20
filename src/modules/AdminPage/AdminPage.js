@@ -39,7 +39,7 @@ class AdminPage extends Component {
   handleChange = (event,value) => this.setState({theme_id: value});
 
   render() {
-    var { onSave} = this.props
+    var {onSave,clearSongs} = this.props
     if (!onSave) onSave = function(){}
     return (
       <div className="root">
@@ -58,12 +58,15 @@ class AdminPage extends Component {
               </CardActions>
               <div>
                 <TextField
-                  id="Theme_id_entry"
+                  ref="Theme_id_entry"
                   value={this.state.theme_id}
                   onChange={this.handleChange}
                 />
               <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
              </div>
+             <div>
+             <RaisedButton primary={true} label="Wipe Songs" onClick={() => clearSongs(this.state.theme_id)}/>
+            </div>
             </Card>
           </Paper>
         </div>
