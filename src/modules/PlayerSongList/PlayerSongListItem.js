@@ -18,6 +18,12 @@ class PlayerSongListItem extends React.Component {
         comment: "",
     }
 
+    componentDidMount{
+
+      this.refs.songcomment.focus()
+
+    }
+
     render = () => {
         var {video, onVideoSelect, onDelete, onCommentChange} = this.props
         const imageUrl = video.snippet.thumbnails.default.url;
@@ -61,6 +67,7 @@ class PlayerSongListItem extends React.Component {
                         />
                         <br />
                         <TextField
+                            ref="songcomment"
                             multiLine={true}
                             floatingLabelText={"Comment Box"}
                             hintText ={"Describe why you chose this song."}

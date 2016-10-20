@@ -44,7 +44,7 @@ class Container extends Component {
                     })
                 })
             })
-            this.setState({successMessage: "Save Succesful"})
+            this.setState({successMessage: "Save Successful"})
             setTimeout(function() {browserHistory.push('/score')}, 2000);
 
         }
