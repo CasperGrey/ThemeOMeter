@@ -6,7 +6,6 @@ import update from 'react-addons-update';
 class Container extends Component {
 
     componentDidMount = () => {
-      debugger
         fetch('/api/songs/by-theme')
         .then(response => response.json())
         .then(songs => {
@@ -53,7 +52,7 @@ class Container extends Component {
                      })
            songs.splice(index,1)
            if(songs.length < 1){
-           setTimeout(function() {browserHistory.push('/summary')}, 2000);
+           setTimeout(function() {browserHistory.push('/summary')}, 1000);
            }
         }
   };

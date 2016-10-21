@@ -8,6 +8,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
+import { Router, Route, Link, browserHistory } from 'react-router'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContentPage.css';
 import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
@@ -41,8 +42,8 @@ class ContentPage extends Component {
         var action;
         if (this.props.login.user) {
             action =  <CardActions>
-                <RaisedButton secondary={true} label="Song Entry" href='/entry'/>
-                <RaisedButton primary={true} label="Score Theme" href='score'/>
+                <Link to="/entry"><RaisedButton secondary={true} label="Song Entry"/></Link>
+                <Link to= "/score"><RaisedButton primary={true} label="Score Theme"/></Link>
             </CardActions>;
         } else {
             action = <LoginContainer/>;

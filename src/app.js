@@ -1,7 +1,7 @@
 require("babel-polyfill")
 import { AsyncRouterContext } from 'redux-async-props'
 import { createStore, applyMiddleware }  from 'redux';
-import reducer from './reducers/index.js'
+import reducer from './reducers/index'
 import { render } from 'react-dom'
 import React from 'react'
 import { Provider } from 'react-redux'
@@ -41,14 +41,11 @@ const store = createStore(
 render((
   <Provider store={store}>
     <StylesAndThemeProvider insertCss={(styles) => css.push(styles._getCss())}>
-      <Router 
-        routes={routes} 
+      <Router
+        routes={routes}
         history={browserHistory}
-        render={(props) => <AsyncRouterContext 
-          {...props} 
-          // Pass in the async props that we're hydrating from 
-          // the server, these are needed so that the initial render 
-          // only needs to be done once. 
+        render={(props) => <AsyncRouterContext
+          {...props}
           asyncProps={initialState.asyncProps}
         />}
       />

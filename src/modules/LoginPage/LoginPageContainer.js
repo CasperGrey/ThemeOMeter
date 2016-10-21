@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 
 function loginAction(user) {
     return {
+
         type: 'LOGIN',
         user: user
     }

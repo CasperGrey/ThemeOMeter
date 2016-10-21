@@ -14,7 +14,6 @@ class Container extends Component {
                 currentTheme: json.name
             })
         })
-
     }
 
     state = {
@@ -22,13 +21,13 @@ class Container extends Component {
     };
 
     onSave = (videoItems) => {
-        if(videoItems.length < 5){
-         alert("Sorry you must choose at least 5 songs")
+      if(videoItems.length < 5){
+-         alert("Sorry you must choose at least 5 songs")
         }
         else {
             videoItems.forEach(video => {
                 var songInfo = parseTitleString(video.snippet.title)
-                var userid = JSON.parse(sessionStorage.getItem('userId'))
+
                 fetch('/api/songs', {
                     method: 'post',
                     headers: {
@@ -44,7 +43,7 @@ class Container extends Component {
                     })
                 })
             })
-            this.setState({successMessage: "Save Successful"})
+            this.setState({successMessage: "Save Succesful"})
             setTimeout(function() {browserHistory.push('/score')}, 2000);
 
         }
