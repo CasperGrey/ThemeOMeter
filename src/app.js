@@ -15,27 +15,27 @@ injectTapEventPlugin();
 // TODO: Dunno what I'm supposed to do with this css on the client
 const css = []; // CSS for all rendered React components
 
-const rememberEverything = store => next => action => {
-    const state = store.getState();
-    sessionStorage.setItem('THEMEO', JSON.stringify(state));
-    next(action);
-    return state
-};
+const sessionState = sessionStorage.getItem('THEMEO')
 
-const storedState = JSON.parse(
-    sessionStorage.getItem('THEMEO')
-);
-console.log(storedState)
-//...
-const initialState = window.__INITIAL_STATE__
+// Window initial state has login.user = 'x' which probably isn't correct?
+// so not going to use it for now
+
+//const initialState = sessionState ? JSON.parse(sessionState) : window.__INITIAL_STATE__
+const initialState = sessionState ? JSON.parse(sessionState) : null
 const store = createStore(
     reducer,
-    storedState || {login:{user:null}},
+    initialState || {login:{user:null}},
     applyMiddleware(
-        thunk,
-        rememberEverything
+      thunk
     )
 );
+// For debugging in the console, can do store.getState()
+global.store = store
+
+store.subscribe(() => {
+  const state = store.getState()
+  sessionStorage.setItem('THEMEO', JSON.stringify(state))
+})
 
 
 render((
@@ -46,7 +46,8 @@ render((
         history={browserHistory}
         render={(props) => <AsyncRouterContext
           {...props}
-          asyncProps={initialState.asyncProps}
+          // This isn't configured properly so removing it for now
+          //asyncProps={initialState.asyncProps}
         />}
       />
     </StylesAndThemeProvider>

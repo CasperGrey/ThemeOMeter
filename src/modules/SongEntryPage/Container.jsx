@@ -3,8 +3,26 @@ import SongEntryPage from './SongEntryPage.js'
 import parseTitleString from './../PlayerSongList/parseTitleString'
 import TextField from 'material-ui/TextField'
 import { browserHistory } from 'react-router'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+
+    var userId = null
+    if (state.login && state.login.user)
+        userId = state.login.user
+    return {
+        userId,
+    }
+}
 
 class Container extends Component {
+
+    static propTypes = {
+        /**
+         * The user id
+         */
+        userId: React.PropTypes.number,
+    };
 
     componentDidMount = () => {
         fetch('/api/themes/current')
@@ -22,9 +40,12 @@ class Container extends Component {
 
     onSave = (videoItems) => {
       if(videoItems.length < 5){
--         alert("Sorry you must choose at least 5 songs")
+          alert("Sorry you must choose at least 5 songs")
         }
         else {
+
+            var userId = this.props.userId
+
             videoItems.forEach(video => {
                 var songInfo = parseTitleString(video.snippet.title)
 
@@ -35,7 +56,7 @@ class Container extends Component {
                     },
                     body: JSON.stringify({
                         songName: songInfo.title,
-                        user_id : userid,
+                        user_id : userId,
                         artistName: songInfo.artist,
                         comment: video.comment,
                         songURL: `https://youtu.be/${video.id.videoId}`,
