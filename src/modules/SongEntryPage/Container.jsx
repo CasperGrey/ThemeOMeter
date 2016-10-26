@@ -84,4 +84,4 @@ class Container extends Component {
 
 
 
-export default Container
+export default connect(mapStateToProps)(Container)
