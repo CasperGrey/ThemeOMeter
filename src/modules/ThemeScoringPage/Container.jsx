@@ -59,7 +59,7 @@ class Container extends Component {
                     },
                     body: JSON.stringify({
                         theme_id: currentsong.theme_id,
-                        user_id: userid,
+                        user_id: userId,
                         song_id: currentsong.song_id,
                         score: currentsong.score,
                         song_comment: currentsong.comment,
