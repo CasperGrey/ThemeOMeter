@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import ThemeScoringPage from './ThemeScoringPage.js'
 import { browserHistory } from 'react-router'
 import update from 'react-addons-update';
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+
+    var userId = null
+    if (state.login && state.login.user)
+        userId = state.login.user
+    return {
+        userId,
+    }
+}
 
 class Container extends Component {
 
@@ -21,17 +32,26 @@ class Container extends Component {
 
     }
 
+
+
+    static propTypes = {
+        /**
+         * The user id
+         */
+        userId: React.PropTypes.number,
+    };
+
     onSave = (songs,index) => {
 
         var currentsong = songs[index]
-        debugger
+
         // TODO: create check to make sure song hasnt been scored before
         if(songs.length < 1){
         setTimeout(function() {browserHistory.push('/home')}, 2000);
         console.log("Returning to home")
         }
         else {
-          var userid = JSON.parse(sessionStorage.getItem('userId'));
+          var userId = this.props.userId
                 fetch('/api/score', {
                     method: 'post',
                     headers: {
@@ -67,4 +87,4 @@ class Container extends Component {
     />
 }
 
-export default Container
+export default connect(mapStateToProps)(Container)
