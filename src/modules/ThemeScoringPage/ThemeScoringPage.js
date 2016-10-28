@@ -118,6 +118,7 @@ class ThemeScoringPage extends Component {
                                 videoId:this.props.songs[this.state.selectedSongIndex].video_id,
                               },
                             }}/> : null}
+                            this.props.songs[this.state.selectedSongIndex].user_comment
                             </CardMedia>
 
                             <Divider/>
@@ -146,9 +147,6 @@ class ThemeScoringPage extends Component {
                               }}>
                               <AvSkipNext color='grey'/>
                             </IconButton>
-                            <Divider/>
-
-                            this.props.songs[this.state.selectedSongIndex].user_comment
                             <Divider/>
                             <Subheader>{this.props.currentTheme}</Subheader>
                             <ScoreSlider onChange={this.onScoreChange}/>
