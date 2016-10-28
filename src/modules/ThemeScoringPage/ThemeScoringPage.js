@@ -118,9 +118,8 @@ class ThemeScoringPage extends Component {
                                 videoId:this.props.songs[this.state.selectedSongIndex].video_id,
                               },
                             }}/> : null}
-                            this.props.songs[this.state.selectedSongIndex].user_comment
+                            <Subheader>{this.props.songs[this.state.selectedSongIndex].user_comment}</Subheader>
                             </CardMedia>
-
                             <Divider/>
                             <IconButton tooltip="Prev Song"
                             style ={styles.icons}
