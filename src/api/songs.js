@@ -38,9 +38,10 @@ router.post('/', async function(req, res, next) {
         // If we don't have a song then create one
         if (!song) {
             song = await createSong(songName, artist.artist_id, url , videoId)
-            var theme = await getCurrentTheme()
-            var entry = await entryDb.createEntry(theme.theme_id,user_id,song.song_id, comment || '')
         }
+
+        var theme = await getCurrentTheme()
+        var entry = await entryDb.createEntry(theme.theme_id,user_id,song.song_id, comment || '')
     }catch(err){
 
         console.error(err)

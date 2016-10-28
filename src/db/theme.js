@@ -5,6 +5,7 @@ import connection from '../db/db.js'
 
 
 export function getCurrentTheme(){
+  console.log('Getting current theme')
     return new Promise(function(resolve, reject){
         connection.query('SELECT * FROM dimthemes WHERE theme_current = 1;', function(err, rows, fields) {
             if (err) return reject(err);
