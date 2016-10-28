@@ -23,11 +23,9 @@ router.post('/', async function(req, res, next) {
 
       console.log(require('util').inspect(req.body))
 
-      var entry = await getScoreBySongId(song_id)
 
-      if(!entry){
-        entry = await enterScore(theme_id,user_id,song_id,score,song_comment)
-      }
+      await enterScore(theme_id,user_id,song_id,score,song_comment)
+
     } catch(err){
         console.error(err)
         reject(err)
