@@ -35,3 +35,17 @@ export function enterScore(theme_id,user_id,song_id,score,song_comment){
         });
     })
 }
+
+export function getTotalSongsScoredByUser(theme_id,user_id){
+
+    return new Promise(function(resolve, reject){
+        connection.query('select count(*) from factscores where theme_id = ? and agent_id = ? and valid_vote = 1;', [theme_id,user_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows[0]
+
+            resolve(result)
+
+        });
+    })
+}

@@ -22,6 +22,21 @@ class Container extends Component {
       .then(themes => {
           this.setState({themes})
       })
+
+      fetch('/api/themes/total',{
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+            theme_id: this.state.currentTheme,
+      })
+    })
+      .then(response => response.json())
+      .then(entries => {
+          this.setState({entries})
+      })
+
   }
 
 
@@ -37,6 +52,7 @@ class Container extends Component {
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
         themes={this.state.themes}
+        entries={this.state.themes}
     />
 }
 
