@@ -65,6 +65,8 @@ export function toggleCurrentThemeOff(theme_id){
 }
 
 
+
+
 export function getThemes(){
     return new Promise(function(resolve, reject){
         connection.query('SELECT * from dimthemes;', function(err, rows, fields) {
@@ -83,6 +85,22 @@ export function clearTheme(theme_id){
         connection.query('DELETE FROM factentry WHERE theme_id = ?;',[theme_id], function(err, rows, fields) {
             if (err) return reject(err);
             resolve()
+        });
+    })
+}
+
+
+export function getAllInTheme(theme_id){
+  console.log('Getting current theme total')
+    return new Promise(function(resolve, reject){
+        connection.query('select count(*) as total from factentry where theme_id = ? and valid_entry = 1;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+            var result = rows
+            resolve(result)
         });
     })
 }

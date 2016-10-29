@@ -18,6 +18,7 @@ import Chip from 'material-ui/Chip';
 import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
 import { StyleSheet } from 'react-look';
+import jss from 'jss'
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
@@ -194,7 +195,7 @@ class ThemeScoringPage extends Component {
 }
 
 
-const styles = StyleSheet.create({
+var sheet = jss.createStyleSheet({
 
     themescorecontainerStyle: {
         margin: '0 auto',
@@ -242,5 +243,5 @@ const styles = StyleSheet.create({
     },
 
 })
-
-export default withStyles(s)(ThemeScoringPage)
+sheet.attach()
+export default ThemeScoringPage

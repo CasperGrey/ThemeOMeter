@@ -5,7 +5,7 @@ import SongEntryPage from './SongEntryPage'
 import ThemeScoringPage from './ThemeScoringPage'
 import AdminPage from './AdminPage'
 import ReportsPage from './ReportsPage/ReportsPage.js'
-import SummaryPage from './SummaryPage/SummaryPage.js'
+import SummaryPage from './SummaryPage'
 import { Route, IndexRoute } from 'react-router'
 
 

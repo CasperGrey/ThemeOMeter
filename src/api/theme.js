@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 import connection from '../db/db.js'
-import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff,clearTheme} from './../db/theme.js'
+import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff,clearTheme,getAllInTheme} from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
 
@@ -89,5 +89,21 @@ router.get('/all', async function(req, res, next) {
   }
 
 });
+
+
+router.post('/total', async function(req, res, next) {
+
+  try{
+      var theme_id = req.body.theme_id
+      var total = await getAllInTheme(theme_id)
+      res.send(total)
+  } catch (err){
+      next(err)
+  }
+
+});
+
+
+
 
 export default router
