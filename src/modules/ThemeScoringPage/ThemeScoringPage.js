@@ -28,6 +28,56 @@ import SvgIconFace from 'material-ui/svg-icons/action/face';
 const title = 'Song Entry';
 const items = [];
 
+const {classes} = jss.createStyleSheet({
+
+    themescorecontainerStyle: {
+        margin: '0 auto',
+        padding: '0 0 40',
+        maxWidth : '500',
+        alignContent: 'center',
+
+    },
+
+    icons: {
+
+
+    },
+
+    cardStyle: {
+        display: 'inline',
+        margin: '24',
+        marginTop: '2',
+        transitionDuration: '0.3s',
+        textAlign: 'center',
+        border: '1 solid #ddd',
+        boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
+        maxWidth: '500',
+    },
+
+    dropdownStyle: {
+        width:'200px',
+    },
+
+    img: {
+      display: 'inline-flex',
+      maxWidth:'100%',
+      maxHeight:'100%',
+      height:'auto',
+      width:'auto', /* ie8 */
+    },
+
+    chip: {
+    margin: '4',
+    },
+
+    wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    },
+
+}).attach()
+
+
 class ThemeScoringPage extends Component {
 
     static contextTypes = {
@@ -122,12 +172,12 @@ class ThemeScoringPage extends Component {
           }
         return (
             <div className={"root"}>
-                <div className={styles.themescorecontainerStyle}>
+                <div className={classes.themescorecontainerStyle}>
                     {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
                     <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
                     <Paper zDepth={3}>
-                        <Card className={styles.cardStyle}>
-                            <CardMedia className={styles.img}>
+                        <Card className={classes.cardStyle}>
+                            <CardMedia className={classes.img}>
                             {this.props.songs.length >= 1 ?
                               [
                                 <Video_detail video={{
@@ -139,7 +189,7 @@ class ThemeScoringPage extends Component {
                                   <Chip
                                     onRequestDelete={this.handleRequestDelete}
                                     onTouchTap={this.handleTouchTap}
-                                    className={styles.chip}
+                                    className={classes.chip}
                                   >
                                     <Avatar color="#EC407A" icon={<SvgIconFace />} />
                                       {selectedSong.user_comment}
@@ -150,7 +200,7 @@ class ThemeScoringPage extends Component {
                             </CardMedia>
                             <Divider/>
                             <IconButton tooltip="Prev Song"
-                            style ={styles.icons}
+                            style ={classes.icons}
                             onClick={() => {
                                 if(this.state.selectedSongIndex < 0){
                                   this.state.selectedSongIndex= 0
@@ -163,7 +213,7 @@ class ThemeScoringPage extends Component {
                             </IconButton>
 
                             <IconButton tooltip="Next Song"
-                            style ={styles.icons}
+                            style ={classes.icons}
                             onClick={() => {
                                 if(this.state.selectedSongIndex < this.props.songs.length){
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex +1})
@@ -196,53 +246,5 @@ class ThemeScoringPage extends Component {
 }
 
 
-var sheet = jss.createStyleSheet({
 
-    themescorecontainerStyle: {
-        margin: '0 auto',
-        padding: '0 0 40',
-        maxWidth : '500',
-        alignContent: 'center',
-
-    },
-
-    icons: {
-
-
-    },
-
-    cardStyle: {
-        display: 'inline',
-        margin: '24',
-        marginTop: '2',
-        transitionDuration: '0.3s',
-        textAlign: 'center',
-        border: '1 solid #ddd',
-        boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
-        maxWidth: '500',
-    },
-
-    dropdownStyle: {
-        width:'200px',
-    },
-
-    img: {
-      display: 'inline-flex',
-      maxWidth:'100%',
-      maxHeight:'100%',
-      height:'auto',
-      width:'auto', /* ie8 */
-    },
-
-    chip: {
-    margin: '4',
-    },
-
-    wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    },
-
-})
-sheet.attach()
 export default ThemeScoringPage
