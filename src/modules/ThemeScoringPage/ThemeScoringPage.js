@@ -26,8 +26,6 @@ import SvgIconFace from 'material-ui/svg-icons/action/face';
 const title = 'Song Entry';
 const items = [];
 
-jss.use(camelCase())
-
 const {classes} = jss.createStyleSheet({
 
     themescorecontainerStyle: {
@@ -37,12 +35,6 @@ const {classes} = jss.createStyleSheet({
         alignContent: 'center',
 
     },
-
-    icons: {
-
-
-    },
-
     cardStyle: {
         display: 'inline',
         margin: '24',
@@ -53,11 +45,9 @@ const {classes} = jss.createStyleSheet({
         boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
         maxWidth: '500',
     },
-
     dropdownStyle: {
         width:'200px',
     },
-
     img: {
       display: 'inline-flex',
       maxWidth:'100%',
@@ -65,16 +55,13 @@ const {classes} = jss.createStyleSheet({
       height:'auto',
       width:'auto', /* ie8 */
     },
-
     chip: {
     margin: '4',
     },
-
     wrapper: {
     display: 'flex',
     flexWrap: 'wrap',
     },
-
 }).attach()
 
 

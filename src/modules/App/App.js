@@ -4,7 +4,6 @@ import preset from 'jss-preset-default'
 import camelCase from 'jss-camel-case'
 
 jss.setup(preset())
-jss.use(camelCase())
 //import Header from '../Header';
 //import Footer from '../Footer';
 
