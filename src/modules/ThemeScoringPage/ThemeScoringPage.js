@@ -195,7 +195,7 @@ class ThemeScoringPage extends Component {
 }
 
 
-var sheet = jss.createStyleSheet({
+const styles = jss.createStyleSheet({
 
     themescorecontainerStyle: {
         margin: '0 auto',
