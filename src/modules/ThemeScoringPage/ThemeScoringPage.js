@@ -246,5 +246,54 @@ class ThemeScoringPage extends Component {
 }
 
 
+<<<<<<< HEAD
+=======
+const styles = jss.createStyleSheet({
+
+    themescorecontainerStyle: {
+        margin: '0 auto',
+        padding: '0 0 40',
+        maxWidth : '500',
+        alignContent: 'center',
+
+    },
+
+    icons: {
+
+
+    },
+
+    cardStyle: {
+        display: 'inline',
+        margin: '24',
+        marginTop: '2',
+        transitionDuration: '0.3s',
+        textAlign: 'center',
+        border: '1 solid #ddd',
+        boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
+        maxWidth: '500',
+    },
+
+    dropdownStyle: {
+        width:'200px',
+    },
+
+    img: {
+      display: 'inline-flex',
+      maxWidth:'100%',
+      maxHeight:'100%',
+      height:'auto',
+      width:'auto', /* ie8 */
+    },
+
+    chip: {
+    margin: '4',
+    },
+
+    wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    },
+>>>>>>> 8da77a7d9ed916e95de6669b3fb743660709c23b
 
 export default ThemeScoringPage
