@@ -5,8 +5,6 @@
  * Created by johnstonb on 14/07/2016.
  */
 import React, { Component, PropTypes } from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ThemeScoringPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton'
 import {Card, CardActions, CardTitle, CardMedia} from 'material-ui/Card';
@@ -17,8 +15,8 @@ import Paper from 'material-ui/Paper';
 import Chip from 'material-ui/Chip';
 import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
-import { StyleSheet } from 'react-look';
 import jss from 'jss'
+import camelCase from 'jss-camel-case'
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
@@ -27,6 +25,8 @@ import SvgIconFace from 'material-ui/svg-icons/action/face';
 
 const title = 'Song Entry';
 const items = [];
+
+jss.use(camelCase())
 
 const {classes} = jss.createStyleSheet({
 
