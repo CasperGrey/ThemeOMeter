@@ -21,6 +21,7 @@ import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
+import SvgIconFace from 'material-ui/svg-icons/action/face';
 
 
 const title = 'Song Entry';
@@ -132,16 +133,16 @@ class ThemeScoringPage extends Component {
                                         videoId:this.props.songs[this.state.selectedSongIndex].video_id,
                                         },
                                 }}/>,
-                                <Subheader>
+
                                   <Chip
-                                      onTouchTap={this.handleTouchTap}
-                                      style={styles.chip}
-                                      >
-                                      <Avatar icon={<FontIcon className="material-icons">perm_identity</FontIcon>} />
-                                      FontIcon Avatar Chip
+                                    onRequestDelete={this.handleRequestDelete}
+                                    onTouchTap={this.handleTouchTap}
+                                    className={styles.chip}
+                                  >
+                                    <Avatar color="#EC407A" icon={<SvgIconFace />} />
+                                      {selectedSong.user_comment}
                                   </Chip>
-                                  {selectedSong.user_comment}
-                                </Subheader>
+
                               ]
                              : null}
                             </CardMedia>
