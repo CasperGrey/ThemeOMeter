@@ -14,6 +14,9 @@ import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
+import Chip from 'material-ui/Chip';
+import FontIcon from 'material-ui/FontIcon';
+import Avatar from 'material-ui/Avatar';
 import { StyleSheet } from 'react-look';
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
@@ -87,6 +90,15 @@ class ThemeScoringPage extends Component {
         this.setState({videoItems: newVideos})
     };
 
+
+       handleRequestDelete() {
+        alert('You clicked the delete button.');
+      }
+
+       handleTouchTap() {
+        alert('You clicked the Chip.');
+      }
+
     render() {
         /*return <div>
             {this.props.songs.map(song => {
@@ -121,6 +133,13 @@ class ThemeScoringPage extends Component {
                                         },
                                 }}/>,
                                 <Subheader>
+                                  <Chip
+                                      onTouchTap={this.handleTouchTap}
+                                      style={styles.chip}
+                                      >
+                                      <Avatar icon={<FontIcon className="material-icons">perm_identity</FontIcon>} />
+                                      FontIcon Avatar Chip
+                                  </Chip>
                                   {selectedSong.user_comment}
                                 </Subheader>
                               ]
@@ -210,6 +229,15 @@ const styles = StyleSheet.create({
       maxHeight:'100%',
       height:'auto',
       width:'auto', /* ie8 */
+    },
+
+    chip: {
+    margin: '4',
+    },
+
+    wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
     },
 
 })
