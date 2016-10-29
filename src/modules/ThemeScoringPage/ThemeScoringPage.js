@@ -113,12 +113,18 @@ class ThemeScoringPage extends Component {
                     <Paper zDepth={3}>
                         <Card className={styles.cardStyle}>
                             <CardMedia className={styles.img}>
-                            {this.props.songs.length >= 1 ? <Video_detail video={{
-                              id: {
-                                videoId:this.props.songs[this.state.selectedSongIndex].video_id,
-                              },
-                            }}/> : null}
-                            <Subheader>{this.props.songs[this.state.selectedSongIndex].user_comment}</Subheader>
+                            {this.props.songs.length >= 1 ?
+                              [
+                                <Video_detail video={{
+                                    id: {
+                                        videoId:this.props.songs[this.state.selectedSongIndex].video_id,
+                                        },
+                                }}/>,
+                                <Subheader>
+                                  {selectedSong.user_comment}
+                                </Subheader>
+                              ]
+                             : null}
                             </CardMedia>
                             <Divider/>
                             <IconButton tooltip="Prev Song"
