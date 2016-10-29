@@ -1,28 +1,15 @@
 import React, { Component, PropTypes } from 'react'
-import { StyleSheet } from 'react-look';
+import jss from 'jss'
+import preset from 'jss-preset-default'
+import camelCase from 'jss-camel-case'
+
+jss.setup(preset())
+jss.use(camelCase())
 //import Header from '../Header';
 //import Footer from '../Footer';
 
-export default class App extends Component {
+const {classes} = jss.createStyleSheet({
 
-  render() {
-    return !this.props.error ? (
-        <div className = {styles.appBackground}>
-          {this.props.children}
-        </div>
-    ) : this.props.children;
-  }
-}
-
-const styles = StyleSheet.create({
-
-    appBackground: {
-        backgroundColor: 'whitesmoke',
-    },
-
-})
-
-StyleSheet.addCSS({
   html: {
     padding: 0,
     margin: 0,
@@ -36,5 +23,22 @@ StyleSheet.addCSS({
  },
  root: {
    margin: '0 auto',
- }
-})
+ },
+
+ appBackground: {
+     backgroundColor: 'whitesmoke',
+ },
+
+}).attach()
+
+
+export default class App extends Component {
+
+  render() {
+    return !this.props.error ? (
+        <div className = {classes.appBackground}>
+          {this.props.children}
+        </div>
+    ) : this.props.children;
+  }
+}
