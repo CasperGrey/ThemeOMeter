@@ -30,10 +30,6 @@ class SongEntryPage extends Component {
   };
 
 
-  componentWillMount() {
-    //this.context.onSetTitle(title);
-  }
-
   constructor(props) {
     super(props);
     this.state = {value: 1, items: [], videoItems: []};
@@ -100,7 +96,7 @@ class SongEntryPage extends Component {
             </div>
             <Countdown/>
             <Divider/>
-            <Subheader>Search Youtube</Subheader>
+            <Subheader style= {styles.searchsection}>Search Youtube</Subheader>
             <YoutubeSearch onAddVideo={this.onAddVideo} />
             <Divider/>
             <div style={{clear: 'both'}} />
@@ -134,6 +130,10 @@ const styles = StyleSheet.create({
         maxWidth : '500',
         alignContent: 'center',
 
+    },
+
+    searchsection: {
+        height : '50',
     },
 
     cardStyle: {

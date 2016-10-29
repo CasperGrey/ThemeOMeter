@@ -44,7 +44,7 @@ export default class ScoreSlider extends React.Component {
 
      }
 
-    
+
 
     handleThirdSlider(event, value) {
         const { secondSlider } = this.state
@@ -81,7 +81,7 @@ export default class ScoreSlider extends React.Component {
                 <Slider
                     min={0}
                     max={10}
-                    step={0.01}
+                    step={0.1}
                     defaultValue={5}
                     value={this.state.firstSlider}
                     onChange={this.handleFirstSlider.bind(this)}
@@ -94,7 +94,7 @@ export default class ScoreSlider extends React.Component {
                     <Slider
                         min={0}
                         max={10}
-                        step={0.01}
+                        step={0.1}
                         defaultValue={5}
                         value={this.state.secondSlider}
                         onChange={this.handleSecondSlider.bind(this)}
@@ -106,7 +106,7 @@ export default class ScoreSlider extends React.Component {
                     <Slider
                         min={0}
                         max={10}
-                        step={0.01}
+                        step={0.1}
                         defaultValue={5}
                         value={this.state.thirdSlider}
                         onChange={this.handleThirdSlider.bind(this)}

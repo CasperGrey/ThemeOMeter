@@ -8,12 +8,18 @@ export default class Search_bar extends Component{
         this.state = {term:''};
     }
 
+    componentDidMount = () => {
+
+      this.refs.youtubesearch.focus()
+
+    }
+
 
     render(){
         return(
             <div className="search-bar">
                <TextField
-                    autofocus ={true}
+                    ref ="youtubesearch"
                     className ="search-term"
                     value = {this.state.term}
                     onChange = {(event) => this.onInputChange(event.target.value)}
