@@ -41,28 +41,7 @@ class Container extends Component {
 
 
     onSave = (songs) => {
-        debugger
-        // TODO: create check to make sure song hasnt been scored before
-        if(songs.length < 1){
-         console.log("Invalid Vote")
-        }
-        else {
-          var userid = JSON.parse(sessionStorage.getItem('userId'));
-                fetch('/api/theme', {
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        theme_id: songs.theme_id,
-                        user_id: userid,
-                        song_id: songs.song_id,
-                        score: songs.score,
-                        song_comment: songs.comment,
-                    })
-                })
-                debugger
-        }
+
     };
 
     state = {};

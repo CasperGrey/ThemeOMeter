@@ -33,6 +33,15 @@ class SummaryPage extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
+  static propTypes = {
+      songs: React.PropTypes.array,
+      onCommentChange: React.PropTypes.func,
+  }
+
+  static defaultProps = {
+      songs: [],
+  }
+
 
   constructor(props) {
     super(props);
@@ -42,6 +51,7 @@ class SummaryPage extends Component {
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
+    const { songs } = this.props
     return (
       <div className="root">
         <div className={styles.containerStyle}>
@@ -53,7 +63,7 @@ class SummaryPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Summary"/>
-                <LineChart width={400} height={400} data={data}>
+                <LineChart width={400} height={400} data={this.props.songs}>
                   <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                 </LineChart>
               <CardActions>

@@ -82,6 +82,7 @@ class ThemeScoringPage extends Component {
 
     onScoreChange = (e, value) => {
         this.setState({score: value})
+
     };
 
     onDeleteVideo = (song) => {
