@@ -69,9 +69,7 @@ class Container extends Component {
         }
         else {
           var status = this.validateSongs(videoItems)
-          if(!status){
-            continue
-          } else {
+          if(status){
           console.log('On Save Status:',status)
             var userId = this.props.userId
                 if(status == 'Not Found')
@@ -95,7 +93,9 @@ class Container extends Component {
                } else if (status == 'Found') {
                 alert("Songs already chosen")
               }
-           } 
+           } else {
+             console.log('loading...')
+           }
         }
       };
 
