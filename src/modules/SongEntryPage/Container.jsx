@@ -15,6 +15,8 @@ const mapStateToProps = (state) => {
     }
 }
 
+
+
 class Container extends Component {
 
     static propTypes = {
@@ -38,37 +40,64 @@ class Container extends Component {
         successMessage: "",
     };
 
+    validateSongs = (videoItems) => {
+      var status
+      videoItems.forEach(video => {
+          var songInfo = parseTitleString(video.snippet.title)
+          fetch('/api/songs/validate', {
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  songName: songInfo.title,
+                  artistName: songInfo.artist,
+              })
+          })
+          .then(response => response.text())
+          .then(response => {
+              status = response
+              console.log('Validate Status:',status)
+          })
+    })
+    return(status)
+  };
+
     onSave = (videoItems) => {
-      if(videoItems.length < 5){
+      if(videoItems.length < 1){
           alert("Sorry you must choose at least 5 songs")
         }
         else {
-
+          var status = this.validateSongs(videoItems)
+          if(!status){
+            continue
+          } else {
+          console.log('On Save Status:',status)
             var userId = this.props.userId
-
-            videoItems.forEach(video => {
-                var songInfo = parseTitleString(video.snippet.title)
-
-                fetch('/api/songs', {
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        songName: songInfo.title,
-                        user_id : userId,
-                        artistName: songInfo.artist,
-                        comment: video.comment,
-                        songURL: `https://youtu.be/${video.id.videoId}`,
-                        videoId: video.id.videoId,
-                    })
-                })
-            })
-            this.setState({successMessage: "Save Succesful"})
-            setTimeout(function() {browserHistory.push('/score')}, 2000);
-
+                if(status == 'Not Found')
+                 {
+                  fetch('/api/songs', {
+                      method: 'post',
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                          songName: songInfo.title,
+                          user_id : userId,
+                          artistName: songInfo.artist,
+                          comment: video.comment,
+                          songURL: `https://youtu.be/${video.id.videoId}`,
+                          videoId: video.id.videoId,
+                      })
+                  })
+                  this.setState({successMessage: "Save Succesful"})
+                  setTimeout(function() {browserHistory.push('/score')}, 2000);
+               } else if (status == 'Found') {
+                alert("Songs already chosen")
+              }
+           } 
         }
-    };
+      };
 
 
 

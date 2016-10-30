@@ -63,7 +63,7 @@ class SummaryPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Summary"/>
-                <LineChart width={400} height={400} data={this.props.songs}>
+                <LineChart width={400} height={400} data={data}>
                   <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                 </LineChart>
               <CardActions>
