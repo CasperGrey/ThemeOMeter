@@ -37,6 +37,26 @@ class Container extends Component {
         debugger
     };
 
+
+    createSave = (theme_name) => {
+        if(theme_name==null){
+         console.log("Invalid Theme name")
+        }
+        else {
+          console.log("Theme_name not null - processing POST")
+          fetch('/api/themes/create', {
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+                body: JSON.stringify({
+                  theme_name: theme_name,
+                })
+            })
+        }
+        debugger
+    };
+
     clearSongs =(theme_id) => {
       if(theme_id==null){
        console.log("Invalid Theme ID")
@@ -65,6 +85,7 @@ class Container extends Component {
         onSave={this.onSave}
         themes={this.state.themes}
         clearSongs={this.clearSongs}
+        createSave={this.createSave}
     />
 }
 

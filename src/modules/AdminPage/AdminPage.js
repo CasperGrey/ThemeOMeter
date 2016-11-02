@@ -31,13 +31,16 @@ class AdminPage extends Component {
     this.state = {
       value: 1,
       theme_id: 0,
+      theme_name:'',
     };
   };
 
   handleChange = (event,value) => this.setState({theme_id: value});
+  handleChangeCreate = (event,value) => this.setState({theme_name: value});
+
 
   render() {
-    var {onSave,clearSongs} = this.props
+    var {createSave,onSave,clearSongs} = this.props
     if (!onSave) onSave = function(){}
     return (
       <div className="root">
@@ -64,6 +67,14 @@ class AdminPage extends Component {
                 />
               <RaisedButton primary={true} label="Save" onClick={() => onSave(this.state.theme_id)}/>
              </div>
+             <div>
+             <TextField
+               ref="Theme_create"
+               value={this.state.theme_name}
+               onChange={this.handleChangeCreate}
+             />
+           <RaisedButton primary={true} label="Save" onClick={() => createSave(this.state.theme_name)}/>
+          </div>
             </Card>
           </Paper>
         </div>

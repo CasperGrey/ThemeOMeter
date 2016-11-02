@@ -33,16 +33,6 @@ export function getThemeById(id){
     })
 }
 
-export function createTheme(theme_name,theme_agent_id){
-    return new Promise(function(resolve, reject){
-      connection.query('INSERT INTO dimthemes (theme_name,theme_agent_id,theme_youtube, theme_num_ppl,seqNoCommentofWeek,theme_used,theme_current) VALUES(?,?,0,0,0,0,0)', [theme_name,theme_agent_id] , function(err, result) {
-          if (err) return reject(err);
-
-          resolve(getThemeById(result.insertId))
-
-      });
-    })
-}
 
 
 export function toggleCurrentTheme(theme_id){
@@ -83,6 +73,16 @@ export function getThemes(){
 export function clearTheme(theme_id){
     return new Promise(function(resolve, reject){
         connection.query('DELETE FROM factentry WHERE theme_id = ?;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+            resolve()
+        });
+    })
+}
+
+
+export function createTheme(theme_name){
+    return new Promise(function(resolve, reject){
+        connection.query('INSERT INTO dimthemes (theme_name,theme_agent_id,theme_num_ppl,theme_used,theme_current) VALUES (?,100,7,0,0);',[theme_name], function(err, rows, fields) {
             if (err) return reject(err);
             resolve()
         });
