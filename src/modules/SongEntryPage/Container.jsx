@@ -4,6 +4,8 @@ import parseTitleString from './../PlayerSongList/parseTitleString'
 import TextField from 'material-ui/TextField'
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
+import UserAlert from './../UserAlerts/UserAlert'
+
 
 const mapStateToProps = (state) => {
 
@@ -38,66 +40,73 @@ class Container extends Component {
 
     state = {
         successMessage: "",
+        open: false,
     };
 
+
+
     validateSongs = (videoItems) => {
-      var status
-      videoItems.forEach(video => {
-          var songInfo = parseTitleString(video.snippet.title)
-          fetch('/api/songs/validate', {
+          return Promise.all(videoItems.map(video => {
+            var songInfo = parseTitleString(video.snippet.title)
+            return fetch('/api/songs/validate', {
               method: 'post',
               headers: {
-                  'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                  songName: songInfo.title,
-                  artistName: songInfo.artist,
+                songName: songInfo.title,
+                artistName: songInfo.artist,
               })
-          })
-          .then(response => response.text())
-          .then(response => {
-              status = response
-              console.log('Validate Status:',status)
-          })
-    })
-    return(status)
-  };
+            })
+            .then(response => response.text())
+            .then(response => {
+                // TODO There will be a response for each video item so this
+                // probably won't work
+                status = response
+                console.log('Validate Status:',status)
+                return response
+            })
+          }))
+          // should be an array of the respones now
+        };
 
-    onSave = (videoItems) => {
-      if(videoItems.length < 1){
-          alert("Sorry you must choose at least 5 songs")
-        }
-        else {
-          var status = this.validateSongs(videoItems)
-          if(status){
-          console.log('On Save Status:',status)
-            var userId = this.props.userId
-                if(status == 'Not Found')
-                 {
-                  fetch('/api/songs', {
-                      method: 'post',
-                      headers: {
-                          'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify({
-                          songName: songInfo.title,
-                          user_id : userId,
-                          artistName: songInfo.artist,
-                          comment: video.comment,
-                          songURL: `https://youtu.be/${video.id.videoId}`,
-                          videoId: video.id.videoId,
-                      })
-                  })
-                  this.setState({successMessage: "Save Succesful"})
-                  setTimeout(function() {browserHistory.push('/score')}, 2000);
-               } else if (status == 'Found') {
-                alert("Songs already chosen")
-              }
+        onSave = async (videoItems) => {
+           if(videoItems.length < 1){
+             alert("Sorry you must choose at least 5 songs")
            } else {
-             console.log('loading...')
+             var statuses = await this.validateSongs(videoItems)
+             statuses.forEach((status, i) => {
+               var videoItem = videoItems[i]
+               console.log(videoItem)
+               var songInfo = parseTitleString(videoItem.snippet.title)
+               console.log('On Save Status:',status)
+               var userId = this.props.userId
+               if(status == 'Not Found'){
+                 fetch('/api/songs', {
+                   method: 'post',
+                   headers: {
+                     'Content-Type': 'application/json',
+                   },
+                   body: JSON.stringify({
+                     songName: songInfo.title,
+                     user_id : userId,
+                     artistName: songInfo.artist,
+                     comment: videoItem.comment,
+                     songURL: `https://youtu.be/${videoItem.id.videoId}`,
+                     videoId: videoItem.id.videoId,
+                   })
+                 })
+                 this.setState({successMessage: "Save Succesful"})
+                 setTimeout(function() {browserHistory.push('/score')}, 2000);
+               } else if (status == 'Found') {
+                 alert(" Oh Drat "+ songInfo.artist + " " + songInfo.title + " has previously been chosen")
+               } else {
+
+                 console.log('loading...')
+               }
+             })
            }
-        }
-      };
+         };
 
 
 
@@ -109,6 +118,7 @@ class Container extends Component {
         onSave={this.onSave}
         successMessage = {this.state.successMessage}
     />
+
 }
 
 

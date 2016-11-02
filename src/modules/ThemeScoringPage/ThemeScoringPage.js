@@ -194,6 +194,7 @@ class ThemeScoringPage extends Component {
                                 }
                                 else{
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex -1})
+                                  this.setState({comment: ''})
                                 }
                               }}>
                               <AvSkipPrevious color='grey'/>
@@ -204,6 +205,7 @@ class ThemeScoringPage extends Component {
                             onClick={() => {
                                 if(this.state.selectedSongIndex < this.props.songs.length){
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex +1})
+                                  this.setState({comment: ''})
                                 }
                                 else{
                                   this.state.selectedSongIndex= 0

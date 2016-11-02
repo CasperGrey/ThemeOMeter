@@ -40,7 +40,7 @@ export default class ScoreSlider extends React.Component {
             secondSlider: value,
         });
         if (this.props.onChange)
-           this.props.onChange(value)
+           this.props.onChange(this.state.firstSlider)
 
      }
 
@@ -53,6 +53,10 @@ export default class ScoreSlider extends React.Component {
             firstSlider: (value + secondSlider) / 2,
             thirdSlider: value,
         });
+
+        if (this.props.onChange)
+          this.props.onChange(event, this.state.firstSlider)
+
     }
 
     setOverallScore = () => {

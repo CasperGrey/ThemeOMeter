@@ -8,7 +8,7 @@ router.use(bodyParser.json())
 
 
 import {getArtist, createArtist } from './../db/artists.js'
-import {createSong, getSong} from './../db/song.js'
+import {createSong, getSong, getSongsByUserinTheme} from './../db/song.js'
 import * as entryDb from './../db/entry.js'
 import { getCurrentTheme } from './../db/theme.js'
 
@@ -87,6 +87,34 @@ router.post('/validate', async function(req, res, next) {
          } else {
             console.log('Song Already Exists')
             res.send('Found');
+          }
+    }catch(err){
+
+        console.error(err)
+        next(err)
+    }
+
+
+});
+
+
+router.post('/in-current-theme', async function(req, res, next) {
+
+    try {
+
+        var agent_id = req.body.user_id
+
+        var theme = await getCurrentTheme()
+
+        console.log(require('util').inspect(req.body))
+
+        console.log('Searching for Songs By User:',user_id)
+        var songs = await getSongsByUserinTheme(agent_id,theme.theme_id)
+
+        if (!songs) {
+        console.log('No Songs Currently IN Theme For',User_id)
+      } else {
+            res.send(songs);
           }
     }catch(err){
 
