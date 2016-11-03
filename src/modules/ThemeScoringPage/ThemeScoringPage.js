@@ -34,7 +34,7 @@ const {classes} = jss.createStyleSheet({
 
     },
     cardStyle: {
-        display: 'inline-block',
+        display: 'inline',
         //margin: 24,
         marginTop: 2,
         transitionDuration: '0.3s',

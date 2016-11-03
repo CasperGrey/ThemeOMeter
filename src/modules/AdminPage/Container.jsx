@@ -57,6 +57,30 @@ class Container extends Component {
         debugger
     };
 
+    SongsByUser =(user_id) => {
+        if(theme_name==null){
+         console.log("Invalid User Id")
+        }
+        else {
+          console.log("User ID not null - processing POST")
+          fetch('/api/songs//in-current-theme', {
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+                body: JSON.stringify({
+                  user_id: user_id,
+                })
+                .then(response => response.json())
+                .then(json => {
+                  this.setState({songs})
+                })
+
+            })
+        }
+        debugger
+    };
+
     clearSongs =(theme_id) => {
       if(theme_id==null){
        console.log("Invalid Theme ID")
@@ -86,6 +110,8 @@ class Container extends Component {
         themes={this.state.themes}
         clearSongs={this.clearSongs}
         createSave={this.createSave}
+        SongsByUser={this.SongsbyUser}
+        songs={this.state.songs}
     />
 }
 
