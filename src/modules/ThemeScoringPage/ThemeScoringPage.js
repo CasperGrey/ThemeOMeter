@@ -20,7 +20,7 @@ import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
-
+import {pink50,pink500, blue300, indigo900} from 'material-ui/styles/colors';
 
 const title = 'Song Entry';
 const items = [];
@@ -55,6 +55,7 @@ const {classes} = jss.createStyleSheet({
     },
     chip: {
         margin: 4,
+
     },
     wrapper: {
     display: 'flex',
@@ -172,11 +173,12 @@ class ThemeScoringPage extends Component {
                                 }}/>,
 
                                   <Chip
+                                    backgroundColor={pink50}
                                     onRequestDelete={this.handleRequestDelete}
                                     onTouchTap={this.handleTouchTap}
                                     className={classes.chip}
                                   >
-                                    <Avatar color="#EC407A" icon={<SvgIconFace />} />
+                                    <Avatar color={blue300} backgroundColor={indigo900} icon={<SvgIconFace />} />
                                       {selectedSong.user_comment}
                                   </Chip>
 
