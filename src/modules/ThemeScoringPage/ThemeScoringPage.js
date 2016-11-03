@@ -16,7 +16,6 @@ import Chip from 'material-ui/Chip';
 import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
 import jss from 'jss'
-import camelCase from 'jss-camel-case'
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
@@ -30,20 +29,19 @@ const {classes} = jss.createStyleSheet({
 
     themescorecontainerStyle: {
         margin: '0 auto',
-        padding: '0 0 40',
-        maxWidth : '500',
+        maxWidth : 500,
         alignContent: 'center',
 
     },
     cardStyle: {
-        display: 'inline',
-        margin: '24',
-        marginTop: '2',
+        display: 'inline-block',
+        //margin: 24,
+        marginTop: 2,
         transitionDuration: '0.3s',
         textAlign: 'center',
-        border: '1 solid #ddd',
+        border: '1px solid #ddd',
         boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
-        maxWidth: '500',
+        maxWidth: 500,
     },
     dropdownStyle: {
         width:'200px',
@@ -56,7 +54,7 @@ const {classes} = jss.createStyleSheet({
       width:'auto', /* ie8 */
     },
     chip: {
-    margin: '4',
+        margin: 4,
     },
     wrapper: {
     display: 'flex',
