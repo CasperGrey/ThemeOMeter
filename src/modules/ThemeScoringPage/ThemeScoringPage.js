@@ -20,7 +20,7 @@ import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
-import {pink50,pink500, blue300, indigo900} from 'material-ui/styles/colors';
+import {pink50,pink500,pink200, blue300, indigo900,lightBlue50,lightBlue100,lightBlue200} from 'material-ui/styles/colors';
 
 const title = 'Song Entry';
 const items = [];
@@ -35,6 +35,7 @@ const {classes} = jss.createStyleSheet({
     },
     cardStyle: {
         display: 'inline',
+        position:'relative',
         //margin: 24,
         marginTop: 2,
         transitionDuration: '0.3s',
@@ -47,7 +48,7 @@ const {classes} = jss.createStyleSheet({
         width:'200px',
     },
     img: {
-      display: 'inline-flex',
+      display: 'border-box',
       maxWidth:'100%',
       maxHeight:'100%',
       height:'auto',
@@ -57,9 +58,8 @@ const {classes} = jss.createStyleSheet({
         margin: 4,
 
     },
-    wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    chiptext: {
+      whiteSpace:'normal',
     },
 }).attach()
 
@@ -173,12 +173,13 @@ class ThemeScoringPage extends Component {
                                 }}/>,
 
                                   <Chip
-                                    backgroundColor={pink50}
+                                    backgroundColor={lightBlue100}
                                     onRequestDelete={this.handleRequestDelete}
                                     onTouchTap={this.handleTouchTap}
                                     className={classes.chip}
+                                    labelStyle={{whiteSpace:'normal'}}
                                   >
-                                    <Avatar color={blue300} backgroundColor={indigo900} icon={<SvgIconFace />} />
+                                    <Avatar color={lightBlue50} backgroundColor={lightBlue200} icon={<SvgIconFace />} />
                                       {selectedSong.user_comment}
                                   </Chip>
 
