@@ -16,12 +16,11 @@ import Chip from 'material-ui/Chip';
 import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
 import jss from 'jss'
-import camelCase from 'jss-camel-case'
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
 import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
-
+import {pink50,pink500,pink200, blue300, indigo900,lightBlue50,lightBlue100,lightBlue200} from 'material-ui/styles/colors';
 
 const title = 'Song Entry';
 const items = [];
@@ -30,37 +29,37 @@ const {classes} = jss.createStyleSheet({
 
     themescorecontainerStyle: {
         margin: '0 auto',
-        padding: '0 0 40',
-        maxWidth : '500',
+        maxWidth : 500,
         alignContent: 'center',
 
     },
     cardStyle: {
         display: 'inline',
-        margin: '24',
-        marginTop: '2',
+        position:'relative',
+        //margin: 24,
+        marginTop: 2,
         transitionDuration: '0.3s',
         textAlign: 'center',
-        border: '1 solid #ddd',
+        border: '1px solid #ddd',
         boxShadow: '0 2 2 0 rgba(0, 0, 0, 0.14), 0 3 1 -2 rgba(0, 0, 0, 0.02),0 1 5 -2 rgba(0, 0, 0, 0.12)',
-        maxWidth: '500',
+        maxWidth: 500,
     },
     dropdownStyle: {
         width:'200px',
     },
     img: {
-      display: 'inline-flex',
+      display: 'border-box',
       maxWidth:'100%',
       maxHeight:'100%',
       height:'auto',
       width:'auto', /* ie8 */
     },
     chip: {
-    margin: '4',
+        margin: 4,
+
     },
-    wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    chiptext: {
+      whiteSpace:'normal',
     },
 }).attach()
 
@@ -174,11 +173,13 @@ class ThemeScoringPage extends Component {
                                 }}/>,
 
                                   <Chip
+                                    backgroundColor={lightBlue100}
                                     onRequestDelete={this.handleRequestDelete}
                                     onTouchTap={this.handleTouchTap}
                                     className={classes.chip}
+                                    labelStyle={{whiteSpace:'normal'}}
                                   >
-                                    <Avatar color="#EC407A" icon={<SvgIconFace />} />
+                                    <Avatar color={lightBlue50} backgroundColor={lightBlue200} icon={<SvgIconFace />} />
                                       {selectedSong.user_comment}
                                   </Chip>
 
@@ -194,6 +195,7 @@ class ThemeScoringPage extends Component {
                                 }
                                 else{
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex -1})
+                                  this.setState({comment: ''})
                                 }
                               }}>
                               <AvSkipPrevious color='grey'/>
@@ -204,6 +206,7 @@ class ThemeScoringPage extends Component {
                             onClick={() => {
                                 if(this.state.selectedSongIndex < this.props.songs.length){
                                   this.setState({selectedSongIndex: this.state.selectedSongIndex +1})
+                                  this.setState({comment: ''})
                                 }
                                 else{
                                   this.state.selectedSongIndex= 0

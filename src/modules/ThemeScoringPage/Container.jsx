@@ -20,7 +20,8 @@ class Container extends Component {
         fetch('/api/songs/by-theme')
         .then(response => response.json())
         .then(songs => {
-            this.setState({songs})
+          var shuffledSongs = this.shuffle(songs)
+          this.setState({songs: shuffledSongs})
         })
         fetch('/api/themes/current')
         .then(response => response.json())
@@ -29,6 +30,26 @@ class Container extends Component {
                 currentTheme: json.name
             })
         })
+
+    }
+
+    shuffle= (array) => {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+         console.log(array)
+         return array;
 
     }
 

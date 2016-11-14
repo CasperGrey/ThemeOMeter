@@ -49,3 +49,19 @@ export function getSong(songName,artist_id){
         });
     })
 }
+
+
+export function getSongsByUserinTheme(agent_id, theme_id){
+    console.log(`Searching for songs by user_id: ${agent_id}`)
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT * FROM factentry where agent_id = ? and theme_id = ?', [agent_id,theme_id] , function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+            var result = rows
+            resolve(result)
+        });
+    })
+}
