@@ -12,20 +12,77 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './SummaryPage.css';
 import {Card, CardActions, CardTitle,CardMedia} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 import { StyleSheet } from 'react-look'
-import {LineChart,Line} from 'recharts'
+import {LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 const title = 'Summary Page';
 
-const data = [
-      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-      {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
+const dataScoreAvgs = [
+      {name: 'MJ', Given: 4.0, Received: 2.400},
+      {name: 'Ben', Given: 3.0, Received: 1.398},
+      {name: 'Sarah', Given: 2.0, Received: 9.800},
+      {name: 'Dave', Given: 2.78, Received: 3.908},
+      {name: 'TK', Given: 1.890, Received: 4.800},
+      {name: 'Otto', Given: 2.390, Received: 3.800},
+      {name: 'James', Given: 3.490, Received: 4.300},
 ];
+
+const dataScoresGivenByAgent = [
+      {name: 'Ben', Score: 1.398, amt: 2210},
+      {name: 'Sarah', Score: 9.800, amt: 2290},
+      {name: 'Dave', Score: 3.908, amt: 2000},
+      {name: 'TK', Score: 4.800, amt: 2181},
+      {name: 'Otto', Score: 3.800, amt: 2500},
+      {name: 'James', Score: 4.300, amt: 2100},
+];
+
+const dataScoresReceivedByAgent = [
+      {name: 'Ben', Score: 3.0},
+      {name: 'Sarah', Score: 2.0},
+      {name: 'Dave', Score: 2.78},
+      {name: 'TK', Score: 1.890},
+      {name: 'Otto', Score: 2.390},
+      {name: 'James', Score: 3.490},
+];
+
+const dataTopFive = [
+      {name: 'song1', Picker: 'Otto', Score: 8.0},
+      {name: 'song2', Picker: 'Ben', Score: 7.5},
+      {name: 'song3', Picker: 'MJ', Score: 7.4},
+      {name: 'song4', Picker: 'Ben', Score: 7.12},
+      {name: 'song5', Picker: 'Dave', Score: 7.0},
+];
+
+const dataBottomFive = [
+      {name: 'song1', Picker: 'Dave', Score: 2.0},
+      {name: 'song2', Picker: 'TK', Score: 4.5},
+      {name: 'song3', Picker: 'Sarah', Score: 5.4},
+      {name: 'song4', Picker: 'Ben', Score: 5.52},
+      {name: 'song5', Picker: 'MJ', Score: 6.0},
+];
+
+const dataThemeRating = [
+      {name: 'theme1', Score: 8.0, ThisScore: 7.1},
+      {name: 'theme2', Score: 7.5, ThisScore: 7.1},
+      {name: 'theme3', Score: 7.4, ThisScore: 7.1},
+      {name: 'theme4', Score: 7.12, ThisScore: 7.1},
+      {name: 'theme5', Score: 7.0, ThisScore: 7.1},
+];
+
+const dataGenreRating = [
+      {name: 'Metal', Score: 6.0 },
+      {name: 'Rock', Score: 6.5 },
+      {name: 'Pop', Score: 7.0 },
+      {name: 'Hip Hop', Score: 5.4 },
+      {name: 'Country', Score: 4.2 },
+];
+
+const dataThemeProgress = [
+      {name: 'Progress', progress: 0.5 },
+];
+
 
 class SummaryPage extends Component {
 
@@ -63,9 +120,60 @@ class SummaryPage extends Component {
                 <img src="/james-jean-talib.jpg" />
               </CardMedia>
               <CardTitle title="Summary"/>
-                <LineChart width={400} height={400} data={data}>
-                  <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                </LineChart>
+              <Subheader>Progress</Subheader>
+              <BarChart width={500} height={100} data={dataThemeProgress}
+                 margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+               <XAxis dataKey="name"/>
+               <YAxis/>
+               <CartesianGrid strokeDasharray="3 3"/>
+               <Tooltip/>
+               <Legend/>
+               <Bar dataKey="progress" fill="#8884d8"  />
+              </BarChart>
+              <Divider/><Subheader>How you were scored</Subheader>
+              <BarChart width={500} height={400} data={dataScoresReceivedByAgent}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+               <XAxis dataKey="name"/>
+               <YAxis/>
+               <CartesianGrid strokeDasharray="3 3"/>
+               <Tooltip/>
+               <Legend/>
+               <Bar dataKey="Score" fill="#8884d8"  />
+              </BarChart>
+              <Divider/><Subheader>How you scored</Subheader>
+              <BarChart width={500} height={400} data={dataScoresGivenByAgent}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+               <XAxis dataKey="name"/>
+               <YAxis/>
+               <CartesianGrid strokeDasharray="3 3"/>
+               <Tooltip/>
+               <Legend/>
+               <Bar dataKey="Score" fill="#82ca9d"   />
+              </BarChart>
+              <Divider/>
+              <Subheader>Comparison</Subheader>
+              <LineChart width={500} height={400} data={dataScoreAvgs}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+               <XAxis dataKey="name"/>
+               <YAxis/>
+               <CartesianGrid strokeDasharray="3 3"/>
+               <Tooltip/>
+               <Legend/>
+               <Line type="monotone" dataKey="Given" stroke="#8884d8" activeDot={{r: 8}}/>
+               <Line type="monotone" dataKey="Received" stroke="#82ca9d" />
+              </LineChart>
+              <Divider/>
+              <Subheader>Theme Averages</Subheader>
+              <LineChart width={500} height={400} data={dataThemeRating}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+               <XAxis dataKey="name"/>
+               <YAxis/>
+               <CartesianGrid strokeDasharray="3 3"/>
+               <Tooltip/>
+               <Legend/>
+               <Line type="monotone" dataKey="Score" stroke="#8884d8" activeDot={{r: 8}}/>
+               <Line type="monotone" dataKey="ThisScore" stroke="#82ca9d" />
+              </LineChart>
               <CardActions>
               </CardActions>
             </Card>

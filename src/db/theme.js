@@ -104,3 +104,18 @@ export function getAllInTheme(theme_id){
         });
     })
 }
+
+export function currentThemeProgress(theme_id){
+  console.log('Getting current theme progress')
+    return new Promise(function(resolve, reject){
+        connection.query('select count(fe.entry_id) as entries, count(fs.seqNo) as scores, (count(fe.entry_id) / count(fs.seqNo)) as progress from factentry fe left join factscores fs on fe.theme_id = fs.theme_id where fe.theme_id = ?;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+            var result = rows
+            resolve(result)
+        });
+    })
+}

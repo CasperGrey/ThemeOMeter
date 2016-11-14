@@ -1,0 +1,1 @@
+select count(fe.entry_id) as entries, count(fs.seqNo) as scores, (count(fe.entry_id) / count(fs.seqNo)) as progress from factentry fe left join factscores fs on fe.theme_id = fs.theme_id where fe.theme_id = 39;
