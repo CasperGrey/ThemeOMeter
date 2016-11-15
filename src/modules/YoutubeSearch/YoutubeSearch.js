@@ -32,16 +32,23 @@ class YoutubeSearch extends Component{
         onAddVideo: React.PropTypes.func,
         allowDelete: React.PropTypes.bool,
     }
-
+    
     videoSearch(searchTerm) {
-        //youtube search
-        YTSearch({key: API_KEY, term:searchTerm}, (videos) => {
-            this.setState({
-                videos:videos,
-                selectedVideo: videos[0]
-            });
+      YTSearch({key: API_KEY, term:searchTerm}, (videos) => {
+            videos = videos.map(v => {
+              // Create new video objects with the properties you want
+              songInfo = parseTitleString(v.snippet.title)
+              return {
+                title: SongInfo.title,
+                artist: SongInfo.artistName,
+              }
+           })
+              this.setState({
+                      videos:videos,
+                      selectedVideo: videos[0]
+                  });
+            console.log(selectedVideo)
         });
-
     }
 
     onAddVideo = () => {

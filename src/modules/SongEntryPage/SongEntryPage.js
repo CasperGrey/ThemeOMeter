@@ -72,6 +72,13 @@ class SongEntryPage extends Component {
         var videoItems = this.state.videoItems.slice()
         videoItems[i].comment = comment
         this.setState({videoItems})
+        console.log(videoItems)
+    };
+
+    onSongNameChange = (video, i, songName) => {
+        var videoItems = this.state.videoItems.slice()
+        videoItems[i].comment = comment
+        this.setState({videoItems})
     };
 
 
