@@ -23,11 +23,27 @@ export function getScoreBySongId(id){
     })
 }
 
+export function getSongPickerId(song_id){
 
-export function enterScore(theme_id,user_id,song_id,score,song_comment){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT agent_id from factentry where song_id = ?', [song_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows[0]
+
+            resolve(result)
+
+        });
+    })
+}
+
+
+
+
+export function enterScore(theme_id,user_id,song_id,score,song_comment,song_picker_id){
     console.log("ScoreEnteredRun")
     return new Promise(function(resolve, reject){
-        connection.query('INSERT INTO factscores (theme_id,agent_id,song_picker_id, song_id, valid_vote,song_raw_score,song_comments) VALUES(?,?,1,?,1,?,?)', [theme_id,user_id,song_id,score,song_comment] , function(err, result) {
+        connection.query('INSERT INTO factscores (theme_id,agent_id,song_picker_id, song_id, valid_vote,song_raw_score,song_comments) VALUES(?,?,?,?,1,?,?)', [theme_id,user_id,song_picker_id,song_id,score,song_comment] , function(err, result) {
             if (err) return reject(err);
 
             resolve(result)

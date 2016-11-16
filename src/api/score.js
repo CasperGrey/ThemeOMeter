@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {enterScore,getScoreBySongId} from './../db/score.js'
+import {enterScore,getScoreBySongId,getSongPickerId} from './../db/score.js'
 
 
 // route with parameters (http://localhost:8080/hello/:name)
@@ -23,8 +23,9 @@ router.post('/', async function(req, res, next) {
 
       console.log(require('util').inspect(req.body))
 
-
-      await enterScore(theme_id,user_id,song_id,score,song_comment)
+      var song_picker_id = await getSongPickerId(song_id)
+      console.log(song_picker_id)
+      await enterScore(theme_id,user_id,song_id,score,song_comment,song_picker_id.agent_id)
 
     } catch(err){
         console.error(err)
