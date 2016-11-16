@@ -9,7 +9,7 @@ import Subheader from 'material-ui/Subheader';
 import Search_bar from "./Search_bar"
 import Video_list from "./Video_list"
 import Video_detail from "./Video_detail"
-
+import parseTitleString from './../PlayerSongList/parseTitleString'
 //variable to hold the API Key
 const API_KEY = 'AIzaSyBYf1d1OI9RrbBZ8ox-HppCUqyndH8herc';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -28,26 +28,33 @@ class YoutubeSearch extends Component{
         this.videoSearch('Macarena');
     }
 
+    componentWillMount() {
+        //this.context.onSetTitle(title);
+    }
+
     static propTypes = {
         onAddVideo: React.PropTypes.func,
         allowDelete: React.PropTypes.bool,
     }
-    
+
     videoSearch(searchTerm) {
+
       YTSearch({key: API_KEY, term:searchTerm}, (videos) => {
             videos = videos.map(v => {
               // Create new video objects with the properties you want
-              songInfo = parseTitleString(v.snippet.title)
+              var songInfo = parseTitleString(v.snippet.title)
               return {
-                title: SongInfo.title,
-                artist: SongInfo.artistName,
+                title: songInfo.title,
+                artist: songInfo.artist,
+                id: v.id,
+                snippet: v.snippet,
               }
            })
               this.setState({
                       videos:videos,
                       selectedVideo: videos[0]
                   });
-            console.log(selectedVideo)
+            console.log(this.state.selectedVideo)
         });
     }
 

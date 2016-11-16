@@ -18,8 +18,11 @@ import Avatar from 'material-ui/Avatar';
 import jss from 'jss'
 import ScoreSlider from './ScoreSlider';
 import Video_detail from "./../YoutubeSearch/Video_detail";
-import{AvSkipNext,AvSkipPrevious,NavigationClose} from 'material-ui/svg-icons/';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
+import AvSkipNext from 'material-ui/svg-icons/av/skip-next';
+import AvSkipPrevious from 'material-ui/svg-icons/av/skip-previous';
+import NavigationClose from 'material-ui/svg-icons/navigation/check';
+
 import {pink50,pink500,pink200, blue300, indigo900,lightBlue50,lightBlue100,lightBlue200} from 'material-ui/styles/colors';
 
 const title = 'Song Entry';

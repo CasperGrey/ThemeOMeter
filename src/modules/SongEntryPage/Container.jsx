@@ -47,15 +47,14 @@ class Container extends Component {
 
     validateSongs = (videoItems) => {
           return Promise.all(videoItems.map(video => {
-            var songInfo = parseTitleString(video.snippet.title)
             return fetch('/api/songs/validate', {
               method: 'post',
               headers: {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                songName: songInfo.title,
-                artistName: songInfo.artist,
+                songName: video.title,
+                artistName: video.artist,
               })
             })
             .then(response => response.text())
@@ -78,7 +77,6 @@ class Container extends Component {
              statuses.forEach((status, i) => {
                var videoItem = videoItems[i]
                console.log(videoItem)
-               var songInfo = parseTitleString(videoItem.snippet.title)
                console.log('On Save Status:',status)
                var userId = this.props.userId
                if(status == 'Not Found'){
@@ -88,9 +86,9 @@ class Container extends Component {
                      'Content-Type': 'application/json',
                    },
                    body: JSON.stringify({
-                     songName: songInfo.title,
+                     songName: videoItem.title,
                      user_id : userId,
-                     artistName: songInfo.artist,
+                     artistName: videoItem.artist,
                      comment: videoItem.comment,
                      songURL: `https://youtu.be/${videoItem.id.videoId}`,
                      videoId: videoItem.id.videoId,
@@ -99,7 +97,7 @@ class Container extends Component {
                  this.setState({successMessage: "Save Succesful"})
                  setTimeout(function() {browserHistory.push('/score')}, 2000);
                } else if (status == 'Found') {
-                 alert(" Oh Drat "+ songInfo.artist + " " + songInfo.title + " has previously been chosen")
+                 alert(" Oh Drat "+ videoItem.artist + " " + videoItem.title + " has previously been chosen")
                } else {
 
                  console.log('loading...')

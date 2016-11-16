@@ -77,7 +77,13 @@ class SongEntryPage extends Component {
 
     onSongNameChange = (video, i, songName) => {
         var videoItems = this.state.videoItems.slice()
-        videoItems[i].comment = comment
+        videoItems[i].title = songName
+        this.setState({videoItems})
+    };
+
+    onArtistNameChange = (video, i, artistName) => {
+        var videoItems = this.state.videoItems.slice()
+        videoItems[i].artist = artistName
         this.setState({videoItems})
     };
 
@@ -85,7 +91,7 @@ class SongEntryPage extends Component {
 
     render() {
 
-        var { onSave, onCommentChange } = this.props
+        var { onSave, onCommentChange,onArtistNameChange, onSongNameChange} = this.props
         if (!onSave) onSave = function(){}
     return (
       <div className={"root"}>
@@ -109,7 +115,7 @@ class SongEntryPage extends Component {
             <div style={{clear: 'both'}} />
             <Subheader>Your Selections</Subheader>
             {/* Ensure we bind so that `this` will relate to the current component */}
-            <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} />
+            <PlayerSongList videos={this.state.videoItems} onDelete={this.onDeleteVideo} onCommentChange={this.onCommentChange} onArtistNameChange={this.onArtistNameChange} onSongNameChange={this.onSongNameChange} />
           <CardActions>
           <RaisedButton secondary={true} label="Back" href="/"/>
           <RaisedButton primary={true} label="Finish" onClick={() => onSave(this.state.videoItems)}/>

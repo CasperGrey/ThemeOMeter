@@ -25,7 +25,7 @@ class PlayerSongListItem extends React.Component {
     }
 
     render = () => {
-        var {video, onVideoSelect, onDelete, onCommentChange} = this.props
+        var {video, onVideoSelect, onDelete, onCommentChange, onArtistNameChange, onSongNameChange} = this.props
         const imageUrl = video.snippet.thumbnails.default.url;
 
         if (onVideoSelect == null)
@@ -53,13 +53,15 @@ class PlayerSongListItem extends React.Component {
                         <TextField
                             floatingLabelText={"Artist"}
                             hintText ={"Your song artist"}
-                            defaultValue={parseTitleString(video.snippet.title).artist}
+                            defaultValue={video.artist}
+                            onChange={onArtistNameChange}
                         />
                         <br />
                         <TextField
                             floatingLabelText={"Song"}
                             hintText ={"Title of your song"}
-                            defaultValue={parseTitleString(video.snippet.title).title}
+                            defaultValue={video.title}
+                            onChange={onSongNameChange}
                         />
                         <br />
                         <TextField

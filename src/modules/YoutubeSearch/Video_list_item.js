@@ -2,7 +2,7 @@ import React from "react"
 import s from './styles.css';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { StyleSheet } from 'react-look'
-import { NavigationClose } from 'material-ui/svg-icons'
+import { NavigationClose } from 'material-ui/svg-icons/navigation/check'
 import IconButton from 'material-ui/IconButton'
 
 
