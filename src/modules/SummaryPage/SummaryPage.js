@@ -92,11 +92,13 @@ class SummaryPage extends Component {
 
   static propTypes = {
       songs: React.PropTypes.array,
+      userscores: React.PropTypes.array,
       onCommentChange: React.PropTypes.func,
   }
 
   static defaultProps = {
       songs: [],
+      userscores: [],
   }
 
 
@@ -108,7 +110,7 @@ class SummaryPage extends Component {
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
-    const { songs } = this.props
+    const { songs , userscores } = this.props
     return (
       <div className="root">
         <div className={styles.containerStyle}>
@@ -131,9 +133,9 @@ class SummaryPage extends Component {
                <Bar dataKey="progress" fill="#8884d8"  />
               </BarChart>
               <Divider/><Subheader>How you were scored</Subheader>
-              <BarChart width={500} height={400} data={dataScoresReceivedByAgent}
+              <BarChart width={500} height={400} data={userscores}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-               <XAxis dataKey="name"/>
+               <XAxis dataKey={userscores.agent_name}/>
                <YAxis/>
                <CartesianGrid strokeDasharray="3 3"/>
                <Tooltip/>

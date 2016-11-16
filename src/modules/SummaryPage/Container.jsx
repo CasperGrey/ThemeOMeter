@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 import SummaryPage from './SummaryPage.js'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+
+    var userId = null
+    if (state.login && state.login.user)
+        userId = state.login.user
+    return {
+        userId,
+    }
+}
 
 class Container extends Component {
+
+  static propTypes = {
+      /**
+       * The user id
+       */
+      userId: React.PropTypes.number,
+  };
 
   componentDidMount = () => {
       fetch('/api/songs/by-theme')
@@ -17,32 +35,29 @@ class Container extends Component {
           })
       })
 
-      fetch('/api/themes/all')
-      .then(response => response.json())
-      .then(themes => {
-          this.setState({themes})
-      })
-
-      fetch('/api/themes/total',{
+      var userId = this.props.userId
+      fetch('/api/reports/userscore',{
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
         },
         body:JSON.stringify({
-            theme_id: this.state.currentTheme,
+            user_id: userId
       })
     })
       .then(response => response.json())
-      .then(entries => {
-          this.setState({entries})
+      .then(userscores => {
+          this.setState({userscores})
+          console.log(this.state.userscores)
       })
+
 
   }
 
 
-    onSave = (songs) => {
 
-    };
+
+
 
     state = {};
 
@@ -52,8 +67,8 @@ class Container extends Component {
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
         themes={this.state.themes}
-        entries={this.state.themes}
+        userscores={this.state.userscores}
     />
 }
 
-export default Container
+export default connect(mapStateToProps)(Container)
