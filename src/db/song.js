@@ -65,3 +65,35 @@ export function getSongsByUserinTheme(agent_id, theme_id){
         });
     })
 }
+
+
+
+export function getTotalSongsinThemeWithoutUsers(agent_id, theme_id){
+    console.log(`Searching for songs by user_id: ${agent_id}`)
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT COUNT(*) as count FROM factentry where agent_id != ? and theme_id = ? and valid_entry = 1', [agent_id,theme_id] , function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+              var result = rows[0]
+            resolve(result)
+        });
+    })
+}
+
+export function getTotalSongsByUserinTheme(agent_id, theme_id){
+    console.log(`Searching for songs by user_id: ${agent_id}`)
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT COUNT(*) as count FROM factentry where agent_id = ? and theme_id = ? and valid_entry = 1', [agent_id,theme_id] , function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+              var result = rows[0]
+            resolve(result)
+        });
+    })
+}

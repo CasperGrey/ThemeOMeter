@@ -63,18 +63,40 @@ class Container extends Component {
                 // probably won't work
                 status = response
                 console.log('Validate Status:',status)
-                return response
+                return status
             })
           }))
           // should be an array of the respones now
         };
+
+
+        areEntriesComplete = (userId) => {
+                fetch('/api/songs/entered', {
+                  method: 'post',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    userId: userId,
+                    theme_id: this.state.currentTheme.theme_id,
+                  })
+                })
+                .then(response => response.text())
+                .then(response => {
+                    // TODO There will be a response for each video item so this
+                    // probably won't work
+                    var complete = response
+                    console.log('Scoring Status:',complete)
+                    return response
+                })
+          };
 
         onSave = async (videoItems) => {
            if(videoItems.length < 1){
              alert("Sorry you must choose at least 5 songs")
            } else {
              var statuses = await this.validateSongs(videoItems)
-             statuses.forEach((status, i) => {
+             statuses.forEach(async(status, i) => {
                var videoItem = videoItems[i]
                console.log(videoItem)
                console.log('On Save Status:',status)
@@ -94,12 +116,15 @@ class Container extends Component {
                      videoId: videoItem.id.videoId,
                    })
                  })
-                 this.setState({successMessage: "Save Succesful"})
-                 setTimeout(function() {browserHistory.push('/score')}, 2000);
+                 var completed = await this.areEntriesComplete(userId)
+                 console.log(completed)
+                 if(completed == 'Finished'){
+                   this.setState({successMessage: "Save Succesful"})
+                   setTimeout(function() {browserHistory.push('/score')}, 2000);
+                 }
                } else if (status == 'Found') {
                  alert(" Oh Drat "+ videoItem.artist + " " + videoItem.title + " has previously been chosen")
                } else {
-
                  console.log('loading...')
                }
              })
@@ -116,9 +141,5 @@ class Container extends Component {
         onSave={this.onSave}
         successMessage = {this.state.successMessage}
     />
-
 }
-
-
-
 export default connect(mapStateToProps)(Container)

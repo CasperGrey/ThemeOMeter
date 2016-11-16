@@ -8,7 +8,8 @@ router.use(bodyParser.json())
 
 
 import {getArtist, createArtist } from './../db/artists.js'
-import {createSong, getSong, getSongsByUserinTheme} from './../db/song.js'
+import {createSong, getSong, getSongsByUserinTheme,getTotalSongsByUserinTheme,getTotalSongsinThemeWithoutUsers} from './../db/song.js'
+import {getTotalSongsScoredByUser} from './../db/score.js'
 import * as entryDb from './../db/entry.js'
 import { getCurrentTheme } from './../db/theme.js'
 
@@ -96,6 +97,86 @@ router.post('/validate', async function(req, res, next) {
 
 
 });
+
+
+router.post('/complete', async function(req, res, next) {
+
+    try {
+
+        var agent_id = req.body.userId
+
+        var theme = await getCurrentTheme()
+
+        console.log(require('util').inspect(req.body))
+
+        console.log('Searching for total entries:',agent_id,theme.theme_id)
+        var total = await getTotalSongsinThemeWithoutUsers(agent_id,theme.theme_id)
+
+        if (!total) {
+        console.log('No Entries For This User')
+        }
+        console.log('Total entries:',total.count)
+        console.log('Searching for total scores by user:',agent_id)
+        var scoredSoFar = await getTotalSongsScoredByUser(theme.theme_id, agent_id);
+        console.log('Scored so far:',scoredSoFar.count)
+        // If we don't have a song then create one
+        if (!scoredSoFar) {
+          res.send('0');
+         }
+        var complete = (scoredSoFar.count/total.count)*100
+
+        console.log('Complete %',complete)
+
+        if(complete >= 100){
+          res.send('100')
+        }
+
+    }catch(err){
+
+        console.error(err)
+        next(err)
+    }
+
+
+});
+
+
+router.post('/entered', async function(req, res, next) {
+
+    try {
+
+        var agent_id = req.body.userId
+
+        var theme = await getCurrentTheme()
+
+        console.log(require('util').inspect(req.body))
+
+        console.log('Searching for total entries:',agent_id,theme.theme_id)
+        var total = await getTotalSongsByUserinTheme(agent_id,theme.theme_id)
+
+        if (!total) {
+        console.log('No Entries For This User')
+        }
+
+        console.log(total.count)
+
+        if(total.count == '5'){
+          res.send('Finished')
+        }else{
+          res.send('Nothing')
+        }
+
+
+
+    }catch(err){
+
+        console.error(err)
+        next(err)
+    }
+
+
+});
+
 
 
 router.post('/in-current-theme', async function(req, res, next) {
