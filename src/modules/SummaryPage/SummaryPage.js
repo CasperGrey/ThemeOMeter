@@ -135,7 +135,7 @@ class SummaryPage extends Component {
               <Divider/><Subheader>How you were scored</Subheader>
               <BarChart width={500} height={400} data={userscores}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-               <XAxis dataKey={userscores.agent_name}/>
+               <XAxis dataKey='agent_name'/>
                <YAxis/>
                <CartesianGrid strokeDasharray="3 3"/>
                <Tooltip/>
