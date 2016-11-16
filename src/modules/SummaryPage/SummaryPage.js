@@ -165,17 +165,6 @@ class SummaryPage extends Component {
                <Line type="monotone" dataKey="Received" stroke="#82ca9d" />
               </LineChart>
               <Divider/>
-              <Subheader>Theme Averages</Subheader>
-              <LineChart width={500} height={400} data={dataThemeRating}
-                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-               <XAxis dataKey="name"/>
-               <YAxis/>
-               <CartesianGrid strokeDasharray="3 3"/>
-               <Tooltip/>
-               <Legend/>
-               <Line type="monotone" dataKey="Score" stroke="#8884d8" activeDot={{r: 8}}/>
-               <Line type="monotone" dataKey="ThisScore" stroke="#82ca9d" />
-              </LineChart>
               <CardActions>
               </CardActions>
             </Card>
