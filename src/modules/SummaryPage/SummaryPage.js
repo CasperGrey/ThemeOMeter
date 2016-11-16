@@ -110,7 +110,7 @@ class SummaryPage extends Component {
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
-    const { songs , userscores } = this.props
+    const { songs , userscores , userscoring} = this.props
     return (
       <div className="root">
         <div className={styles.containerStyle}>
