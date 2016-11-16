@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {getCurrentAgentAverageScores} from './../db/reporting.js'
+import {getCurrentAgentAverageScores,getCurrentAgentAverageScoring} from './../db/reporting.js'
 import { getCurrentTheme} from './../db/theme.js'
 
 
@@ -27,6 +27,30 @@ router.post('/userscore', async function(req, res, next) {
       var scoredata = await getCurrentAgentAverageScores(user_id,currentTheme.theme_id)
 
       return res.send(scoredata)
+
+    } catch(err){
+        console.error(err)
+        reject(err)
+    }
+
+
+});
+
+router.post('/userscoring', async function(req, res, next) {
+
+    try {
+
+      var user_id = req.body.user_id
+
+      console.log(require('util').inspect(req.body))
+
+      var currentTheme = await getCurrentTheme()
+
+      console.log(currentTheme.theme_id)
+
+      var scoringdata = await getCurrentAgentAverageScoring(user_id,currentTheme.theme_id)
+
+      return res.send(scoringdata)
 
     } catch(err){
         console.error(err)

@@ -51,6 +51,21 @@ class Container extends Component {
           console.log(this.state.userscores)
       })
 
+      fetch('/api/reports/userscoring',{
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+            user_id: userId
+      })
+    })
+      .then(response => response.json())
+      .then(userscoring => {
+          this.setState({userscoring})
+          console.log(this.state.userscoring)
+      })
+
 
   }
 
@@ -68,6 +83,7 @@ class Container extends Component {
         onSave={this.onSave}
         themes={this.state.themes}
         userscores={this.state.userscores}
+        userscoring={this.state.userscoring}
     />
 }
 

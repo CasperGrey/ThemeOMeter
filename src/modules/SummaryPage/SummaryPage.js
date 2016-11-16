@@ -143,9 +143,9 @@ class SummaryPage extends Component {
                <Bar dataKey="Score" fill="#8884d8"  />
               </BarChart>
               <Divider/><Subheader>How you scored</Subheader>
-              <BarChart width={500} height={400} data={dataScoresGivenByAgent}
+              <BarChart width={500} height={400} data={userscoring}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-               <XAxis dataKey="name"/>
+               <XAxis dataKey="agent_name"/>
                <YAxis/>
                <CartesianGrid strokeDasharray="3 3"/>
                <Tooltip/>
