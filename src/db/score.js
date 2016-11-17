@@ -65,3 +65,15 @@ export function getTotalSongsScoredByUser(theme_id,user_id){
         });
     })
 }
+export function getAllScoredSongs(theme_id){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT * from factscores where theme_id = ?;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows
+
+            resolve(result)
+
+        });
+    })
+}

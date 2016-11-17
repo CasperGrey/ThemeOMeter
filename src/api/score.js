@@ -36,3 +36,14 @@ router.post('/', async function(req, res, next) {
 });
 
 export default router
+
+
+router.get('/all-songs',  async function(req, res, next) {
+    try{
+        var theme = await getCurrentTheme()
+        var scores = await getAllScoredSongs(theme.theme_id)
+        res.send(scores)
+    } catch (err){
+        next(err)
+    }
+})
