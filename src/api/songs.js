@@ -87,7 +87,7 @@ router.post('/validate', async function(req, res, next) {
           res.send('Not Found');
          } else {
             console.log('Song Already Exists')
-            res.send('Not Found');
+            res.send('Found');
           }
     }catch(err){
 

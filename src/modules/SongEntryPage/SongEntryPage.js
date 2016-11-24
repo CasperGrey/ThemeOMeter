@@ -50,15 +50,32 @@ class SongEntryPage extends Component {
     this.setState({items: items});
   }
 
-    onAddVideo = (selectedVideo) => {
+    onAddVideo = async (selectedVideo) => {
+        var {validateSongs} = this.props
+        if (!validateSongs) validateSongs = function(){}
         // We clone the existing items array with slice, so that we have a new
         // array rather than a reference to the existing one
         var videoItems = this.state.videoItems.slice()
         videoItems.push(selectedVideo)
+        var statuses = await validateSongs(videoItems)
+        statuses.forEach(async(status, i) => {
+          var videoItem = videoItems[i]
+          console.log(videoItem)
+          console.log('On Add Status:',status)
+          if(status == 'Not Found'){
 
-        // Update state with the new array
-        this.setState({videoItems});
-    };
+            // Update state with the new array
+            this.setState({videoItems});
+          } else if (status == 'Found') {
+            alert(" Oh Drat "+ videoItem.artist + " " + videoItem.title + " has previously been chosen")
+          } else {
+            console.log('loading...')
+          }
+        })
+      };
+
+
+
 
     onDeleteVideo = (video) => {
         const { videoItems } = this.state

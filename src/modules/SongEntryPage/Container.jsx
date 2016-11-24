@@ -95,38 +95,26 @@ class Container extends Component {
            if(videoItems.length < 1){
              alert("Sorry you must choose at least 5 songs")
            } else {
-             var statuses = await this.validateSongs(videoItems)
-             statuses.forEach(async(status, i) => {
-               var videoItem = videoItems[i]
-               console.log(videoItem)
-               console.log('On Save Status:',status)
+              videoItems.forEach(video => {
+               console.log(videoItems)
                var userId = this.props.userId
-               if(status == 'Not Found'){
-                 fetch('/api/songs', {
+               fetch('/api/songs', {
                    method: 'post',
                    headers: {
                      'Content-Type': 'application/json',
                    },
                    body: JSON.stringify({
-                     songName: videoItem.title,
+                     songName: video.title,
                      user_id : userId,
-                     artistName: videoItem.artist,
-                     comment: videoItem.comment,
-                     songURL: `https://youtu.be/${videoItem.id.videoId}`,
-                     videoId: videoItem.id.videoId,
+                     artistName: video.artist,
+                     comment: video.comment,
+                     songURL: `https://youtu.be/${video.id.videoId}`,
+                     videoId: video.id.videoId,
                    })
                  })
-                 var completed = await this.areEntriesComplete(userId)
-                 console.log(completed)
-                 if(completed == 'Finished'){
+
                    this.setState({successMessage: "Save Succesful"})
                    setTimeout(function() {browserHistory.push('/score')}, 2000);
-                 }
-               } else if (status == 'Found') {
-                 alert(" Oh Drat "+ videoItem.artist + " " + videoItem.title + " has previously been chosen")
-               } else {
-                 console.log('loading...')
-               }
              })
            }
          };
@@ -140,6 +128,7 @@ class Container extends Component {
         currentTheme={this.state.currentTheme}
         onSave={this.onSave}
         successMessage = {this.state.successMessage}
+        validateSongs = {this.validateSongs}
     />
 }
 export default connect(mapStateToProps)(Container)
