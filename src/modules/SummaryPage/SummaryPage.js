@@ -93,12 +93,14 @@ class SummaryPage extends Component {
   static propTypes = {
       songs: React.PropTypes.array,
       userscores: React.PropTypes.array,
+      currentProgress: React.PropTypes.array,
       onCommentChange: React.PropTypes.func,
   }
 
   static defaultProps = {
       songs: [],
       userscores: [],
+      currentProgress: [],
   }
 
 
@@ -110,7 +112,7 @@ class SummaryPage extends Component {
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
-    const { songs , userscores , userscoring} = this.props
+    const { songs , userscores , userscoring, currentProgress } = this.props
     return (
       <div className="root">
         <div className={styles.containerStyle}>
@@ -123,7 +125,7 @@ class SummaryPage extends Component {
               </CardMedia>
               <CardTitle title="Summary"/>
               <Subheader>Progress</Subheader>
-              <BarChart width={500} height={100} data={dataThemeProgress}
+              <BarChart width={500} height={100} data={currentProgress}
                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                <XAxis dataKey="name"/>
                <YAxis/>

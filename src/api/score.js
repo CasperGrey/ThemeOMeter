@@ -7,7 +7,8 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 
-import {enterScore,getScoreBySongId,getSongPickerId} from './../db/score.js'
+import {enterScore,getScoreBySongId,getSongPickerId,getTopScoredSongs,getBottomScoredSongs} from './../db/score.js'
+import { getCurrentTheme } from './../db/theme.js'
 
 
 // route with parameters (http://localhost:8080/hello/:name)
@@ -42,6 +43,26 @@ router.get('/all-songs',  async function(req, res, next) {
     try{
         var theme = await getCurrentTheme()
         var scores = await getAllScoredSongs(theme.theme_id)
+        res.send(scores)
+    } catch (err){
+        next(err)
+    }
+})
+
+router.get('/top-songs',  async function(req, res, next) {
+    try{
+        var theme = await getCurrentTheme()
+        var scores = await getTopScoredSongs(theme.theme_id,5)
+        res.send(scores)
+    } catch (err){
+        next(err)
+    }
+})
+
+router.get('/bottom-songs',  async function(req, res, next) {
+    try{
+        var theme = await getCurrentTheme()
+        var scores = await getBottomScoredSongs(theme.theme_id,5)
         res.send(scores)
     } catch (err){
         next(err)

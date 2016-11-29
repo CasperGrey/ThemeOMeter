@@ -8,7 +8,7 @@ router.use(bodyParser.json())
 
 
 import {getArtist, createArtist } from './../db/artists.js'
-import {createSong, getSong, getSongsByUserinTheme,getTotalSongsByUserinTheme,getTotalSongsinThemeWithoutUsers} from './../db/song.js'
+import {createSong, getSong, getSongsByUserinTheme,getTotalSongsByUserinTheme,getTotalSongsinThemeWithoutUsers,getAllSongs} from './../db/song.js'
 import {getTotalSongsScoredByUser} from './../db/score.js'
 import * as entryDb from './../db/entry.js'
 import { getCurrentTheme } from './../db/theme.js'
@@ -137,6 +137,18 @@ router.post('/complete', async function(req, res, next) {
         next(err)
     }
 
+
+});
+
+
+router.get('/all', async function(req, res, next) {
+
+  try{
+      var songs = await getAllSongs()
+      res.send(songs)
+  } catch (err){
+      next(err)
+  }
 
 });
 

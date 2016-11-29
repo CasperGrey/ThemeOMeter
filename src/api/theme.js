@@ -7,7 +7,7 @@ var router = express.Router();
 router.use(bodyParser.json())
 
 import connection from '../db/db.js'
-import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff,clearTheme,getAllInTheme,createTheme} from './../db/theme.js'
+import { getCurrentTheme , getThemes, toggleCurrentTheme, toggleCurrentThemeOff,clearTheme,getAllInTheme,createTheme,getCurrentThemeProgress} from './../db/theme.js'
 
 // route with parameters (http://localhost:8080/hello/:name)
 
@@ -78,6 +78,29 @@ router.get('/current', async function(req, res, next) {
     }
 
 });
+
+
+router.get('/currentProgress', async function(req, res, next) {
+
+    try {
+        var currentTheme = await getCurrentTheme()
+        var currentThemeProgress = await getCurrentThemeProgress(currentTheme.theme_id)
+
+        if (currentThemeProgress == null)
+            return res.status(404).send({
+                message: "No current theme"
+            })
+
+        return res.send({
+            name: currentThemeProgress.xAxisName,
+            progress: currentThemeProgress.progress
+        })
+    } catch (err){
+        reject(err);
+    }
+
+});
+
 
 router.get('/all', async function(req, res, next) {
 

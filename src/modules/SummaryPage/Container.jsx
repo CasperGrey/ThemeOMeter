@@ -27,11 +27,20 @@ class Container extends Component {
       .then(songs => {
           this.setState({songs})
       })
+
       fetch('/api/themes/current')
       .then(response => response.json())
       .then(json => {
           this.setState({
               currentTheme: json.name
+          })
+      })
+
+      fetch('/api/themes/currentProgress')
+      .then(response => response.json())
+      .then(json => {
+          this.setState({
+              currentProgress: json.name
           })
       })
 
@@ -84,6 +93,7 @@ class Container extends Component {
         themes={this.state.themes}
         userscores={this.state.userscores}
         userscoring={this.state.userscoring}
+        currentProgress={this.state.currentProgress}
     />
 }
 

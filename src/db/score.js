@@ -77,3 +77,29 @@ export function getAllScoredSongs(theme_id){
         });
     })
 }
+
+export function getTopScoredSongs(theme_id,number_of_songs){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT dimartists.artist_name, dimsongs.song_name, factscores.song_id, avg(factscores.song_raw_score) as avgscore from factscores left join dimsongs on dimsongs.song_id = factscores.song_id left join dimartists on dimartists.artist_id = dimsongs.artist_id where theme_id = ? and valid_vote = 1 group by factscores.song_id order by avgscore desc LIMIT ?;',[theme_id, number_of_songs], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows
+
+            resolve(result)
+
+        });
+    })
+}
+
+export function getBottomScoredSongs(theme_id,number_of_songs){
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT dimartists.artist_name, dimsongs.song_name, factscores.song_id, avg(factscores.song_raw_score) as avgscore from factscores left join dimsongs on dimsongs.song_id = factscores.song_id left join dimartists on dimartists.artist_id = dimsongs.artist_id where theme_id = ? and valid_vote = 1 group by factscores.song_id order by avgscore asc LIMIT ?;',[theme_id, number_of_songs], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows
+
+            resolve(result)
+
+        });
+    })
+}

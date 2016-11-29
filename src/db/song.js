@@ -97,3 +97,19 @@ export function getTotalSongsByUserinTheme(agent_id, theme_id){
         });
     })
 }
+
+export function getAllSongs(){
+    console.log(`Searching for all songs with valid entry`)
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT dimthemes.theme_name, dimartists.artist_name, dimsongs.* FROM dimsongs left join dimartists on dimsongs.artist_id = dimartists.artist_id LEFT JOIN factentry on factentry.song_id = dimsongs.song_id LEFT JOIN dimthemes on dimthemes.theme_id = factentry.theme_id WHERE factentry.valid_entry = 1;', function(err, rows, fields) {
+            if (err) return reject(err);
+
+            if (rows.length == 0){
+                return reject(null)
+            }
+            var result = rows
+            
+            resolve(result)
+        });
+    })
+}

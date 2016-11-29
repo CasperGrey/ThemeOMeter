@@ -19,6 +19,21 @@ export function getCurrentTheme(){
     })
 }
 
+
+export function getCurrentThemeProgress(theme_id){
+  console.log(`Getting current theme progress id: ${theme_id}`)
+    return new Promise(function(resolve, reject){
+        connection.query('SELECT COUNT(factentry.entry_id) AS entries, COUNT(factscores.seqNo) AS scores, (COUNT(factentry.entry_id) / COUNT(factscores.seqNo)) AS progress, "Progress" AS xAxisName FROM factentry LEFT JOIN factscores ON factentry.theme_id = factscores.theme_id WHERE factentry.theme_id = ? and factentry.valid_entry = 1;',[theme_id], function(err, rows, fields) {
+            if (err) return reject(err);
+
+            var result = rows[0]
+
+            resolve(result)
+        });
+    })
+}
+
+
 export function getThemeById(id){
     console.log(`getthemeById id: ${id}`)
     return new Promise(function(resolve, reject){
@@ -94,21 +109,6 @@ export function getAllInTheme(theme_id){
   console.log('Getting current theme total')
     return new Promise(function(resolve, reject){
         connection.query('select count(*) as total from factentry where theme_id = ? and valid_entry = 1;',[theme_id], function(err, rows, fields) {
-            if (err) return reject(err);
-
-            if (rows.length == 0){
-                return reject(null)
-            }
-            var result = rows
-            resolve(result)
-        });
-    })
-}
-
-export function currentThemeProgress(theme_id){
-  console.log('Getting current theme progress')
-    return new Promise(function(resolve, reject){
-        connection.query('select count(fe.entry_id) as entries, count(fs.seqNo) as scores, (count(fe.entry_id) / count(fs.seqNo)) as progress from factentry fe left join factscores fs on fe.theme_id = fs.theme_id where fe.theme_id = ?;',[theme_id], function(err, rows, fields) {
             if (err) return reject(err);
 
             if (rows.length == 0){
