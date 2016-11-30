@@ -15,6 +15,12 @@ class Container extends Component {
         })
     })
 
+    fetch('/api/songs/by-theme')
+    .then(response => response.json())
+    .then(songs => {
+        this.setState({songs})
+    })
+
   }
 
 
