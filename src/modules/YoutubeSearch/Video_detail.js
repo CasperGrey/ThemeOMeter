@@ -13,7 +13,7 @@ const Video_detail = ( { video }) =>{
     return(
         <div className="video-detail col-md-8">
             <div className="embed-responsive embed-responsive-16by9">
-                <iframe className = "embed-responsive-item" src={url}></iframe>
+                <iframe style={{width: '100%', height: 300}} frameBorder="0" className = "embed-responsive-item" src={url}></iframe>
             </div>
 
             {(video.snippet && video.snippet.title && video.snippet.description) ? <div className="details">
