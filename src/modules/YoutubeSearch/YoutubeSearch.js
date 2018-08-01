@@ -33,8 +33,8 @@ class YoutubeSearch extends Component{
     }
 
     static propTypes = {
-        onAddVideo: React.PropTypes.func,
-        allowDelete: React.PropTypes.bool,
+        onAddVideo: Proptypes.func,
+        allowDelete: Proptypes.bool,
     }
 
     videoSearch(searchTerm) {

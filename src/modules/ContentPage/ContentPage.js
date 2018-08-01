@@ -73,7 +73,7 @@ class ContentPage extends Component {
     }
 }
 ContentPage.propTypes = {
-//    user: React.PropTypes.any.isRequired
+//    user: Proptypes.any.isRequired
 };
 
 const styles = StyleSheet.create({

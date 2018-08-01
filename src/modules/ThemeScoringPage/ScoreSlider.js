@@ -9,7 +9,7 @@ import Toggle from 'material-ui/Toggle';
 export default class ScoreSlider extends React.Component {
 
       static propTypes = {
-          onChange: React.PropTypes.func,
+          onChange: Proptypes.func,
       };
 
     state = {

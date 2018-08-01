@@ -91,10 +91,10 @@ class SummaryPage extends Component {
   };
 
   static propTypes = {
-      songs: React.PropTypes.array,
-      userscores: React.PropTypes.array,
-      currentProgress: React.PropTypes.array,
-      onCommentChange: React.PropTypes.func,
+      songs: Proptypes.array,
+      userscores: Proptypes.array,
+      currentProgress: Proptypes.array,
+      onCommentChange: Proptypes.func,
   }
 
   static defaultProps = {

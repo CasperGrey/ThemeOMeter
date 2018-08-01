@@ -18,7 +18,7 @@ class Container extends Component {
       /**
        * The user id
        */
-      userId: React.PropTypes.number,
+      userId: Proptypes.number,
   };
 
   componentDidMount = () => {

@@ -9,7 +9,7 @@ import IconButton from 'material-ui/IconButton'
 class Video_list_item extends React.Component {
 
     static propTypes = {
-        onDelete: React.PropTypes.func,
+        onDelete: Proptypes.func,
     };
     render = () => {
         var {video, onVideoSelect, onDelete} = this.props;

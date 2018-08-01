@@ -10,8 +10,8 @@ import Paper from 'material-ui/Paper'
 class PlayerSongListItem extends React.Component {
 
     static propTypes = {
-        onDelete: React.PropTypes.func,
-        onCommentChange: React.PropTypes.func,
+        onDelete: Proptypes.func,
+        onCommentChange: Proptypes.func,
     }
 
     static defaultProps = {

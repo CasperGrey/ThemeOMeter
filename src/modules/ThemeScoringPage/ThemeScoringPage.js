@@ -74,8 +74,8 @@ class ThemeScoringPage extends Component {
     };
 
     static propTypes = {
-        songs: React.PropTypes.array,
-        onCommentChange: React.PropTypes.func,
+        songs: Proptypes.array,
+        onCommentChange: Proptypes.func,
     }
 
     static defaultProps = {

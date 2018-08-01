@@ -6,7 +6,7 @@ import List from 'material-ui/List'
 class PlayerSongList extends React.Component{
 
     static propTypes = {
-        onDelete: React.PropTypes.func,
+        onDelete: Proptypes.func,
     }
 
 

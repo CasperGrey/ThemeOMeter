@@ -13,7 +13,7 @@ class Main extends React.Component {
   }
 
   static childContextTypes = {
-    insertCss: React.PropTypes.func, 
+    insertCss: Proptypes.func,
   };
 
 

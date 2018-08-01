@@ -5,7 +5,7 @@ import Video_list_item from "./Video_list_item"
 class Video_list extends React.Component{
 
     static propTypes = {
-        onDelete: React.PropTypes.func,
+        onDelete: Proptypes.func,
     }
 
 

@@ -2,7 +2,8 @@
  * Created by johnstonb on 15/07/2016.
  */
 
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
 export default React.createClass({
   displayName: 'Form',
