@@ -12,7 +12,7 @@ compileWebpackServerBundle()
 
 function compileWebpackClientBundle(){
 	webpackClientConfig.output.publicPath = '/'
-	webpackClientConfig.plugins.push(new webpack.optimize.UglifyJsPlugin())
+
 	webpackClientConfig.plugins.push(new webpack.DefinePlugin({
 	  'process.env.NODE_ENV': process.env.NODE_ENV == 'production' ? '"production"' : '"development"'
 	}))

@@ -36,7 +36,8 @@ Object.assign(config, {
 config.plugins = config.plugins.slice()
 //webpackConfig.plugins.push(new webpack.IgnorePlugin(/\.(css|less)$/))
 config.plugins.push(
-  new webpack.BannerPlugin('require("source-map-support").install();',
-                             { raw: true, entryOnly: false }))
+    new webpack.BannerPlugin({banner: 'require("source-map-support").install();', raw: true, entryOnly: false})
+
+                    )
 
 module.exports = config

@@ -1,5 +1,5 @@
 var path = require('path')
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpackConfig = {
   entry: [
     path.join(__dirname, 'src/app.js'),
@@ -9,14 +9,15 @@ const webpackConfig = {
     publicPath: "http://localhost:8000/",
     filename: "bundle.js"
   },
+  mode: 'production',
+    performance: { hints: false },
   plugins: [
-    
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/, 
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
       },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
@@ -41,6 +42,17 @@ const webpackConfig = {
       { test: /\.css$/, loader: "isomorphic-style-loader!css-loader" },
     ],
   },
+    optimization: {
+        minimizer: [
+            new UglifyJSPlugin({
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true,
+                    }
+                }
+            })
+        ]
+    }
 }
 
 module.exports = webpackConfig
